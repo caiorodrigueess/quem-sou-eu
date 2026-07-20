@@ -116,6 +116,15 @@ function App() {
     socket.emit('nextQuestion');
   };
 
+  const submitPalpite = () => {
+    if (!palpiteGuess) return;
+    socket.emit('submitPalpite', { guess: palpiteGuess });
+  };
+  
+  const handleNextPalpiteRound = () => {
+    socket.emit('nextPalpiteRound');
+  };
+
   if (view === 'home') {
     if (!gameType) {
       return (
@@ -282,6 +291,66 @@ function App() {
   if (view === 'playing' && roomData) {
     const isHost = roomData.host === myId;
     
+    if (roomData.gameType === 'palpite') {
+      const myData = roomData.playersData.find(p => p.id === myId);
+      return (
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <h2>Sala: {roomData.id}</h2>
+            <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+          </div>
+          
+          <div className="glass-panel" style={{ marginTop: '2rem', padding: '4rem 2rem' }}>
+            <h3 style={{ color: 'var(--secondary)', marginBottom: '2rem', fontSize: '1.5rem' }}>Pergunta:</h3>
+            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '3rem' }}>
+              {roomData.currentPalpite?.question}
+            </div>
+            
+            {!myData?.hasSubmittedPalpite ? (
+              <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>Qual o seu palpite exato (apenas números)?</p>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <input 
+                    type="number"
+                    value={palpiteGuess} 
+                    onChange={e => setPalpiteGuess(e.target.value)} 
+                    placeholder="Ex: 100"
+                    style={{ fontSize: '1.5rem', textAlign: 'center' }}
+                  />
+                  <button onClick={submitPalpite} style={{ margin: 0, width: 'auto', background: 'var(--primary)' }}>Enviar</button>
+                </div>
+              </div>
+            ) : (
+              <div style={{ padding: '2rem', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '12px', border: '1px solid #10b981' }}>
+                <Check size={48} style={{ color: '#10b981', margin: '0 auto 1rem' }} />
+                <h3 style={{ color: '#10b981' }}>Palpite Registrado!</h3>
+                <p>Aguardando os outros jogadores...</p>
+              </div>
+            )}
+            
+            <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--glass-border)' }}>
+              <h4 style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Status dos Jogadores:</h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+                {roomData.playersData.map(p => (
+                  <div key={p.id} style={{ 
+                    padding: '0.5rem 1rem', 
+                    borderRadius: '20px', 
+                    background: p.hasSubmittedPalpite ? 'rgba(16, 185, 129, 0.2)' : 'var(--bg-card)',
+                    border: p.hasSubmittedPalpite ? '1px solid #10b981' : '1px solid var(--glass-border)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem'
+                  }}>
+                    {p.name} {p.id === myId ? '(Você)' : ''} {p.hasSubmittedPalpite ? <Check size={16} color="#10b981" /> : <Timer size={16} color="var(--text-muted)" />}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
     if (roomData.gameType === 'impostor') {
       const myData = roomData.playersData.find(p => p.id === myId);
       const iAmImpostor = myId === roomData.impostorId;
@@ -422,7 +491,97 @@ function App() {
     );
   }
 
+  if (view === 'palpite_results' && roomData) {
+    const isHost = roomData.host === myId;
+    return (
+      <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+        <h2>Fim da Rodada {roomData.currentRound}</h2>
+        
+        <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 1rem' }}>
+          <h3 style={{ color: 'var(--text-muted)' }}>A resposta correta era:</h3>
+          <div style={{ fontSize: '4rem', fontWeight: 'bold', color: '#10b981', margin: '1rem 0 3rem' }}>
+            {roomData.currentPalpite?.answer}
+          </div>
+          
+          <div style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
+            <h4 style={{ marginBottom: '1rem', color: 'var(--secondary)' }}>Ranking da Rodada:</h4>
+            {roomData.sortedPalpites && roomData.sortedPalpites.map((sp, index) => {
+              const pData = roomData.playersData.find(p => p.id === sp.pId);
+              return (
+                <div key={sp.pId} style={{ 
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '1rem', background: sp.pId === myId ? 'rgba(255,255,255,0.1)' : 'var(--bg-card)',
+                  border: '1px solid var(--glass-border)', borderRadius: '8px', marginBottom: '0.5rem'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', width: '30px' }}>#{sp.rank}</div>
+                    <div>
+                      <div style={{ fontWeight: 'bold' }}>{pData?.name} {sp.pId === myId ? '(Você)' : ''}</div>
+                      <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Palpite: {sp.guess} (Erro: {sp.diff})</div>
+                    </div>
+                  </div>
+                  {sp.pointsEarned > 0 && (
+                    <div style={{ background: 'var(--primary)', color: 'white', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>
+                      +{sp.pointsEarned} pts
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          
+          {isHost && (
+            <div style={{ marginTop: '3rem' }}>
+              <button onClick={handleNextPalpiteRound} style={{ padding: '1rem 2rem', fontSize: '1.2rem' }}>
+                {roomData.currentRound < roomData.maxRounds ? 'Próxima Pergunta ➡' : 'Ver Ranking Final 🏆'}
+              </button>
+            </div>
+          )}
+          {!isHost && (
+            <p style={{ marginTop: '3rem', color: 'var(--text-muted)' }}>Aguardando anfitrião...</p>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   if (view === 'finished' && roomData) {
+    if (roomData.gameType === 'palpite') {
+      const sortedPlayers = [...roomData.playersData].sort((a, b) => b.score - a.score);
+      return (
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div className="glass-panel">
+            <h2><Trophy size={48} style={{ color: '#fbbf24', display: 'block', margin: '0 auto 1rem' }}/> Ranking Final (Palpite)</h2>
+            <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>Fim das {roomData.maxRounds} rodadas!</p>
+            
+            <div style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
+              {sortedPlayers.map((p, index) => (
+                <div key={p.id} style={{ 
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '1.5rem', background: p.id === myId ? 'rgba(255,255,255,0.1)' : 'var(--bg-card)',
+                  border: '1px solid var(--glass-border)', borderRadius: '12px', marginBottom: '1rem'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ fontSize: '2rem', fontWeight: 'bold', width: '40px', color: index === 0 ? '#fbbf24' : index === 1 ? '#9ca3af' : index === 2 ? '#b45309' : 'inherit' }}>
+                      #{index + 1}
+                    </div>
+                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{p.name} {p.id === myId ? '(Você)' : ''}</div>
+                  </div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>
+                    {p.score} pts
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {roomData.host === myId && (
+              <button onClick={() => socket.emit('restartGame')} style={{ marginTop: '2rem' }}>Voltar ao Lobby</button>
+            )}
+          </div>
+        </div>
+      );
+    }
+    
     // Math.max can return -Infinity if array is empty, but playersData shouldn't be empty
     const finishTimes = roomData.playersData.map(p => p.finishTime).filter(t => t);
     const maxTime = finishTimes.length ? Math.max(...finishTimes) : Date.now();
