@@ -26,6 +26,27 @@ const CATEGORIES = {
   celebridades: ["Silvio Santos", "Neymar", "Anitta", "Elon Musk", "Beyoncé", "Faustão"]
 };
 
+const PARES_IMPOSTOR = [
+  ["Praia", "Piscina"],
+  ["Cachorro", "Gato"],
+  ["Hamburguer", "Pizza"],
+  ["Leão", "Tigre"],
+  ["Vampiro", "Zumbi"],
+  ["Batman", "Superman"],
+  ["Carro", "Moto"],
+  ["Celular", "Computador"]
+];
+
+const PERGUNTAS_IMPOSTOR = [
+  "Qual é a sua relação com isso?",
+  "Onde você costuma encontrar isso?",
+  "Quando foi a última vez que você viu ou usou isso?",
+  "Que cor ou forma isso costuma ter?",
+  "Se você pudesse descrever isso em uma palavra, qual seria?",
+  "Como isso faz você se sentir?",
+  "Isso é mais útil de dia ou de noite?"
+];
+
 function generateRoomCode() {
   return Math.random().toString(36).substring(2, 6).toUpperCase();
 }
@@ -33,17 +54,23 @@ function generateRoomCode() {
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
 
-  socket.on('createRoom', ({ name, mode, category }) => {
+  socket.on('createRoom', ({ name, mode, category, gameType, discussionType }) => {
     const roomId = generateRoomCode();
     
     rooms[roomId] = {
       id: roomId,
-      mode, // 'random' ou 'manual'
+      gameType: gameType || 'quem_sou_eu',
+      mode, // 'random' ou 'manual' para QSE, 'cego' ou 'tradicional' para Impostor
+      discussionType: discussionType || 'livre',
       category: category || 'animais',
       host: socket.id,
       players: [socket.id],
       status: 'lobby',
-      startTime: null
+      startTime: null,
+      votes: {}, // quem votou em quem (playerId -> targetId)
+      impostorId: null,
+      secretWord: null,
+      currentQuestion: null
     };
 
     players[socket.id] = {
@@ -53,7 +80,8 @@ io.on('connection', (socket) => {
       score: 0,
       character: null,
       suggestedCharacter: null,
-      finishTime: null
+      finishTime: null,
+      votedFor: null
     };
 
     socket.join(roomId);
@@ -77,7 +105,8 @@ io.on('connection', (socket) => {
         score: 0,
         character: null,
         suggestedCharacter: null,
-        finishTime: null
+        finishTime: null,
+        votedFor: null
       };
 
       socket.join(roomId);
@@ -93,25 +122,69 @@ io.on('connection', (socket) => {
     if (player && rooms[player.roomId] && rooms[player.roomId].host === socket.id) {
       const room = rooms[player.roomId];
       
-      if (room.mode === 'random') {
-        // Distribuir aleatoriamente da categoria
-        const chars = [...(CATEGORIES[room.category] || CATEGORIES['animais'])].sort(() => 0.5 - Math.random());
+      if (room.gameType === 'impostor') {
+        const impostorIndex = Math.floor(Math.random() * room.players.length);
+        const impostorId = room.players[impostorIndex];
+        room.impostorId = impostorId;
+        room.votes = {};
         
-        room.players.forEach((playerId, index) => {
-          players[playerId].character = chars[index % chars.length];
-          players[playerId].finishTime = null;
-        });
+        if (room.discussionType === 'perguntas') {
+          room.currentQuestion = PERGUNTAS_IMPOSTOR[Math.floor(Math.random() * PERGUNTAS_IMPOSTOR.length)];
+        } else {
+          room.currentQuestion = null;
+        }
         
-        // Sorteia a ordem dos jogadores na sala
+        if (room.mode === 'tradicional') {
+          const chars = CATEGORIES[room.category] || CATEGORIES['animais'];
+          const secretWord = chars[Math.floor(Math.random() * chars.length)];
+          room.secretWord = secretWord;
+          
+          room.players.forEach(pId => {
+            players[pId].character = pId === impostorId ? 'IMPOSTOR' : secretWord;
+            players[pId].finishTime = null;
+            players[pId].votedFor = null;
+          });
+        } else {
+          // Impostor Cego
+          const pair = PARES_IMPOSTOR[Math.floor(Math.random() * PARES_IMPOSTOR.length)];
+          const isReversed = Math.random() > 0.5;
+          const crewWord = isReversed ? pair[1] : pair[0];
+          const impWord = isReversed ? pair[0] : pair[1];
+          room.secretWord = crewWord; // to show at the end
+          room.impostorWord = impWord;
+          
+          room.players.forEach(pId => {
+            players[pId].character = pId === impostorId ? impWord : crewWord;
+            players[pId].finishTime = null;
+            players[pId].votedFor = null;
+          });
+        }
+        
         room.players = room.players.sort(() => 0.5 - Math.random());
-        
         room.startTime = Date.now();
         room.status = 'playing';
         io.to(room.id).emit('updateRoom', getRoomData(room.id));
       } else {
-        // Modo manual: precisa que cada um sugira um personagem
-        room.status = 'assigning';
-        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+        if (room.mode === 'random') {
+          // Distribuir aleatoriamente da categoria
+          const chars = [...(CATEGORIES[room.category] || CATEGORIES['animais'])].sort(() => 0.5 - Math.random());
+          
+          room.players.forEach((playerId, index) => {
+            players[playerId].character = chars[index % chars.length];
+            players[playerId].finishTime = null;
+          });
+          
+          // Sorteia a ordem dos jogadores na sala
+          room.players = room.players.sort(() => 0.5 - Math.random());
+          
+          room.startTime = Date.now();
+          room.status = 'playing';
+          io.to(room.id).emit('updateRoom', getRoomData(room.id));
+        } else {
+          // Modo manual: precisa que cada um sugira um personagem
+          room.status = 'assigning';
+          io.to(room.id).emit('updateRoom', getRoomData(room.id));
+        }
       }
     }
   });
@@ -144,6 +217,78 @@ io.on('connection', (socket) => {
         room.status = 'playing';
       }
       
+      io.to(room.id).emit('updateRoom', getRoomData(room.id));
+    }
+  });
+
+  socket.on('submitVote', ({ targetId }) => {
+    const player = players[socket.id];
+    if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing' && rooms[player.roomId].gameType === 'impostor') {
+      const room = rooms[player.roomId];
+      // Impostor não vota
+      if (socket.id === room.impostorId) return;
+      
+      room.votes[socket.id] = targetId;
+      player.votedFor = targetId;
+      
+      const votesCount = Object.keys(room.votes).length;
+      if (votesCount === room.players.length - 1) { // Todos menos o impostor votaram
+        room.status = 'voting_results';
+        
+        // Contar votos
+        const voteTally = {};
+        Object.values(room.votes).forEach(vId => {
+          voteTally[vId] = (voteTally[vId] || 0) + 1;
+        });
+        
+        // Descobrir o mais votado
+        let maxVotes = 0;
+        let mostVotedPlayers = [];
+        for (const [vId, count] of Object.entries(voteTally)) {
+          if (count > maxVotes) {
+            maxVotes = count;
+            mostVotedPlayers = [vId];
+          } else if (count === maxVotes) {
+            mostVotedPlayers.push(vId);
+          }
+        }
+        
+        // Se o impostor está entre os mais votados, os tripulantes ganham
+        const impostorCaught = mostVotedPlayers.includes(room.impostorId);
+        if (impostorCaught) {
+          room.players.forEach(pId => {
+            if (pId !== room.impostorId) players[pId].score += 100;
+          });
+        } else {
+          players[room.impostorId].score += 100;
+        }
+        room.impostorCaught = impostorCaught;
+        room.voteTally = voteTally;
+      }
+      
+      io.to(room.id).emit('updateRoom', getRoomData(room.id));
+    }
+  });
+
+  socket.on('guessImpostorWord', ({ word }) => {
+    const player = players[socket.id];
+    if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing' && rooms[player.roomId].gameType === 'impostor') {
+      const room = rooms[player.roomId];
+      if (socket.id !== room.impostorId) return; // Apenas impostor pode chutar
+      
+      room.status = 'voting_results';
+      const isCorrect = word && room.secretWord && word.toLowerCase().trim() === room.secretWord.toLowerCase().trim();
+      
+      if (isCorrect) {
+        player.score += 100;
+      } else {
+        room.players.forEach(pId => {
+          if (pId !== room.impostorId) players[pId].score += 100;
+        });
+      }
+      
+      room.impostorCaught = !isCorrect;
+      room.impostorGuessed = { word, isCorrect };
       io.to(room.id).emit('updateRoom', getRoomData(room.id));
     }
   });
@@ -181,12 +326,21 @@ io.on('connection', (socket) => {
       const room = rooms[player.roomId];
       room.status = 'lobby';
       room.startTime = null;
+      room.votes = {};
+      room.impostorId = null;
+      room.secretWord = null;
+      room.impostorWord = null;
+      room.impostorCaught = undefined;
+      room.impostorGuessed = undefined;
+      room.voteTally = undefined;
+      room.currentQuestion = null;
       
       room.players.forEach(pId => {
         if (players[pId]) {
           players[pId].character = null;
           players[pId].suggestedCharacter = null;
           players[pId].finishTime = null;
+          players[pId].votedFor = null;
         }
       });
       

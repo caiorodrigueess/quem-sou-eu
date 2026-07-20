@@ -3,10 +3,12 @@ import { socket } from './socket';
 import { Users, Crown, Play, Hash, Check, Trophy, Timer } from 'lucide-react';
 
 function App() {
-  const [view, setView] = useState('home'); // home, lobby, assigning, playing, finished
+  const [view, setView] = useState('home'); // home, lobby, assigning, playing, finished, voting_results
+  const [gameType, setGameType] = useState(''); // 'quem_sou_eu' ou 'impostor'
   const [name, setName] = useState('');
   const [roomCode, setRoomCode] = useState('');
   const [mode, setMode] = useState('random');
+  const [discussionType, setDiscussionType] = useState('livre');
   const [category, setCategory] = useState('animais');
   
   const [roomData, setRoomData] = useState(null);
@@ -34,6 +36,7 @@ function App() {
       if (data.status === 'assigning') setView('assigning');
       if (data.status === 'playing') setView('playing');
       if (data.status === 'finished') setView('finished');
+      if (data.status === 'voting_results') setView('voting_results');
     });
 
     socket.on('error', (msg) => {
@@ -58,7 +61,7 @@ function App() {
   const handleCreateRoom = (e) => {
     e.preventDefault();
     if (!name) return alert('Digite seu nome!');
-    socket.emit('createRoom', { name, mode, category });
+    socket.emit('createRoom', { name, mode, category, gameType, discussionType });
   };
 
   const handleJoinRoom = (e) => {
@@ -88,16 +91,53 @@ function App() {
   const handleLeaveRoom = () => {
     socket.emit('leaveRoom');
     setView('home');
+    setGameType('');
     setRoomData(null);
     setRoomCode('');
     setSuggestedChar('');
   };
 
+  const [voteTarget, setVoteTarget] = useState('');
+  const [showVoteModal, setShowVoteModal] = useState(false);
+  const [guessWord, setGuessWord] = useState('');
+  
+  const submitVote = () => {
+    if (!voteTarget) return alert('Selecione um jogador!');
+    socket.emit('submitVote', { targetId: voteTarget });
+    setShowVoteModal(false);
+  };
+  
+  const submitImpostorGuess = () => {
+    if (!guessWord) return;
+    socket.emit('guessImpostorWord', { word: guessWord });
+  };
+
   if (view === 'home') {
+    if (!gameType) {
+      return (
+        <div className="container">
+          <div className="glass-panel" style={{ textAlign: 'center' }}>
+            <h1>Escolha o Jogo 🎮</h1>
+            <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', marginTop: '2rem' }}>
+              <button onClick={() => { setGameType('quem_sou_eu'); setMode('random'); }} style={{ padding: '1.5rem', fontSize: '1.2rem' }}>
+                🤔 Quem Sou Eu?
+              </button>
+              <button onClick={() => { setGameType('impostor'); setMode('cego'); }} style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'linear-gradient(135deg, #ef4444, #b91c1c)' }}>
+                🕵️ Impostor
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
     return (
       <div className="container">
         <div className="glass-panel">
-          <h1>Quem Sou Eu? 🤔</h1>
+          <div className="flex-row">
+            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : '🤔 Quem Sou Eu?'}</h1>
+            <button onClick={() => setGameType('')} style={{ background: 'transparent', width: 'auto', margin: 0, padding: '0.5rem' }}>Voltar</button>
+          </div>
           
           <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: '250px' }}>
@@ -110,17 +150,35 @@ function App() {
                 <div className="form-group">
                   <label>Modo de Jogo</label>
                   <select value={mode} onChange={e => setMode(e.target.value)}>
-                    <option value="random">Sorteio Automático</option>
-                    <option value="manual">Nós escolhemos!</option>
+                    {gameType === 'quem_sou_eu' ? (
+                      <>
+                        <option value="random">Sorteio Automático</option>
+                        <option value="manual">Nós escolhemos!</option>
+                      </>
+                    ) : (
+                      <>
+                        <option value="cego">Impostor Cego (Palavras Parecidas)</option>
+                        <option value="tradicional">Impostor Tradicional</option>
+                      </>
+                    )}
                   </select>
                 </div>
-                {mode === 'random' && (
+                {(mode === 'random' || mode === 'tradicional') && (
                   <div className="form-group">
                     <label>Categoria</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
                       <option value="animais">Animais</option>
                       <option value="filmes">Filmes & Séries</option>
                       <option value="celebridades">Celebridades</option>
+                    </select>
+                  </div>
+                )}
+                {gameType === 'impostor' && (
+                  <div className="form-group">
+                    <label>Tipo de Discussão</label>
+                    <select value={discussionType} onChange={e => setDiscussionType(e.target.value)}>
+                      <option value="livre">Conversa Livre</option>
+                      <option value="perguntas">Responder Perguntas</option>
                     </select>
                   </div>
                 )}
@@ -219,6 +277,101 @@ function App() {
 
   if (view === 'playing' && roomData) {
     const isHost = roomData.host === myId;
+    
+    if (roomData.gameType === 'impostor') {
+      const myData = roomData.playersData.find(p => p.id === myId);
+      const iAmImpostor = myId === roomData.impostorId;
+      
+      return (
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <h2>Sala: {roomData.id}</h2>
+          
+          <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 1rem' }}>
+            {roomData.currentQuestion && (
+              <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px dashed var(--secondary)' }}>
+                <h4 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>Pergunta da Rodada:</h4>
+                <p style={{ fontSize: '1.3rem', fontWeight: 'bold' }}>"{roomData.currentQuestion}"</p>
+              </div>
+            )}
+            
+            <h3 style={{ color: 'var(--text-muted)' }}>{iAmImpostor && roomData.mode === 'tradicional' ? 'Seu Papel:' : 'Sua Palavra:'}</h3>
+            <div style={{ fontSize: '3rem', fontWeight: 'bold', color: iAmImpostor && roomData.mode === 'tradicional' ? '#ef4444' : 'var(--primary)', margin: '1rem 0' }}>
+              {myData?.character}
+            </div>
+            
+            <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+              Descubra quem tem a palavra diferente conversando com o grupo!
+            </p>
+            
+            {!iAmImpostor && !myData?.votedFor && (
+              <button onClick={() => setShowVoteModal(true)} style={{ maxWidth: '300px', margin: '0 auto' }}>
+                Votar no Impostor
+              </button>
+            )}
+            
+            {!iAmImpostor && myData?.votedFor && (
+              <p style={{ color: '#10b981', fontWeight: 'bold' }}>Voto registrado! Aguardando os outros...</p>
+            )}
+            
+            {iAmImpostor && (
+              <p style={{ color: '#fbbf24', fontWeight: 'bold' }}>Tente disfarçar! Os outros tentarão te descobrir.</p>
+            )}
+            
+            {iAmImpostor && roomData.mode === 'tradicional' && (
+              <div style={{ marginTop: '2rem', borderTop: '1px solid var(--glass-border)', paddingTop: '2rem' }}>
+                <p>Já sabe qual é a palavra deles?</p>
+                <div style={{ display: 'flex', gap: '1rem', maxWidth: '400px', margin: '1rem auto 0' }}>
+                  <input 
+                    value={guessWord} 
+                    onChange={e => setGuessWord(e.target.value)} 
+                    placeholder="Digite a palavra secreta..."
+                  />
+                  <button onClick={submitImpostorGuess} style={{ margin: 0, width: 'auto' }}>Chutar</button>
+                </div>
+              </div>
+            )}
+            
+            <div style={{ marginTop: '3rem', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)', textAlign: 'left' }}>
+              <h4 style={{ color: 'var(--text-muted)', marginBottom: '1rem', textAlign: 'center' }}>Ordem de Jogada (Sorteada):</h4>
+              <ul style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+                {roomData.playersData.map((p, index) => (
+                  <li key={p.id} style={{ background: 'var(--bg-card)', padding: '0.5rem 1rem', borderRadius: '20px', border: index === 0 ? '1px solid var(--primary)' : '1px solid var(--glass-border)', opacity: p.votedFor ? 0.5 : 1 }}>
+                    <span style={{ fontWeight: 'bold', marginRight: '0.5rem', color: index === 0 ? 'var(--primary)' : 'inherit' }}>{index + 1}º</span> {p.name} {p.id === myId ? '(Você)' : ''} {p.votedFor ? '✅' : ''}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          
+          {showVoteModal && (
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}>
+              <div className="glass-panel" style={{ width: '90%', maxWidth: '400px' }}>
+                <h2>Quem é o Impostor?</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', margin: '2rem 0' }}>
+                  {roomData.playersData.filter(p => p.id !== myId).map(p => (
+                    <button 
+                      key={p.id} 
+                      onClick={() => setVoteTarget(p.id)}
+                      style={{ 
+                        background: voteTarget === p.id ? 'var(--primary)' : 'rgba(255,255,255,0.1)',
+                        border: '1px solid var(--glass-border)'
+                      }}
+                    >
+                      {p.name}
+                    </button>
+                  ))}
+                </div>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <button onClick={() => setShowVoteModal(false)} style={{ background: 'transparent', border: '1px solid var(--secondary)', margin: 0 }}>Cancelar</button>
+                  <button onClick={submitVote} style={{ margin: 0 }}>Confirmar Voto</button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
     return (
       <div className="container" style={{ maxWidth: '1000px' }}>
         <div className="flex-row">
@@ -290,6 +443,68 @@ function App() {
           
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem', flexWrap: 'wrap' }}>
             {roomData.host === myId ? (
+              <button onClick={handleRestartGame} style={{ background: 'linear-gradient(135deg, #10b981, #059669)', margin: 0, flex: 1, minWidth: '200px' }}>
+                <Play size={18} style={{ verticalAlign: 'middle', marginRight: '8px' }}/> Nova Rodada
+              </button>
+            ) : (
+              <p style={{ color: 'var(--text-muted)', flex: '1 1 100%', marginBottom: '1rem' }}>Aguardando anfitrião para uma nova rodada...</p>
+            )}
+            <button onClick={handleLeaveRoom} style={{ background: 'rgba(236, 72, 153, 0.1)', border: '1px solid var(--secondary)', margin: 0, flex: 1, minWidth: '200px' }}>
+              Sair da Sala
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (view === 'voting_results' && roomData) {
+    const isHost = roomData.host === myId;
+    const impostorPlayer = roomData.playersData.find(p => p.id === roomData.impostorId);
+    const impostorName = impostorPlayer?.name || 'Desconhecido';
+    
+    return (
+      <div className="container" style={{ textAlign: 'center' }}>
+        <div className="glass-panel">
+          <h1>Fim de Jogo!</h1>
+          
+          <div style={{ margin: '2rem 0' }}>
+            <h2 style={{ color: roomData.impostorCaught ? '#10b981' : '#ef4444' }}>
+              {roomData.impostorCaught ? 'Tripulantes Venceram!' : 'O Impostor Venceu!'}
+            </h2>
+            <p style={{ fontSize: '1.2rem', marginTop: '1rem' }}>
+              O impostor era: <strong>{impostorName}</strong>
+            </p>
+            {roomData.secretWord && (
+              <p style={{ fontSize: '1.2rem' }}>
+                A palavra secreta era: <strong>{roomData.secretWord}</strong>
+              </p>
+            )}
+            {roomData.impostorGuessed && (
+              <p style={{ fontSize: '1.2rem', marginTop: '1rem', color: '#fbbf24' }}>
+                O impostor chutou a palavra "{roomData.impostorGuessed.word}" e {roomData.impostorGuessed.isCorrect ? 'acertou!' : 'errou!'}
+              </p>
+            )}
+          </div>
+          
+          {roomData.voteTally && (
+            <div style={{ margin: '2rem 0', background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '10px' }}>
+              <h3>Votos Recebidos</h3>
+              <ul style={{ listStyle: 'none', marginTop: '1rem' }}>
+                {Object.entries(roomData.voteTally).map(([vId, count]) => {
+                  const pName = roomData.playersData.find(p => p.id === vId)?.name || 'Desconhecido';
+                  return (
+                    <li key={vId} style={{ marginBottom: '0.5rem', fontSize: '1.1rem' }}>
+                      <strong>{pName}:</strong> {count} voto(s) {vId === roomData.impostorId ? '😈' : ''}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+          
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem', flexWrap: 'wrap' }}>
+            {isHost ? (
               <button onClick={handleRestartGame} style={{ background: 'linear-gradient(135deg, #10b981, #059669)', margin: 0, flex: 1, minWidth: '200px' }}>
                 <Play size={18} style={{ verticalAlign: 'middle', marginRight: '8px' }}/> Nova Rodada
               </button>
