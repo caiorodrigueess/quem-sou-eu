@@ -108,13 +108,16 @@ button:active {
 }
 
 .players-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .player-card {
+  flex: 1 1 150px; /* Largura mínima flexível */
+  max-width: 250px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--glass-border);
   border-radius: 15px;
@@ -213,15 +216,19 @@ button:active {
 .lobby-list {
   list-style: none;
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .lobby-list li {
-  padding: 0.75rem;
-  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  flex: 1 1 calc(50% - 1rem);
+  min-width: 200px;
   display: flex;
   justify-content: space-between;
-}
-
-.lobby-list li:last-child {
-  border-bottom: none;
+  align-items: center;
 }

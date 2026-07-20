@@ -64,6 +64,10 @@ io.on('connection', (socket) => {
   socket.on('joinRoom', ({ name, roomId }) => {
     roomId = roomId.toUpperCase();
     if (rooms[roomId] && rooms[roomId].status === 'lobby') {
+      if (rooms[roomId].players.length >= 10) {
+        return socket.emit('error', 'A sala está cheia (limite de 10 jogadores).');
+      }
+      
       rooms[roomId].players.push(socket.id);
       
       players[socket.id] = {
@@ -150,13 +154,19 @@ io.on('connection', (socket) => {
     const player = players[socket.id];
     if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing') {
       const targetPlayer = players[playerId];
+      const room = rooms[player.roomId];
+      
       if (targetPlayer && !targetPlayer.finishTime) {
-        targetPlayer.score += 10; // 10 pontos por acertar
+        // Conta quantos já terminaram para calcular a pontuação
+        const alreadyFinishedCount = room.players.filter(pId => players[pId].finishTime).length;
+        const pointsEarned = Math.max(10, 100 - (alreadyFinishedCount * 10)); // 100, 90, 80...
+        
+        targetPlayer.score += pointsEarned;
         targetPlayer.finishTime = Date.now();
         
-        const allFinished = rooms[player.roomId].players.every(pId => players[pId].finishTime);
+        const allFinished = room.players.every(pId => players[pId].finishTime);
         if (allFinished) {
-          rooms[player.roomId].status = 'finished';
+          room.status = 'finished';
         }
         
         io.to(player.roomId).emit('updateRoom', getRoomData(player.roomId));

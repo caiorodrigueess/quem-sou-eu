@@ -243,7 +243,7 @@ function App() {
                 {!p.finishTime ? (
                   isHost && (
                     <button className="correct-btn" onClick={() => handleCorrectGuess(p.id)}>
-                      +10 Pontos (Acertou)
+                      Marcar Acerto
                     </button>
                   )
                 ) : (
