@@ -111,6 +111,10 @@ function App() {
     if (!guessWord) return;
     socket.emit('guessImpostorWord', { word: guessWord });
   };
+  
+  const handleNextQuestion = () => {
+    socket.emit('nextQuestion');
+  };
 
   if (view === 'home') {
     if (!gameType) {
@@ -291,6 +295,11 @@ function App() {
               <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px dashed var(--secondary)' }}>
                 <h4 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>Pergunta da Rodada:</h4>
                 <p style={{ fontSize: '1.3rem', fontWeight: 'bold' }}>"{roomData.currentQuestion}"</p>
+                {isHost && (
+                  <button onClick={handleNextQuestion} style={{ marginTop: '1rem', background: 'var(--bg-card)', border: '1px solid var(--primary)', padding: '0.5rem 1rem', fontSize: '0.9rem', width: 'auto' }}>
+                    Sorteia Nova Pergunta
+                  </button>
+                )}
               </div>
             )}
             

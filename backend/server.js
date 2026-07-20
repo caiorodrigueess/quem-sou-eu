@@ -293,6 +293,21 @@ io.on('connection', (socket) => {
     }
   });
 
+  socket.on('nextQuestion', () => {
+    const player = players[socket.id];
+    if (player && rooms[player.roomId] && rooms[player.roomId].host === socket.id && rooms[player.roomId].status === 'playing') {
+      const room = rooms[player.roomId];
+      if (room.gameType === 'impostor' && room.discussionType === 'perguntas') {
+        let newQuestion;
+        do {
+          newQuestion = PERGUNTAS_IMPOSTOR[Math.floor(Math.random() * PERGUNTAS_IMPOSTOR.length)];
+        } while (newQuestion === room.currentQuestion && PERGUNTAS_IMPOSTOR.length > 1);
+        room.currentQuestion = newQuestion;
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      }
+    }
+  });
+
   socket.on('guessCorrect', ({ playerId }) => {
     // Quando alguém adivinha corretamente
     // O anfitrião ou o próprio jogador pode acionar isso
