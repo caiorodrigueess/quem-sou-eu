@@ -226,12 +226,15 @@ function App() {
         </div>
         
         <div className="players-grid">
-          {roomData.playersData.map(p => {
+          {roomData.playersData.map((p, index) => {
             const isMe = p.id === myId;
             return (
               <div key={p.id} className={`player-card ${isMe ? 'my-card' : ''}`}>
                 <div className="score">{p.score}</div>
                 <div className="player-name">{p.name} {p.id === roomData.host ? '👑' : ''} {isMe ? '(Você)' : ''}</div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--secondary)', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                  {index === 0 ? '🎯 1º a jogar' : `${index + 1}º a jogar`}
+                </div>
                 
                 <div className="player-character">
                   {p.character}

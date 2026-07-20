@@ -98,6 +98,9 @@ io.on('connection', (socket) => {
           players[playerId].finishTime = null;
         });
         
+        // Sorteia a ordem dos jogadores na sala
+        room.players = room.players.sort(() => 0.5 - Math.random());
+        
         room.startTime = Date.now();
         room.status = 'playing';
         io.to(room.id).emit('updateRoom', getRoomData(room.id));
@@ -129,6 +132,9 @@ io.on('connection', (socket) => {
           players[nextPlayer].character = players[currentPlayer].suggestedCharacter;
           players[nextPlayer].finishTime = null;
         }
+        
+        // Sorteia a ordem dos jogadores (podemos apenas reusar a lista embaralhada)
+        room.players = shuffledPlayers;
         
         room.startTime = Date.now();
         room.status = 'playing';
