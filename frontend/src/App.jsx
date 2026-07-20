@@ -11,6 +11,7 @@ function App() {
   const [discussionType, setDiscussionType] = useState('livre');
   const [category, setCategory] = useState('animais');
   const [maxRounds, setMaxRounds] = useState(10);
+  const [palpiteGuess, setPalpiteGuess] = useState('');
   
   const [roomData, setRoomData] = useState(null);
   const [myId, setMyId] = useState('');
@@ -38,6 +39,7 @@ function App() {
       if (data.status === 'playing') setView('playing');
       if (data.status === 'finished') setView('finished');
       if (data.status === 'voting_results') setView('voting_results');
+      if (data.status === 'palpite_results') setView('palpite_results');
     });
 
     socket.on('error', (msg) => {
