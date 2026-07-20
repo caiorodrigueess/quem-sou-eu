@@ -10,6 +10,7 @@ function App() {
   const [mode, setMode] = useState('random');
   const [discussionType, setDiscussionType] = useState('livre');
   const [category, setCategory] = useState('animais');
+  const [maxRounds, setMaxRounds] = useState(10);
   
   const [roomData, setRoomData] = useState(null);
   const [myId, setMyId] = useState('');
@@ -61,7 +62,7 @@ function App() {
   const handleCreateRoom = (e) => {
     e.preventDefault();
     if (!name) return alert('Digite seu nome!');
-    socket.emit('createRoom', { name, mode, category, gameType, discussionType });
+    socket.emit('createRoom', { name, mode, category, gameType, discussionType, maxRounds });
   };
 
   const handleJoinRoom = (e) => {
@@ -138,6 +139,9 @@ function App() {
               <button onClick={() => { setGameType('impostor'); setMode('cego'); }} style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'linear-gradient(135deg, #ef4444, #b91c1c)' }}>
                 🕵️ Impostor
               </button>
+              <button onClick={() => { setGameType('palpite'); setMode('random'); }} style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'linear-gradient(135deg, #10b981, #047857)' }}>
+                🔢 Palpite
+              </button>
             </div>
           </div>
         </div>
@@ -148,7 +152,7 @@ function App() {
       <div className="container">
         <div className="glass-panel">
           <div className="flex-row">
-            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : '🤔 Quem Sou Eu?'}</h1>
+            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : '🤔 Quem Sou Eu?'}</h1>
             <button onClick={() => setGameType('')} style={{ background: 'transparent', width: 'auto', margin: 0, padding: '0.5rem' }}>Voltar</button>
           </div>
           
@@ -160,23 +164,37 @@ function App() {
                   <label>Seu Nome</label>
                   <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: João" />
                 </div>
-                <div className="form-group">
-                  <label>Modo de Jogo</label>
-                  <select value={mode} onChange={e => setMode(e.target.value)}>
-                    {gameType === 'quem_sou_eu' ? (
-                      <>
-                        <option value="random">Sorteio Automático</option>
-                        <option value="manual">Nós escolhemos!</option>
-                      </>
-                    ) : (
-                      <>
-                        <option value="cego">Impostor Cego (Palavras Parecidas)</option>
-                        <option value="tradicional">Impostor Tradicional</option>
-                      </>
-                    )}
-                  </select>
-                </div>
-                {(mode === 'random' || mode === 'tradicional') && (
+                {gameType !== 'palpite' && (
+                  <div className="form-group">
+                    <label>Modo de Jogo</label>
+                    <select value={mode} onChange={e => setMode(e.target.value)}>
+                      {gameType === 'quem_sou_eu' ? (
+                        <>
+                          <option value="random">Sorteio Automático</option>
+                          <option value="manual">Nós escolhemos!</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="cego">Impostor Cego (Palavras Parecidas)</option>
+                          <option value="tradicional">Impostor Tradicional</option>
+                        </>
+                      )}
+                    </select>
+                  </div>
+                )}
+                
+                {gameType === 'palpite' && (
+                  <div className="form-group">
+                    <label>Número de Rodadas</label>
+                    <select value={maxRounds} onChange={e => setMaxRounds(Number(e.target.value))}>
+                      <option value={10}>10 Rodadas</option>
+                      <option value={15}>15 Rodadas</option>
+                      <option value={20}>20 Rodadas</option>
+                    </select>
+                  </div>
+                )}
+                
+                {gameType !== 'palpite' && (mode === 'random' || mode === 'tradicional') && (
                   <div className="form-group">
                     <label>Categoria</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
