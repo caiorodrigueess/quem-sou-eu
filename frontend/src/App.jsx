@@ -273,7 +273,10 @@ function App() {
         <div className="glass-panel">
           <div className="flex-row">
             <h2>Sala: {roomData.id} <Hash size={24} style={{ verticalAlign: 'middle', color: 'var(--secondary)' }}/></h2>
-            <div className="badge">{roomData.mode === 'random' ? 'Modo: Automático' : 'Modo: Manual'}</div>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div className="badge">{roomData.mode === 'random' ? 'Modo: Automático' : 'Modo: Manual'}</div>
+              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+            </div>
           </div>
           
           <h3>Jogadores na Sala ({roomData.playersData.length})</h3>
@@ -301,7 +304,8 @@ function App() {
     const me = roomData.playersData.find(p => p.id === myId);
     return (
       <div className="container">
-        <div className="glass-panel" style={{ textAlign: 'center' }}>
+        <div className="glass-panel" style={{ textAlign: 'center', position: 'relative' }}>
+          <button onClick={handleLeaveRoom} style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem 1rem', background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
           <h2>Escolha um personagem!</h2>
           <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>Escreva o nome de um personagem. Ele será sorteado para outro jogador da sala.</p>
           
@@ -342,7 +346,13 @@ function App() {
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2>Sala: {roomData.id}</h2>
-            <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+            </div>
+              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+            </div>
           </div>
           
           <div className="glass-panel" style={{ marginTop: '2rem', padding: '4rem 2rem' }}>
@@ -520,7 +530,10 @@ function App() {
       
       return (
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <h2>Sala: {roomData.id}</h2>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h2>Sala: {roomData.id}</h2>
+            <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+          </div>
           
           <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 1rem' }}>
             {roomData.currentQuestion && (
@@ -617,6 +630,7 @@ function App() {
       <div className="container" style={{ maxWidth: '1000px' }}>
         <div className="flex-row">
           <h2>Sala: {roomData.id}</h2>
+          <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
         </div>
         
         <div className="players-grid">
