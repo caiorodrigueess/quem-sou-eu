@@ -341,16 +341,13 @@ function App() {
     const isHost = roomData.host === myId;
     
     if (roomData.gameType === 'palpite') {
-      const myData = roomData.playersData.find(p => p.id === myId);
+      const myData = roomData.playersData?.find(p => p.id === myId);
       return (
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2>Sala: {roomData.id}</h2>
             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
               <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
-              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
-            </div>
               <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
             </div>
           </div>
@@ -429,7 +426,10 @@ function App() {
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2>Sala: {roomData.id}</h2>
-            <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+            </div>
           </div>
           
           <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 2rem' }}>
@@ -471,7 +471,7 @@ function App() {
                     <div style={{ background: 'rgba(239, 68, 68, 0.1)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #ef4444', maxWidth: '400px', margin: '0 auto 2rem' }}>
                       <h4 style={{ color: '#ef4444', marginBottom: '1rem' }}>NÃO DIGA:</h4>
                       <ul style={{ listStyle: 'none', padding: 0, fontSize: '1.2rem', fontWeight: 'bold', color: '#ef4444' }}>
-                        {roomData.currentWord?.forbidden.map((f, i) => (
+                        {roomData.currentWord?.forbidden?.map((f, i) => (
                           <li key={i} style={{ marginBottom: '0.5rem' }}>❌ {f}</li>
                         ))}
                       </ul>
