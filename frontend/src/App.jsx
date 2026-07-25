@@ -208,7 +208,7 @@ function App() {
                   <label>Seu Nome</label>
                   <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: João" />
                 </div>
-                {gameType !== 'palpite' && (
+                {gameType !== 'palpite' && gameType !== 'proibido' && (
                   <div className="form-group">
                     <label>Modo de Jogo</label>
                     <select value={mode} onChange={e => setMode(e.target.value)}>
@@ -238,7 +238,7 @@ function App() {
                   </div>
                 )}
                 
-                {gameType !== 'palpite' && (mode === 'random' || mode === 'tradicional') && (
+                {gameType !== 'palpite' && gameType !== 'proibido' && (mode === 'random' || mode === 'tradicional') && (
                   <div className="form-group">
                     <label>Categoria</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
