@@ -166,6 +166,11 @@ function App() {
               <button onClick={() => { setGameType('palpite'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #10b981, #047857)' }}>
                 🔢 Palpite
               </button>
+
+              <button onClick={() => { setGameType('proibido'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}>
+                🚫 Proibido
+              </button>
+
             </div>
           </div>
 
@@ -191,7 +196,7 @@ function App() {
       <div className="container">
         <div className="glass-panel">
           <div className="flex-row">
-            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : '🤔 Quem Sou Eu?'}</h1>
+            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : gameType === 'proibido' ? '🚫 Proibido' : '🤔 Quem Sou Eu?'}</h1>
             <button onClick={() => setGameType('')} style={{ background: 'transparent', width: 'auto', margin: 0, padding: '0.5rem' }}>Voltar</button>
           </div>
           
@@ -222,7 +227,7 @@ function App() {
                   </div>
                 )}
                 
-                {gameType === 'palpite' && (
+                {(gameType === 'palpite' || gameType === 'proibido') && (
                   <div className="form-group">
                     <label>Número de Rodadas</label>
                     <select value={maxRounds} onChange={e => setMaxRounds(Number(e.target.value))}>
@@ -391,6 +396,124 @@ function App() {
       );
     }
     
+    
+    if (roomData.gameType === 'proibido') {
+      const myData = roomData.playersData.find(p => p.id === myId);
+      const isMyTeam = roomData.teams[roomData.currentTeamIndex]?.includes(myId);
+      const currentTeam = roomData.teams[roomData.currentTeamIndex];
+      const describerId = currentTeam?.[roomData.describerIndexByTeam[roomData.currentTeamIndex]];
+      const amIDescriber = myId === describerId;
+      const amIGuesser = isMyTeam && !amIDescriber;
+      
+      const formatTime = (ms) => {
+        if (!ms) return '01:00';
+        const remaining = Math.max(0, Math.ceil((ms - Date.now()) / 1000));
+        const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+        const s = (remaining % 60).toString().padStart(2, '0');
+        return `${m}:${s}`;
+      };
+      
+      const getPlayerName = (id) => roomData.playersData.find(p => p.id === id)?.name;
+
+      return (
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <h2>Sala: {roomData.id}</h2>
+            <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+          </div>
+          
+          <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 2rem' }}>
+            {roomData.turnStatus === 'waiting' ? (
+              <div>
+                <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>Aguardando início do turno...</h3>
+                <h4 style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
+                  Vez da Equipe {roomData.currentTeamIndex + 1}
+                </h4>
+                <p style={{ color: 'var(--text-muted)' }}>
+                  <strong>{getPlayerName(describerId)}</strong> vai dar as dicas para: 
+                  {currentTeam?.filter(id => id !== describerId).map(getPlayerName).join(', ')}.
+                </p>
+                
+                {isMyTeam && (
+                  <button onClick={() => socket.emit('startProibidoTurn')} style={{ marginTop: '3rem', fontSize: '1.5rem', padding: '1rem 3rem' }}>
+                    Iniciar Tempo
+                  </button>
+                )}
+                {!isMyTeam && (
+                  <p style={{ marginTop: '3rem', color: 'var(--text-muted)' }}>Aguardando a equipe {roomData.currentTeamIndex + 1} iniciar...</p>
+                )}
+              </div>
+            ) : (
+              <div>
+                <div style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--primary)', margin: '1rem 0' }}>
+                  ⏱️ {formatTime(roomData.turnEndTime)}
+                </div>
+                
+                {!amIGuesser ? (
+                  <div style={{ marginTop: '2rem' }}>
+                    <h3 style={{ color: 'var(--text-muted)' }}>
+                      {amIDescriber ? 'Sua Palavra Secreta:' : `Adivinhando: ${getPlayerName(describerId)}`}
+                    </h3>
+                    <div style={{ fontSize: '3rem', fontWeight: 'bold', margin: '1rem 0', color: 'white' }}>
+                      {roomData.currentWord?.word}
+                    </div>
+                    
+                    <div style={{ background: 'rgba(239, 68, 68, 0.1)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #ef4444', maxWidth: '400px', margin: '0 auto 2rem' }}>
+                      <h4 style={{ color: '#ef4444', marginBottom: '1rem' }}>NÃO DIGA:</h4>
+                      <ul style={{ listStyle: 'none', padding: 0, fontSize: '1.2rem', fontWeight: 'bold', color: '#ef4444' }}>
+                        {roomData.currentWord?.forbidden.map((f, i) => (
+                          <li key={i} style={{ marginBottom: '0.5rem' }}>❌ {f}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    {amIDescriber && (
+                      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                        <button onClick={() => socket.emit('skipProibidoWord')} style={{ background: 'transparent', border: '1px solid var(--secondary)', margin: 0 }}>Pular</button>
+                        <button onClick={() => socket.emit('proibidoCorrectGuess')} style={{ margin: 0, background: '#10b981' }}>Acertou!</button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div style={{ marginTop: '2rem' }}>
+                    <h3 style={{ color: 'white' }}>Tente adivinhar o que o(a) {getPlayerName(describerId)} está descrevendo!</h3>
+                  </div>
+                )}
+                
+                {(isHost || amIDescriber) && (
+                  <button onClick={() => socket.emit('nextProibidoTurn')} style={{ marginTop: '3rem', background: 'transparent', border: '1px solid #ef4444', color: '#ef4444', padding: '0.5rem 1rem' }}>
+                    Encerrar Turno / Tempo Acabou
+                  </button>
+                )}
+              </div>
+            )}
+            
+            <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--glass-border)' }}>
+              <h4 style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Placar:</h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+                {roomData.teams.map((t, index) => (
+                  <div key={index} style={{ 
+                    padding: '1rem', 
+                    borderRadius: '12px', 
+                    background: 'var(--bg-card)',
+                    border: index === roomData.currentTeamIndex ? '2px solid var(--primary)' : '1px solid var(--glass-border)',
+                  }}>
+                    <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Equipe {index + 1}</div>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                      {t.map(getPlayerName).join(' & ')}
+                    </div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)', marginTop: '0.5rem' }}>
+                      {roomData.teamScores[index]} pts
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     if (roomData.gameType === 'impostor') {
       const myData = roomData.playersData.find(p => p.id === myId);
       const iAmImpostor = myId === roomData.impostorId;

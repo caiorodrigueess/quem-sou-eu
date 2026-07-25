@@ -53,6 +53,30 @@ const PERGUNTAS_IMPOSTOR = [
   "Isso é mais útil de dia ou de noite?"
 ];
 
+
+const PERGUNTAS_PROIBIDO = [
+  { word: "Cachorro", forbidden: ["Animal", "Latir", "Osso", "Gato", "Estimação"] },
+  { word: "Praia", forbidden: ["Areia", "Mar", "Sol", "Verão", "Água"] },
+  { word: "Pizza", forbidden: ["Massa", "Queijo", "Comida", "Italiana", "Redonda"] },
+  { word: "Futebol", forbidden: ["Bola", "Gol", "Esporte", "Campo", "Neymar"] },
+  { word: "Computador", forbidden: ["Internet", "Teclado", "Mouse", "Tela", "Trabalho"] },
+  { word: "Avião", forbidden: ["Voar", "Céu", "Piloto", "Passagem", "Asa"] },
+  { word: "Celular", forbidden: ["Ligar", "Telefone", "Tela", "Mensagem", "Internet"] },
+  { word: "Cinema", forbidden: ["Filme", "Pipoca", "Tela", "Assistir", "Escuro"] },
+  { word: "Dinheiro", forbidden: ["Comprar", "Banco", "Nota", "Moeda", "Rico"] },
+  { word: "Escola", forbidden: ["Professor", "Estudar", "Aluno", "Aula", "Caderno"] },
+  { word: "Hospital", forbidden: ["Médico", "Doente", "Enfermeira", "Remédio", "Saúde"] },
+  { word: "Livro", forbidden: ["Ler", "Página", "História", "Biblioteca", "Papel"] },
+  { word: "Música", forbidden: ["Cantar", "Ouvir", "Som", "Banda", "Instrumento"] },
+  { word: "Relógio", forbidden: ["Tempo", "Hora", "Pulso", "Ponteiro", "Minuto"] },
+  { word: "Sapato", forbidden: ["Pé", "Andar", "Tênis", "Calçar", "Meia"] },
+  { word: "Televisão", forbidden: ["Assistir", "Canal", "Tela", "Controle", "Filme"] },
+  { word: "Carro", forbidden: ["Dirigir", "Roda", "Motor", "Rua", "Veículo"] },
+  { word: "Café", forbidden: ["Beber", "Manhã", "Preto", "Xícara", "Quente"] },
+  { word: "Casamento", forbidden: ["Noiva", "Festa", "Igreja", "Aliança", "Amor"] },
+  { word: "Banho", forbidden: ["Água", "Sabonete", "Chuveiro", "Limpo", "Lavar"] }
+];
+
 const PERGUNTAS_PALPITE = [
   // --- CIÊNCIA, CORPO HUMANO & NATUREZA ---
   { question: "Aproximadamente quantos ossos tem o corpo de um bebê recém-nascido?", answer: 300 },
@@ -348,7 +372,37 @@ io.on('connection', (socket) => {
       socket.join(roomId);
       socket.emit('roomJoined', roomId);
       io.to(roomId).emit('updateRoom', getRoomData(roomId));
-    } else {
+    
+      } else if (room.gameType === 'proibido') {
+        room.currentRound = 1;
+        room.maxRounds = room.maxRounds || 10;
+        room.usedQuestions = [];
+        room.teamScores = [];
+        room.teams = [];
+        
+        const shuffled = [...room.players].sort(() => 0.5 - Math.random());
+        for (let i = 0; i < shuffled.length; i += 2) {
+          if (i === shuffled.length - 3) {
+            room.teams.push([shuffled[i], shuffled[i+1], shuffled[i+2]]);
+            room.teamScores.push(0);
+            break;
+          }
+          if (i + 1 < shuffled.length) {
+            room.teams.push([shuffled[i], shuffled[i+1]]);
+            room.teamScores.push(0);
+          }
+        }
+        
+        room.currentTeamIndex = 0;
+        room.turnStatus = 'waiting'; 
+        room.currentWord = null;
+        room.turnEndTime = null;
+        room.describerIndexByTeam = room.teams.map(() => 0); 
+        
+        room.startTime = Date.now();
+        room.status = 'playing';
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      } else {
       socket.emit('error', 'Sala não encontrada ou jogo já iniciado.');
     }
   });
@@ -720,6 +774,101 @@ io.on('connection', (socket) => {
 
   socket.on('leaveRoom', () => {
     handlePlayerLeave(socket);
+  });
+
+  
+  socket.on('startProibidoTurn', () => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'proibido') {
+      const room = rooms[player.roomId];
+      if (room.turnStatus === 'waiting') {
+        room.turnStatus = 'playing';
+        room.turnEndTime = Date.now() + 60000;
+        
+        let available = PERGUNTAS_PROIBIDO.filter(q => !room.usedQuestions.includes(q.word));
+        if (available.length === 0) {
+          room.usedQuestions = [];
+          available = PERGUNTAS_PROIBIDO;
+        }
+        const w = available[Math.floor(Math.random() * available.length)];
+        room.currentWord = w;
+        room.usedQuestions.push(w.word);
+        
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      }
+    }
+  });
+
+  socket.on('proibidoCorrectGuess', () => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'proibido') {
+      const room = rooms[player.roomId];
+      if (room.turnStatus === 'playing') {
+        room.teamScores[room.currentTeamIndex] += 10;
+        
+        let available = PERGUNTAS_PROIBIDO.filter(q => !room.usedQuestions.includes(q.word));
+        if (available.length === 0) {
+          room.usedQuestions = [];
+          available = PERGUNTAS_PROIBIDO;
+        }
+        const w = available[Math.floor(Math.random() * available.length)];
+        room.currentWord = w;
+        room.usedQuestions.push(w.word);
+        
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      }
+    }
+  });
+
+  socket.on('nextProibidoTurn', () => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'proibido') {
+      const room = rooms[player.roomId];
+      
+      // Passa a vez
+      room.turnStatus = 'waiting';
+      room.currentWord = null;
+      room.turnEndTime = null;
+      
+      // Atualiza quem vai descrever na próxima vez que essa equipe jogar
+      const currentTeam = room.teams[room.currentTeamIndex];
+      room.describerIndexByTeam[room.currentTeamIndex] = (room.describerIndexByTeam[room.currentTeamIndex] + 1) % currentTeam.length;
+      
+      room.currentTeamIndex++;
+      
+      if (room.currentTeamIndex >= room.teams.length) {
+        room.currentTeamIndex = 0;
+        room.currentRound++;
+        if (room.currentRound > room.maxRounds) {
+          room.status = 'finished';
+        }
+      }
+      
+      io.to(room.id).emit('updateRoom', getRoomData(room.id));
+    }
+  });
+
+  socket.on('skipProibidoWord', () => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'proibido') {
+      const room = rooms[player.roomId];
+      if (room.turnStatus === 'playing') {
+        let available = PERGUNTAS_PROIBIDO.filter(q => !room.usedQuestions.includes(q.word));
+        if (available.length === 0) {
+          room.usedQuestions = [];
+          available = PERGUNTAS_PROIBIDO;
+        }
+        const w = available[Math.floor(Math.random() * available.length)];
+        room.currentWord = w;
+        room.usedQuestions.push(w.word);
+        
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      }
+    }
   });
 
   socket.on('disconnect', () => {
