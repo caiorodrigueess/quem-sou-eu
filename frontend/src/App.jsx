@@ -441,7 +441,7 @@ function App() {
                 </h4>
                 <p style={{ color: 'var(--text-muted)' }}>
                   <strong>{getPlayerName(describerId)}</strong> vai dar as dicas para: 
-                  {currentTeam?.filter(id => id !== describerId).map(getPlayerName).join(', ')}.
+                  {currentTeam?.filter(id => id !== describerId)?.map(getPlayerName).join(', ')}.
                 </p>
                 
                 {isMyTeam && (

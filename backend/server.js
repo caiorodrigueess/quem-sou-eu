@@ -381,15 +381,20 @@ io.on('connection', (socket) => {
         room.teams = [];
         
         const shuffled = [...room.players].sort(() => 0.5 - Math.random());
-        for (let i = 0; i < shuffled.length; i += 2) {
-          if (i === shuffled.length - 3) {
-            room.teams.push([shuffled[i], shuffled[i+1], shuffled[i+2]]);
-            room.teamScores.push(0);
-            break;
-          }
-          if (i + 1 < shuffled.length) {
-            room.teams.push([shuffled[i], shuffled[i+1]]);
-            room.teamScores.push(0);
+        if (shuffled.length < 2) {
+          room.teams.push([...shuffled]);
+          room.teamScores.push(0);
+        } else {
+          for (let i = 0; i < shuffled.length; i += 2) {
+            if (i === shuffled.length - 3) {
+              room.teams.push([shuffled[i], shuffled[i+1], shuffled[i+2]]);
+              room.teamScores.push(0);
+              break;
+            }
+            if (i + 1 < shuffled.length) {
+              room.teams.push([shuffled[i], shuffled[i+1]]);
+              room.teamScores.push(0);
+            }
           }
         }
         
