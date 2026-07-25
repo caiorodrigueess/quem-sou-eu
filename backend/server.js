@@ -18,7 +18,13 @@ const PORT = process.env.PORT || 3001;
 
 // Database em memória
 const rooms = {}; // roomId -> { id, mode, category, host, players: [], status: 'lobby'|'assigning'|'playing'|'finished', startTime: null }
-const players = {}; // socketId -> { id, name, roomId, score, character, suggestedCharacter, finishTime: null }
+const players = {};
+const socketIdToSessionId = {};
+
+function getPlayer(socketId) {
+  const sessionId = socketIdToSessionId[socketId];
+  return players[sessionId];
+} // socketId -> { id, name, roomId, score, character, suggestedCharacter, finishTime: null }
 
 const CATEGORIES = {
   animais: ["Leão", "Elefante", "Cachorro", "Gato", "Girafa", "Tigre", "Pinguim", "Canguru"],
@@ -270,7 +276,9 @@ function generateRoomCode() {
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
 
-  socket.on('createRoom', ({ name, mode, category, gameType, discussionType, maxRounds }) => {
+  socket.on('createRoom', ({ name, mode, category, gameType, discussionType, maxRounds , sessionId}) => {
+    if (!sessionId) return;
+    socketIdToSessionId[socket.id] = sessionId;
     const roomId = generateRoomCode();
     
     rooms[roomId] = {
@@ -279,8 +287,8 @@ io.on('connection', (socket) => {
       mode, // 'random'/'manual', 'cego'/'tradicional'
       discussionType: discussionType || 'livre',
       category: category || 'animais',
-      host: socket.id,
-      players: [socket.id],
+      host: sessionId,
+      players: [sessionId],
       status: 'lobby',
       startTime: null,
       votes: {}, // quem votou em quem (playerId -> targetId)
@@ -293,8 +301,10 @@ io.on('connection', (socket) => {
       usedQuestions: []
     };
 
-    players[socket.id] = {
-      id: socket.id,
+    players[sessionId] = {
+      id: sessionId,
+      socketId: socket.id,
+      connected: true,
       name,
       roomId,
       score: 0,
@@ -310,17 +320,21 @@ io.on('connection', (socket) => {
     io.to(roomId).emit('updateRoom', getRoomData(roomId));
   });
 
-  socket.on('joinRoom', ({ name, roomId }) => {
+  socket.on('joinRoom', ({ name, roomId , sessionId}) => {
+    if (!sessionId) return;
+    socketIdToSessionId[socket.id] = sessionId;
     roomId = roomId.toUpperCase();
     if (rooms[roomId] && rooms[roomId].status === 'lobby') {
       if (rooms[roomId].players.length >= 10) {
         return socket.emit('error', 'A sala está cheia (limite de 10 jogadores).');
       }
       
-      rooms[roomId].players.push(socket.id);
+      if (!rooms[roomId].players.includes(sessionId)) rooms[roomId].players.push(sessionId);
       
-      players[socket.id] = {
-        id: socket.id,
+      players[sessionId] = {
+      id: sessionId,
+      socketId: socket.id,
+      connected: true,
         name,
         roomId,
         score: 0,
@@ -340,8 +354,9 @@ io.on('connection', (socket) => {
   });
 
   socket.on('startGame', () => {
-    const player = players[socket.id];
-    if (player && rooms[player.roomId] && rooms[player.roomId].host === socket.id) {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].host === sessionId) {
       const room = rooms[player.roomId];
       
       if (room.gameType === 'palpite') {
@@ -430,7 +445,8 @@ io.on('connection', (socket) => {
   });
 
   socket.on('submitCharacter', ({ character }) => {
-    const player = players[socket.id];
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
     if (player && rooms[player.roomId] && rooms[player.roomId].status === 'assigning') {
       player.suggestedCharacter = character;
       
@@ -462,13 +478,14 @@ io.on('connection', (socket) => {
   });
 
   socket.on('submitVote', ({ targetId }) => {
-    const player = players[socket.id];
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
     if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing' && rooms[player.roomId].gameType === 'impostor') {
       const room = rooms[player.roomId];
       // Impostor não vota
-      if (socket.id === room.impostorId) return;
+      if (sessionId === room.impostorId) return;
       
-      room.votes[socket.id] = targetId;
+      room.votes[sessionId] = targetId;
       player.votedFor = targetId;
       
       const votesCount = Object.keys(room.votes).length;
@@ -511,10 +528,11 @@ io.on('connection', (socket) => {
   });
 
   socket.on('guessImpostorWord', ({ word }) => {
-    const player = players[socket.id];
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
     if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing' && rooms[player.roomId].gameType === 'impostor') {
       const room = rooms[player.roomId];
-      if (socket.id !== room.impostorId) return; // Apenas impostor pode chutar
+      if (sessionId !== room.impostorId) return; // Apenas impostor pode chutar
       
       room.status = 'voting_results';
       const isCorrect = word && room.secretWord && word.toLowerCase().trim() === room.secretWord.toLowerCase().trim();
@@ -534,14 +552,15 @@ io.on('connection', (socket) => {
   });
 
   socket.on('submitPalpite', ({ guess }) => {
-    const player = players[socket.id];
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
     if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing' && rooms[player.roomId].gameType === 'palpite') {
       const room = rooms[player.roomId];
       
       const numGuess = Number(guess);
       if (isNaN(numGuess)) return;
       
-      room.palpites[socket.id] = {
+      room.palpites[sessionId] = {
         guess: numGuess,
         diff: Math.abs(numGuess - room.currentPalpite.answer),
         pointsEarned: 0
@@ -580,8 +599,9 @@ io.on('connection', (socket) => {
   });
 
   socket.on('nextPalpiteRound', () => {
-    const player = players[socket.id];
-    if (player && rooms[player.roomId] && rooms[player.roomId].host === socket.id) {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].host === sessionId) {
       const room = rooms[player.roomId];
       
       if (room.currentRound < room.maxRounds) {
@@ -617,8 +637,9 @@ io.on('connection', (socket) => {
   });
 
   socket.on('nextQuestion', () => {
-    const player = players[socket.id];
-    if (player && rooms[player.roomId] && rooms[player.roomId].host === socket.id && rooms[player.roomId].status === 'playing') {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].host === sessionId && rooms[player.roomId].status === 'playing') {
       const room = rooms[player.roomId];
       if (room.gameType === 'impostor' && room.discussionType === 'perguntas') {
         // Zera o registro se todas as perguntas esgotarem
@@ -643,7 +664,8 @@ io.on('connection', (socket) => {
   socket.on('guessCorrect', ({ playerId }) => {
     // Quando alguém adivinha corretamente
     // O anfitrião ou o próprio jogador pode acionar isso
-    const player = players[socket.id];
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
     if (player && rooms[player.roomId] && rooms[player.roomId].status === 'playing') {
       const targetPlayer = players[playerId];
       const room = rooms[player.roomId];
@@ -668,8 +690,9 @@ io.on('connection', (socket) => {
   });
 
   socket.on('restartGame', () => {
-    const player = players[socket.id];
-    if (player && rooms[player.roomId] && rooms[player.roomId].host === socket.id) {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].host === sessionId) {
       const room = rooms[player.roomId];
       room.status = 'lobby';
       room.startTime = null;
@@ -703,27 +726,47 @@ io.on('connection', (socket) => {
     handlePlayerLeave(socket);
   });
 
+  socket.on('reconnectRoom', ({ roomId, sessionId }) => {
+    roomId = roomId?.toUpperCase();
+    if (rooms[roomId] && players[sessionId] && players[sessionId].roomId === roomId) {
+      socketIdToSessionId[socket.id] = sessionId;
+      players[sessionId].socketId = socket.id;
+      players[sessionId].connected = true;
+      socket.join(roomId);
+      io.to(roomId).emit('updateRoom', getRoomData(roomId));
+    } else {
+      socket.emit('reconnectFailed');
+    }
+  });
+
   function handlePlayerLeave(socket) {
-    const player = players[socket.id];
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
     if (player) {
       const roomId = player.roomId;
       const room = rooms[roomId];
       
       if (room) {
-        room.players = room.players.filter(pId => pId !== socket.id);
-        socket.leave(roomId);
-        
-        if (room.players.length === 0) {
-          delete rooms[roomId];
-        } else {
-          if (room.host === socket.id) {
-            room.host = room.players[0]; // Passa o host
+        if (room.status === 'lobby') {
+          room.players = room.players.filter(pId => pId !== sessionId);
+          socket.leave(roomId);
+          if (room.players.length === 0) {
+            delete rooms[roomId];
+          } else {
+            if (room.host === sessionId) {
+              room.host = room.players[0]; // Passa o host
+            }
+            io.to(roomId).emit('updateRoom', getRoomData(roomId));
           }
+          delete players[sessionId];
+        } else {
+          // Jogo já começou, apenas marca como desconectado
+          player.connected = false;
           io.to(roomId).emit('updateRoom', getRoomData(roomId));
         }
       }
-      delete players[socket.id];
     }
+    delete socketIdToSessionId[socket.id];
   }
 
   function getRoomData(roomId) {
@@ -741,7 +784,8 @@ io.on('connection', (socket) => {
           hasSubmitted: !!p.suggestedCharacter,
           finishTime: p.finishTime,
           hasSubmittedPalpite: p.hasSubmittedPalpite,
-          votedFor: p.votedFor
+          votedFor: p.votedFor,
+          connected: p.connected
         };
       })
     };

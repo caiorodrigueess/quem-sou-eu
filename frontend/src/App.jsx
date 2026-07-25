@@ -14,21 +14,36 @@ function App() {
   const [palpiteGuess, setPalpiteGuess] = useState('');
   
   const [roomData, setRoomData] = useState(null);
+  const [sessionId] = useState(() => {
+    let id = localStorage.getItem('sessionId');
+    if (!id) {
+      id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      localStorage.setItem('sessionId', id);
+    }
+    return id;
+  });
   const [myId, setMyId] = useState('');
   const [suggestedChar, setSuggestedChar] = useState('');
 
   useEffect(() => {
+    const savedRoomId = localStorage.getItem('roomId');
+    if (savedRoomId && sessionId) {
+      socket.emit('reconnectRoom', { roomId: savedRoomId, sessionId });
+    }
+
     socket.on('connect', () => {
-      setMyId(socket.id);
+      setMyId(sessionId);
     });
 
     socket.on('roomCreated', (id) => {
       setRoomCode(id);
+      localStorage.setItem('roomId', id);
       setView('lobby');
     });
 
     socket.on('roomJoined', (id) => {
       setRoomCode(id);
+      localStorage.setItem('roomId', id);
       setView('lobby');
     });
 
@@ -40,6 +55,11 @@ function App() {
       if (data.status === 'finished') setView('finished');
       if (data.status === 'voting_results') setView('voting_results');
       if (data.status === 'palpite_results') setView('palpite_results');
+    });
+
+    socket.on('reconnectFailed', () => {
+      localStorage.removeItem('roomId');
+      setView('home');
     });
 
     socket.on('error', (msg) => {
@@ -58,19 +78,20 @@ function App() {
       socket.off('updateRoom');
       socket.off('error');
       socket.off('playerGuessed');
+      socket.off('reconnectFailed');
     };
   }, []);
 
   const handleCreateRoom = (e) => {
     e.preventDefault();
     if (!name) return alert('Digite seu nome!');
-    socket.emit('createRoom', { name, mode, category, gameType, discussionType, maxRounds });
+    socket.emit('createRoom', { name, mode, category, gameType, discussionType, maxRounds, sessionId });
   };
 
   const handleJoinRoom = (e) => {
     e.preventDefault();
     if (!name || !roomCode) return alert('Digite seu nome e o código da sala!');
-    socket.emit('joinRoom', { name, roomId: roomCode });
+    socket.emit('joinRoom', { name, roomId: roomCode, sessionId });
   };
 
   const handleStartGame = () => {
@@ -93,6 +114,7 @@ function App() {
 
   const handleLeaveRoom = () => {
     socket.emit('leaveRoom');
+    localStorage.removeItem('roomId');
     setView('home');
     setGameType('');
     setRoomData(null);
@@ -131,20 +153,35 @@ function App() {
   if (view === 'home') {
     if (!gameType) {
       return (
-        <div className="container">
+        <div className="container" style={{ maxWidth: '600px' }}>
           <div className="glass-panel" style={{ textAlign: 'center' }}>
-            <h1>Escolha o Jogo 🎮</h1>
-            <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', marginTop: '2rem' }}>
-              <button onClick={() => { setGameType('quem_sou_eu'); setMode('random'); }} style={{ padding: '1.5rem', fontSize: '1.2rem' }}>
+            <h2>Criar Nova Partida 🎮</h2>
+            <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', marginTop: '1.5rem' }}>
+              <button onClick={() => { setGameType('quem_sou_eu'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem' }}>
                 🤔 Quem Sou Eu?
               </button>
-              <button onClick={() => { setGameType('impostor'); setMode('cego'); }} style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'linear-gradient(135deg, #ef4444, #b91c1c)' }}>
+              <button onClick={() => { setGameType('impostor'); setMode('cego'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #ef4444, #b91c1c)' }}>
                 🕵️ Impostor
               </button>
-              <button onClick={() => { setGameType('palpite'); setMode('random'); }} style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'linear-gradient(135deg, #10b981, #047857)' }}>
+              <button onClick={() => { setGameType('palpite'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #10b981, #047857)' }}>
                 🔢 Palpite
               </button>
             </div>
+          </div>
+
+          <div className="glass-panel" style={{ marginTop: '2rem' }}>
+            <h3 style={{ textAlign: 'center' }}>Entrar em Sala Existente</h3>
+            <form onSubmit={handleJoinRoom} style={{ marginTop: '1.5rem' }}>
+              <div className="form-group">
+                <label>Seu Nome</label>
+                <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: Maria" />
+              </div>
+              <div className="form-group">
+                <label>Código da Sala</label>
+                <input value={roomCode} onChange={e => setRoomCode(e.target.value)} placeholder="Ex: A1B2" style={{ textTransform: 'uppercase' }} maxLength={6} />
+              </div>
+              <button type="submit"><Users size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }}/> Entrar na Sala</button>
+            </form>
           </div>
         </div>
       );
@@ -218,23 +255,6 @@ function App() {
                 <button type="submit"><Crown size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }}/> Criar Sala</button>
               </form>
             </div>
-
-            <div style={{ flex: 1, minWidth: '250px', borderLeft: '1px solid var(--glass-border)', paddingLeft: '2rem' }}>
-              <h3>Entrar em Sala</h3>
-              <form onSubmit={handleJoinRoom}>
-                <div className="form-group">
-                  <label>Seu Nome</label>
-                  <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: Maria" />
-                </div>
-                <div className="form-group">
-                  <label>Código da Sala</label>
-                  <input value={roomCode} onChange={e => setRoomCode(e.target.value)} placeholder="Ex: ABCD" style={{ textTransform: 'uppercase' }} maxLength={4} />
-                </div>
-                <button type="submit" style={{ background: 'var(--bg-card)', border: '1px solid var(--primary)' }}>
-                  <Users size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }}/> Entrar
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>
@@ -255,7 +275,7 @@ function App() {
           <ul className="lobby-list">
             {roomData.playersData.map(p => (
               <li key={p.id}>
-                <span>{p.name} {p.id === roomData.host ? '👑' : ''} {p.id === myId ? '(Você)' : ''}</span>
+                <span>{p.name} {p.connected === false ? '(Off)' : ''} {p.id === roomData.host ? '👑' : ''} {p.id === myId ? '(Você)' : ''}</span>
               </li>
             ))}
           </ul>
@@ -287,7 +307,7 @@ function App() {
               <ul className="lobby-list" style={{ textAlign: 'left', marginTop: '2rem' }}>
                 {roomData.playersData.map(p => (
                   <li key={p.id}>
-                    {p.name} {p.hasSubmitted ? '✅' : '⏳'}
+                    {p.name} {p.connected === false ? '(Off)' : ''} {p.hasSubmitted ? '✅' : '⏳'}
                   </li>
                 ))}
               </ul>
@@ -361,7 +381,7 @@ function App() {
                     alignItems: 'center',
                     gap: '0.5rem'
                   }}>
-                    {p.name} {p.id === myId ? '(Você)' : ''} {p.hasSubmittedPalpite ? <Check size={16} color="#10b981" /> : <Timer size={16} color="var(--text-muted)" />}
+                    {p.name} {p.connected === false ? '(Off)' : ''} {p.id === myId ? '(Você)' : ''} {p.hasSubmittedPalpite ? <Check size={16} color="#10b981" /> : <Timer size={16} color="var(--text-muted)" />}
                   </div>
                 ))}
               </div>
@@ -434,7 +454,7 @@ function App() {
               <ul style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
                 {roomData.playersData.map((p, index) => (
                   <li key={p.id} style={{ background: 'var(--bg-card)', padding: '0.5rem 1rem', borderRadius: '20px', border: index === 0 ? '1px solid var(--primary)' : '1px solid var(--glass-border)', opacity: p.votedFor ? 0.5 : 1 }}>
-                    <span style={{ fontWeight: 'bold', marginRight: '0.5rem', color: index === 0 ? 'var(--primary)' : 'inherit' }}>{index + 1}º</span> {p.name} {p.id === myId ? '(Você)' : ''} {p.votedFor ? '✅' : ''}
+                    <span style={{ fontWeight: 'bold', marginRight: '0.5rem', color: index === 0 ? 'var(--primary)' : 'inherit' }}>{index + 1}º</span> {p.name} {p.connected === false ? '(Off)' : ''} {p.id === myId ? '(Você)' : ''} {p.votedFor ? '✅' : ''}
                   </li>
                 ))}
               </ul>
@@ -455,7 +475,7 @@ function App() {
                         border: '1px solid var(--glass-border)'
                       }}
                     >
-                      {p.name}
+                      {p.name} {p.connected === false ? '(Off)' : ''}
                     </button>
                   ))}
                 </div>
@@ -467,10 +487,10 @@ function App() {
             </div>
           )}
         </div>
-      );
-    }
+    );
+  }
 
-    return (
+  return (
       <div className="container" style={{ maxWidth: '1000px' }}>
         <div className="flex-row">
           <h2>Sala: {roomData.id}</h2>
@@ -482,21 +502,22 @@ function App() {
             return (
               <div key={p.id} className={`player-card ${isMe ? 'my-card' : ''}`}>
                 <div className="score">{p.score}</div>
-                <div className="player-name">{p.name} {p.id === roomData.host ? '👑' : ''} {isMe ? '(Você)' : ''}</div>
+                <div className="player-name">{p.name} {p.connected === false ? '(Off)' : ''} {p.id === roomData.host ? '👑' : ''} {isMe ? '(Você)' : ''}</div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--secondary)', marginBottom: '0.5rem', fontWeight: 'bold' }}>
                   {index === 0 ? '🎯 1º a jogar' : `${index + 1}º a jogar`}
                 </div>
                 
-                <div className="player-character">
-                  {p.character}
+                <div className="player-character" style={{ fontSize: isMe ? '3rem' : '1.5rem' }}>
+                  {isMe ? '?' : p.character}
                 </div>
+                {isMe && <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>Descubra quem você é!</p>}
                 
                 {!p.finishTime ? (
-                  isHost && (
+                  isHost && !roomData.impostorCaught ? (
                     <button className="correct-btn" onClick={() => handleCorrectGuess(p.id)}>
                       Marcar Acerto
                     </button>
-                  )
+                  ) : null
                 ) : (
                   <div style={{ marginTop: '1rem', color: '#10b981', fontWeight: 'bold' }}>
                     <Check size={18} style={{ verticalAlign: 'middle', marginRight: '5px' }}/>
@@ -585,7 +606,7 @@ function App() {
                     <div style={{ fontSize: '2rem', fontWeight: 'bold', width: '40px', color: index === 0 ? '#fbbf24' : index === 1 ? '#9ca3af' : index === 2 ? '#b45309' : 'inherit' }}>
                       #{index + 1}
                     </div>
-                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{p.name} {p.id === myId ? '(Você)' : ''}</div>
+                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{p.name} {p.connected === false ? '(Off)' : ''} {p.id === myId ? '(Você)' : ''}</div>
                   </div>
                   <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>
                     {p.score} pts
@@ -619,7 +640,7 @@ function App() {
               const timeTaken = p.finishTime ? Math.round((p.finishTime - roomData.startTime) / 1000) : 'N/A';
               return (
                 <li key={p.id}>
-                  <span><strong>#{index + 1} {p.name}</strong></span>
+                  <span><strong>#{index + 1} {p.name} {p.connected === false ? '(Off)' : ''}</strong></span>
                   <span style={{ color: 'var(--secondary)' }}>
                     <Timer size={16} style={{ verticalAlign: 'text-bottom', marginRight: '5px' }}/> 
                     {timeTaken}s (Era: {p.character})
