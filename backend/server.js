@@ -77,6 +77,30 @@ const PERGUNTAS_PROIBIDO = [
   { word: "Banho", forbidden: ["Água", "Sabonete", "Chuveiro", "Limpo", "Lavar"] }
 ];
 
+
+const PERGUNTAS_DUVIDO = [
+  "Cite nomes de países da Europa",
+  "Cite marcas de carro",
+  "Cite cores em inglês",
+  "Cite animais que começam com a letra M",
+  "Cite filmes de super-herói",
+  "Cite capitais de estados brasileiros",
+  "Cite instrumentos musicais",
+  "Cite esportes olímpicos",
+  "Cite frutas com a letra M",
+  "Cite raças de cachorro",
+  "Cite profissões",
+  "Cite nomes de planetas, luas ou constelações",
+  "Cite ferramentas de construção ou carpintaria",
+  "Cite idiomas falados no mundo",
+  "Cite partes do corpo humano",
+  "Cite nomes de redes sociais",
+  "Cite doces e sobremesas",
+  "Cite personagens da Disney",
+  "Cite elementos químicos",
+  "Cite marcas de chocolate"
+];
+
 const PERGUNTAS_PALPITE = [
   // --- CIÊNCIA, CORPO HUMANO & NATUREZA ---
   { question: "Aproximadamente quantos ossos tem o corpo de um bebê recém-nascido?", answer: 300 },
@@ -356,9 +380,9 @@ io.on('connection', (socket) => {
       if (!rooms[roomId].players.includes(sessionId)) rooms[roomId].players.push(sessionId);
       
       players[sessionId] = {
-      id: sessionId,
-      socketId: socket.id,
-      connected: true,
+        id: sessionId,
+        socketId: socket.id,
+        connected: true,
         name,
         roomId,
         score: 0,
@@ -372,42 +396,7 @@ io.on('connection', (socket) => {
       socket.join(roomId);
       socket.emit('roomJoined', roomId);
       io.to(roomId).emit('updateRoom', getRoomData(roomId));
-    
-      } else if (room.gameType === 'proibido') {
-        room.currentRound = 1;
-        room.maxRounds = room.maxRounds || 10;
-        room.usedQuestions = [];
-        room.teamScores = [];
-        room.teams = [];
-        
-        const shuffled = [...room.players].sort(() => 0.5 - Math.random());
-        if (shuffled.length < 2) {
-          room.teams.push([...shuffled]);
-          room.teamScores.push(0);
-        } else {
-          for (let i = 0; i < shuffled.length; i += 2) {
-            if (i === shuffled.length - 3) {
-              room.teams.push([shuffled[i], shuffled[i+1], shuffled[i+2]]);
-              room.teamScores.push(0);
-              break;
-            }
-            if (i + 1 < shuffled.length) {
-              room.teams.push([shuffled[i], shuffled[i+1]]);
-              room.teamScores.push(0);
-            }
-          }
-        }
-        
-        room.currentTeamIndex = 0;
-        room.turnStatus = 'waiting'; 
-        room.currentWord = null;
-        room.turnEndTime = null;
-        room.describerIndexByTeam = room.teams.map(() => 0); 
-        
-        room.startTime = Date.now();
-        room.status = 'playing';
-        io.to(room.id).emit('updateRoom', getRoomData(room.id));
-      } else {
+    } else {
       socket.emit('error', 'Sala não encontrada ou jogo já iniciado.');
     }
   });
@@ -473,14 +462,11 @@ io.on('connection', (socket) => {
             players[pId].votedFor = null;
           });
         }
-        
-        room.players = room.players.sort(() => 0.5 - Math.random());
         room.startTime = Date.now();
         room.status = 'playing';
         io.to(room.id).emit('updateRoom', getRoomData(room.id));
-      } else {
+      } else if (room.gameType === 'quem_sou_eu') {
         if (room.mode === 'random') {
-          // Distribuir aleatoriamente da categoria
           const chars = [...(CATEGORIES[room.category] || CATEGORIES['animais'])].sort(() => 0.5 - Math.random());
           
           room.players.forEach((playerId, index) => {
@@ -488,17 +474,97 @@ io.on('connection', (socket) => {
             players[playerId].finishTime = null;
           });
           
-          // Sorteia a ordem dos jogadores na sala
           room.players = room.players.sort(() => 0.5 - Math.random());
           
           room.startTime = Date.now();
           room.status = 'playing';
           io.to(room.id).emit('updateRoom', getRoomData(room.id));
         } else {
-          // Modo manual: precisa que cada um sugira um personagem
           room.status = 'assigning';
           io.to(room.id).emit('updateRoom', getRoomData(room.id));
         }
+      } else if (room.gameType === 'proibido') {
+        room.currentRound = 1;
+        room.maxRounds = room.maxRounds || 10;
+        room.usedQuestions = [];
+        room.teamScores = [];
+        room.teams = [];
+        
+        const shuffled = [...room.players].sort(() => 0.5 - Math.random());
+        if (shuffled.length < 2) {
+          room.teams.push([...shuffled]);
+          room.teamScores.push(0);
+        } else {
+          for (let i = 0; i < shuffled.length; i += 2) {
+            if (i === shuffled.length - 3) {
+              room.teams.push([shuffled[i], shuffled[i+1], shuffled[i+2]]);
+              room.teamScores.push(0);
+              break;
+            }
+            if (i + 1 < shuffled.length) {
+              room.teams.push([shuffled[i], shuffled[i+1]]);
+              room.teamScores.push(0);
+            }
+          }
+        }
+        
+        room.currentTeamIndex = 0;
+        room.turnStatus = 'waiting'; 
+        room.currentWord = null;
+        room.turnEndTime = null;
+        room.describerIndexByTeam = room.teams.map(() => 0); 
+        
+        room.startTime = Date.now();
+        room.status = 'playing';
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      } else if (room.gameType === 'duvido') {
+        room.currentRound = 1;
+        room.maxRounds = room.maxRounds || 10;
+        room.usedQuestions = [];
+        room.teamScores = [];
+        room.teams = [];
+        
+        const shuffled = [...room.players].sort(() => 0.5 - Math.random());
+        if (shuffled.length < 2) {
+          room.teams.push([...shuffled]);
+          room.teamScores.push(0);
+        } else {
+          for (let i = 0; i < shuffled.length; i += 2) {
+            if (i === shuffled.length - 3) {
+              room.teams.push([shuffled[i], shuffled[i+1], shuffled[i+2]]);
+              room.teamScores.push(0);
+              break;
+            }
+            if (i + 1 < shuffled.length) {
+              room.teams.push([shuffled[i], shuffled[i+1]]);
+              room.teamScores.push(0);
+            }
+          }
+        }
+        
+        room.rolesByTeam = room.teams.map(team => {
+          if (team.length === 3) return { bettors: [team[0], team[1]], guessers: [team[2]] };
+          if (team.length === 2) return { bettors: [team[0]], guessers: [team[1]] };
+          return { bettors: [team[0]], guessers: [] };
+        });
+        
+        room.duvidoState = 'betting';
+        room.currentBet = 0;
+        room.turnTeamIndex = 0;
+        room.highestBidderTeamIndex = null;
+        room.doubtingTeamIndex = null;
+        
+        let available = PERGUNTAS_DUVIDO.filter(q => !room.usedQuestions.includes(q));
+        if (available.length === 0) {
+          room.usedQuestions = [];
+          available = PERGUNTAS_DUVIDO;
+        }
+        room.currentQuestion = available[Math.floor(Math.random() * available.length)];
+        room.usedQuestions.push(room.currentQuestion);
+        
+        room.startTime = Date.now();
+        room.status = 'playing';
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
       }
     }
   });
@@ -870,6 +936,86 @@ io.on('connection', (socket) => {
         const w = available[Math.floor(Math.random() * available.length)];
         room.currentWord = w;
         room.usedQuestions.push(w.word);
+        
+        io.to(room.id).emit('updateRoom', getRoomData(room.id));
+      }
+    }
+  });
+
+  
+  socket.on('placeDuvidoBet', ({ bet }) => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'duvido') {
+      const room = rooms[player.roomId];
+      if (room.duvidoState === 'betting' && room.turnTeamIndex !== null && room.teams[room.turnTeamIndex].includes(sessionId)) {
+        if (bet > room.currentBet) {
+          room.currentBet = bet;
+          room.highestBidderTeamIndex = room.turnTeamIndex;
+          
+          room.turnTeamIndex = (room.turnTeamIndex + 1) % room.teams.length;
+          // If turn gets back to the only bidder, they win the bid immediately?
+          // No, usually they keep betting against someone else. But if it's 2 teams, turn passes.
+          
+          io.to(room.id).emit('updateRoom', getRoomData(room.id));
+        }
+      }
+    }
+  });
+
+  socket.on('callDuvido', () => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'duvido') {
+      const room = rooms[player.roomId];
+      if (room.duvidoState === 'betting' && room.turnTeamIndex !== null && room.teams[room.turnTeamIndex].includes(sessionId)) {
+        if (room.currentBet > 0 && room.highestBidderTeamIndex !== null) {
+          room.doubtingTeamIndex = room.turnTeamIndex;
+          room.duvidoState = 'answering';
+          room.turnEndTime = Date.now() + 60000;
+          io.to(room.id).emit('updateRoom', getRoomData(room.id));
+        }
+      }
+    }
+  });
+
+  socket.on('duvidoChallengeResult', ({ success }) => {
+    const sessionId = socketIdToSessionId[socket.id];
+    const player = players[sessionId];
+    if (player && rooms[player.roomId] && rooms[player.roomId].gameType === 'duvido') {
+      const room = rooms[player.roomId];
+      if (room.duvidoState === 'answering') {
+        if (success) {
+          room.teamScores[room.highestBidderTeamIndex] += 10;
+        } else {
+          room.teamScores[room.doubtingTeamIndex] += 10;
+        }
+        
+        // Next round setup
+        room.currentRound++;
+        if (room.currentRound > room.maxRounds) {
+          room.status = 'finished';
+        } else {
+          // Swap roles
+          room.rolesByTeam = room.rolesByTeam.map(roles => {
+            return { bettors: roles.guessers, guessers: roles.bettors };
+          });
+          
+          room.duvidoState = 'betting';
+          room.currentBet = 0;
+          room.highestBidderTeamIndex = null;
+          room.doubtingTeamIndex = null;
+          room.turnTeamIndex = room.currentRound % room.teams.length; // Shift who starts
+          room.turnEndTime = null;
+          
+          let available = PERGUNTAS_DUVIDO.filter(q => !room.usedQuestions.includes(q));
+          if (available.length === 0) {
+            room.usedQuestions = [];
+            available = PERGUNTAS_DUVIDO;
+          }
+          room.currentQuestion = available[Math.floor(Math.random() * available.length)];
+          room.usedQuestions.push(room.currentQuestion);
+        }
         
         io.to(room.id).emit('updateRoom', getRoomData(room.id));
       }

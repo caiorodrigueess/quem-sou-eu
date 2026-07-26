@@ -171,6 +171,10 @@ function App() {
                 🚫 Proibido
               </button>
 
+              <button onClick={() => { setGameType('duvido'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #8b5cf6, #6d28d9)' }}>
+                🤨 Duvido
+              </button>
+
             </div>
           </div>
 
@@ -196,7 +200,7 @@ function App() {
       <div className="container">
         <div className="glass-panel">
           <div className="flex-row">
-            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : gameType === 'proibido' ? '🚫 Proibido' : '🤔 Quem Sou Eu?'}</h1>
+            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : gameType === 'proibido' ? '🚫 Proibido' : gameType === 'duvido' ? '🤨 Duvido' : '🤔 Quem Sou Eu?'}</h1>
             <button onClick={() => setGameType('')} style={{ background: 'transparent', width: 'auto', margin: 0, padding: '0.5rem' }}>Voltar</button>
           </div>
           
@@ -208,7 +212,7 @@ function App() {
                   <label>Seu Nome</label>
                   <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: João" />
                 </div>
-                {gameType !== 'palpite' && gameType !== 'proibido' && (
+                {gameType !== 'palpite' && gameType !== 'proibido' && gameType !== 'duvido' && (
                   <div className="form-group">
                     <label>Modo de Jogo</label>
                     <select value={mode} onChange={e => setMode(e.target.value)}>
@@ -227,7 +231,7 @@ function App() {
                   </div>
                 )}
                 
-                {(gameType === 'palpite' || gameType === 'proibido') && (
+                {(gameType === 'palpite' || gameType === 'proibido' || gameType === 'duvido') && (
                   <div className="form-group">
                     <label>Número de Rodadas</label>
                     <select value={maxRounds} onChange={e => setMaxRounds(Number(e.target.value))}>
@@ -238,7 +242,7 @@ function App() {
                   </div>
                 )}
                 
-                {gameType !== 'palpite' && gameType !== 'proibido' && (mode === 'random' || mode === 'tradicional') && (
+                {gameType !== 'palpite' && gameType !== 'proibido' && gameType !== 'duvido' && (mode === 'random' || mode === 'tradicional') && (
                   <div className="form-group">
                     <label>Categoria</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
@@ -507,6 +511,171 @@ function App() {
                     borderRadius: '12px', 
                     background: 'var(--bg-card)',
                     border: index === roomData.currentTeamIndex ? '2px solid var(--primary)' : '1px solid var(--glass-border)',
+                  }}>
+                    <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Equipe {index + 1}</div>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                      {t.map(getPlayerName).join(' & ')}
+                    </div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)', marginTop: '0.5rem' }}>
+                      {roomData.teamScores[index]} pts
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    
+    if (roomData.gameType === 'duvido') {
+      const myData = roomData.playersData?.find(p => p.id === myId);
+      const isMyTeam = roomData.teams[roomData.currentTeamIndex]?.includes(myId);
+      
+      let myTeamIndex = -1;
+      roomData.teams.forEach((t, i) => { if (t.includes(myId)) myTeamIndex = i; });
+      
+      const amIBettor = myTeamIndex !== -1 && roomData.rolesByTeam[myTeamIndex]?.bettors.includes(myId);
+      const amIGuesser = myTeamIndex !== -1 && roomData.rolesByTeam[myTeamIndex]?.guessers.includes(myId);
+      
+      const isMyTurnToBet = roomData.duvidoState === 'betting' && roomData.turnTeamIndex === myTeamIndex;
+      
+      const getPlayerName = (id) => roomData.playersData.find(p => p.id === id)?.name;
+      
+      const formatTime = (ms) => {
+        if (!ms) return '01:00';
+        const remaining = Math.max(0, Math.ceil((ms - Date.now()) / 1000));
+        const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+        const s = (remaining % 60).toString().padStart(2, '0');
+        return `${m}:${s}`;
+      };
+
+      const [betInput, setBetInput] = React.useState('');
+
+      return (
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <h2>Sala: {roomData.id}</h2>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+            </div>
+          </div>
+          
+          <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 2rem' }}>
+            
+            {myTeamIndex !== -1 && (
+              <div style={{ marginBottom: '2rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px' }}>
+                Você é: <strong>{amIBettor ? 'Apostador 👀' : 'Adivinhador 🙈'}</strong> da Equipe {myTeamIndex + 1}
+              </div>
+            )}
+
+            {roomData.duvidoState === 'betting' ? (
+              <div>
+                <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>Fase de Apostas (Leilão)</h3>
+                
+                {amIGuesser ? (
+                  <div style={{ marginTop: '3rem', padding: '2rem', border: '1px dashed var(--text-muted)', borderRadius: '12px' }}>
+                    <h2 style={{ color: 'var(--text-muted)' }}>Você está às cegas! 🙈</h2>
+                    <p>Aguarde enquanto os apostadores debatem sobre a pergunta da rodada...</p>
+                  </div>
+                ) : (
+                  <div style={{ marginTop: '2rem' }}>
+                    <h4 style={{ color: 'var(--text-muted)' }}>Pergunta da Rodada:</h4>
+                    <div style={{ fontSize: '2rem', fontWeight: 'bold', margin: '1rem 0', color: 'white' }}>
+                      {roomData.currentQuestion}
+                    </div>
+                  </div>
+                )}
+                
+                <div style={{ margin: '3rem 0', padding: '1.5rem', background: 'var(--bg-card)', borderRadius: '12px' }}>
+                  <h3 style={{ color: '#fbbf24' }}>
+                    Aposta Atual: {roomData.currentBet > 0 ? `${roomData.currentBet} itens` : 'Nenhuma aposta ainda'}
+                  </h3>
+                  {roomData.highestBidderTeamIndex !== null && (
+                    <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+                      Feita pela Equipe {roomData.highestBidderTeamIndex + 1}
+                    </p>
+                  )}
+                </div>
+                
+                {isMyTurnToBet && amIBettor ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                    <h4>Sua vez de apostar!</h4>
+                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                      <input 
+                        type="number" 
+                        min={roomData.currentBet + 1} 
+                        value={betInput} 
+                        onChange={e => setBetInput(e.target.value)} 
+                        placeholder={roomData.currentBet + 1}
+                        style={{ width: '100px', fontSize: '1.5rem', textAlign: 'center' }} 
+                      />
+                      <button onClick={() => socket.emit('placeDuvidoBet', { bet: parseInt(betInput) || (roomData.currentBet + 1) })} style={{ margin: 0 }}>
+                        Apostar
+                      </button>
+                    </div>
+                    {roomData.currentBet > 0 && (
+                      <button onClick={() => socket.emit('callDuvido')} style={{ background: '#ef4444', marginTop: '1rem' }}>
+                        Duvido!
+                      </button>
+                    )}
+                  </div>
+                ) : (
+                  <h4 style={{ color: 'var(--text-muted)' }}>
+                    Vez da Equipe {roomData.turnTeamIndex + 1} apostar...
+                  </h4>
+                )}
+              </div>
+            ) : (
+              <div>
+                <h3 style={{ color: '#ef4444', marginBottom: '1rem' }}>ALGUÉM DUVIDOU! 🚨</h3>
+                <div style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--primary)', margin: '1rem 0' }}>
+                  ⏱️ {formatTime(roomData.turnEndTime)}
+                </div>
+                
+                <h4 style={{ color: 'var(--text-muted)', marginTop: '2rem' }}>A Equipe {roomData.highestBidderTeamIndex + 1} precisa listar:</h4>
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#fbbf24', margin: '1rem 0' }}>
+                  {roomData.currentBet} itens
+                </div>
+                
+                <div style={{ marginTop: '2rem', padding: '2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px' }}>
+                  <h4 style={{ color: 'var(--text-muted)' }}>Pergunta:</h4>
+                  <div style={{ fontSize: '2rem', fontWeight: 'bold', margin: '1rem 0', color: 'white' }}>
+                    {roomData.currentQuestion}
+                  </div>
+                </div>
+
+                {roomData.highestBidderTeamIndex === myTeamIndex ? (
+                  amIGuesser ? (
+                    <h3 style={{ color: '#10b981', marginTop: '2rem' }}>🗣️ RESPONDA EM VOZ ALTA!</h3>
+                  ) : (
+                    <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
+                      <h4 style={{ color: 'var(--text-muted)' }}>O seu adivinhador falou {roomData.currentBet} itens corretos?</h4>
+                      <div style={{ display: 'flex', gap: '1rem' }}>
+                        <button onClick={() => socket.emit('duvidoChallengeResult', { success: false })} style={{ background: 'transparent', border: '1px solid #ef4444', color: '#ef4444', margin: 0 }}>Falhou</button>
+                        <button onClick={() => socket.emit('duvidoChallengeResult', { success: true })} style={{ background: '#10b981', margin: 0 }}>Conseguiu!</button>
+                      </div>
+                    </div>
+                  )
+                ) : (
+                  <h4 style={{ color: 'var(--text-muted)', marginTop: '2rem' }}>
+                    Avaliando o desempenho da Equipe {roomData.highestBidderTeamIndex + 1}...
+                  </h4>
+                )}
+              </div>
+            )}
+            
+            <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--glass-border)' }}>
+              <h4 style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Placar:</h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+                {roomData.teams?.map((t, index) => (
+                  <div key={index} style={{ 
+                    padding: '1rem', 
+                    borderRadius: '12px', 
+                    background: 'var(--bg-card)',
+                    border: index === roomData.turnTeamIndex && roomData.duvidoState === 'betting' ? '2px solid var(--primary)' : '1px solid var(--glass-border)',
                   }}>
                     <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Equipe {index + 1}</div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
