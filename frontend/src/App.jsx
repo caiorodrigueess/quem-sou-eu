@@ -24,6 +24,14 @@ function App() {
   });
   const [myId, setMyId] = useState('');
   const [suggestedChar, setSuggestedChar] = useState('');
+  const [tick, setTick] = useState(0);
+
+  useEffect(() => {
+    if (view === 'playing') {
+      const timer = setInterval(() => setTick(t => t + 1), 1000);
+      return () => clearInterval(timer);
+    }
+  }, [view]);
 
   useEffect(() => {
     const savedRoomId = localStorage.getItem('roomId');
