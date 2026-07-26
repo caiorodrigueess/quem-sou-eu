@@ -161,8 +161,8 @@ function App() {
   if (view === 'home') {
     if (!gameType) {
       return (
-        <div className="container" style={{ maxWidth: '600px' }}>
-          <div className="glass-panel" style={{ textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '900px', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+          <div className="glass-panel" style={{ textAlign: 'center', flex: '1 1 300px' }}>
             <h2>Criar Nova Partida 🎮</h2>
             <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', marginTop: '1.5rem' }}>
               <button onClick={() => { setGameType('quem_sou_eu'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem' }}>
@@ -186,7 +186,7 @@ function App() {
             </div>
           </div>
 
-          <div className="glass-panel" style={{ marginTop: '2rem' }}>
+          <div className="glass-panel" style={{ flex: '1 1 300px' }}>
             <h3 style={{ textAlign: 'center' }}>Entrar em Sala Existente</h3>
             <form onSubmit={handleJoinRoom} style={{ marginTop: '1.5rem' }}>
               <div className="form-group">
