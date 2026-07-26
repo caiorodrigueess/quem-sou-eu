@@ -91,7 +91,7 @@ function App() {
   const handleJoinRoom = (e) => {
     e.preventDefault();
     if (!name || !roomCode) return alert('Digite seu nome e o código da sala!');
-    socket.emit('joinRoom', { name, roomId: roomCode, sessionId });
+    socket.emit('joinRoom', { name, roomId: roomCode.trim(), sessionId });
   };
 
   const handleStartGame = () => {

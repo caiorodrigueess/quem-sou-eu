@@ -371,7 +371,7 @@ io.on('connection', (socket) => {
   socket.on('joinRoom', ({ name, roomId , sessionId}) => {
     if (!sessionId) return;
     socketIdToSessionId[socket.id] = sessionId;
-    roomId = roomId.toUpperCase();
+    roomId = roomId.trim().toUpperCase();
     if (rooms[roomId] && rooms[roomId].status === 'lobby') {
       if (rooms[roomId].players.length >= 10) {
         return socket.emit('error', 'A sala está cheia (limite de 10 jogadores).');
@@ -1027,7 +1027,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('reconnectRoom', ({ roomId, sessionId }) => {
-    roomId = roomId?.toUpperCase();
+    roomId = roomId?.trim().toUpperCase();
     if (rooms[roomId] && players[sessionId] && players[sessionId].roomId === roomId) {
       socketIdToSessionId[socket.id] = sessionId;
       players[sessionId].socketId = socket.id;
