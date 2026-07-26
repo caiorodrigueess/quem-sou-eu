@@ -25,6 +25,7 @@ function App() {
   const [myId, setMyId] = useState('');
   const [suggestedChar, setSuggestedChar] = useState('');
   const [tick, setTick] = useState(0);
+  const [betInput, setBetInput] = useState('');
 
   useEffect(() => {
     if (view === 'playing') {
@@ -539,7 +540,7 @@ function App() {
     
     if (roomData.gameType === 'duvido') {
       const myData = roomData.playersData?.find(p => p.id === myId);
-      const isMyTeam = roomData.teams[roomData.currentTeamIndex]?.includes(myId);
+      const isMyTeam = roomData.teams[roomData.turnTeamIndex]?.includes(myId);
       
       let myTeamIndex = -1;
       roomData.teams.forEach((t, i) => { if (t.includes(myId)) myTeamIndex = i; });
@@ -558,8 +559,6 @@ function App() {
         const s = (remaining % 60).toString().padStart(2, '0');
         return `${m}:${s}`;
       };
-
-      const [betInput, setBetInput] = React.useState('');
 
       return (
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
