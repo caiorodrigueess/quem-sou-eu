@@ -76,7 +76,6 @@ const PARES_IMPOSTOR = [
 ];
 
 
-const path = require('path');
 const DATA_FILE = path.join(__dirname, 'data', 'perguntas.json');
 let PERGUNTAS_IMPOSTOR = [];
 let PERGUNTAS_PROIBIDO = [];
