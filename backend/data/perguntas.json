@@ -1,0 +1,6720 @@
+{
+  "palpite": [
+    {
+      "question": "Quantos ossos tem um adulto humano?",
+      "answer": 206
+    },
+    {
+      "question": "Quantos dentes tem um adulto humano?",
+      "answer": 32
+    },
+    {
+      "question": "Qual a altura do aro de basquete em cm?",
+      "answer": 305
+    },
+    {
+      "question": "Quantos dias há em um ano bissexto?",
+      "answer": 366
+    },
+    {
+      "question": "Quantos graus tem um círculo completo?",
+      "answer": 360
+    },
+    {
+      "question": "Quantos meses existem em 2 anos?",
+      "answer": 24
+    },
+    {
+      "question": "Quantos dias existem em 2 semanas?",
+      "answer": 14
+    },
+    {
+      "question": "Quantas horas tem 2 dias?",
+      "answer": 48
+    },
+    {
+      "question": "Quantos meses existem em 3 anos?",
+      "answer": 36
+    },
+    {
+      "question": "Quantos dias existem em 3 semanas?",
+      "answer": 21
+    },
+    {
+      "question": "Quantas horas tem 3 dias?",
+      "answer": 72
+    },
+    {
+      "question": "Quantos meses existem em 4 anos?",
+      "answer": 48
+    },
+    {
+      "question": "Quantos dias existem em 4 semanas?",
+      "answer": 28
+    },
+    {
+      "question": "Quantas horas tem 4 dias?",
+      "answer": 96
+    },
+    {
+      "question": "Quantos meses existem em 5 anos?",
+      "answer": 60
+    },
+    {
+      "question": "Quantos dias existem em 5 semanas?",
+      "answer": 35
+    },
+    {
+      "question": "Quantas horas tem 5 dias?",
+      "answer": 120
+    },
+    {
+      "question": "Quantos meses existem em 6 anos?",
+      "answer": 72
+    },
+    {
+      "question": "Quantos dias existem em 6 semanas?",
+      "answer": 42
+    },
+    {
+      "question": "Quantas horas tem 6 dias?",
+      "answer": 144
+    },
+    {
+      "question": "Quantos meses existem em 7 anos?",
+      "answer": 84
+    },
+    {
+      "question": "Quantos dias existem em 7 semanas?",
+      "answer": 49
+    },
+    {
+      "question": "Quantas horas tem 7 dias?",
+      "answer": 168
+    },
+    {
+      "question": "Quantos meses existem em 8 anos?",
+      "answer": 96
+    },
+    {
+      "question": "Quantos dias existem em 8 semanas?",
+      "answer": 56
+    },
+    {
+      "question": "Quantas horas tem 8 dias?",
+      "answer": 192
+    },
+    {
+      "question": "Quantos meses existem em 9 anos?",
+      "answer": 108
+    },
+    {
+      "question": "Quantos dias existem em 9 semanas?",
+      "answer": 63
+    },
+    {
+      "question": "Quantas horas tem 9 dias?",
+      "answer": 216
+    },
+    {
+      "question": "Quantos meses existem em 10 anos?",
+      "answer": 120
+    },
+    {
+      "question": "Quantos dias existem em 10 semanas?",
+      "answer": 70
+    },
+    {
+      "question": "Quantas horas tem 10 dias?",
+      "answer": 240
+    },
+    {
+      "question": "Quantos meses existem em 11 anos?",
+      "answer": 132
+    },
+    {
+      "question": "Quantos dias existem em 11 semanas?",
+      "answer": 77
+    },
+    {
+      "question": "Quantas horas tem 11 dias?",
+      "answer": 264
+    },
+    {
+      "question": "Quantos meses existem em 12 anos?",
+      "answer": 144
+    },
+    {
+      "question": "Quantos dias existem em 12 semanas?",
+      "answer": 84
+    },
+    {
+      "question": "Quantas horas tem 12 dias?",
+      "answer": 288
+    },
+    {
+      "question": "Quantos meses existem em 13 anos?",
+      "answer": 156
+    },
+    {
+      "question": "Quantos dias existem em 13 semanas?",
+      "answer": 91
+    },
+    {
+      "question": "Quantas horas tem 13 dias?",
+      "answer": 312
+    },
+    {
+      "question": "Quantos meses existem em 14 anos?",
+      "answer": 168
+    },
+    {
+      "question": "Quantos dias existem em 14 semanas?",
+      "answer": 98
+    },
+    {
+      "question": "Quantas horas tem 14 dias?",
+      "answer": 336
+    },
+    {
+      "question": "Quantos meses existem em 15 anos?",
+      "answer": 180
+    },
+    {
+      "question": "Quantos dias existem em 15 semanas?",
+      "answer": 105
+    },
+    {
+      "question": "Quantas horas tem 15 dias?",
+      "answer": 360
+    },
+    {
+      "question": "Quantos meses existem em 16 anos?",
+      "answer": 192
+    },
+    {
+      "question": "Quantos dias existem em 16 semanas?",
+      "answer": 112
+    },
+    {
+      "question": "Quantas horas tem 16 dias?",
+      "answer": 384
+    },
+    {
+      "question": "Quantos meses existem em 17 anos?",
+      "answer": 204
+    },
+    {
+      "question": "Quantos dias existem em 17 semanas?",
+      "answer": 119
+    },
+    {
+      "question": "Quantas horas tem 17 dias?",
+      "answer": 408
+    },
+    {
+      "question": "Quantos meses existem em 18 anos?",
+      "answer": 216
+    },
+    {
+      "question": "Quantos dias existem em 18 semanas?",
+      "answer": 126
+    },
+    {
+      "question": "Quantas horas tem 18 dias?",
+      "answer": 432
+    },
+    {
+      "question": "Quantos meses existem em 19 anos?",
+      "answer": 228
+    },
+    {
+      "question": "Quantos dias existem em 19 semanas?",
+      "answer": 133
+    },
+    {
+      "question": "Quantas horas tem 19 dias?",
+      "answer": 456
+    },
+    {
+      "question": "Quantos meses existem em 20 anos?",
+      "answer": 240
+    },
+    {
+      "question": "Quantos dias existem em 20 semanas?",
+      "answer": 140
+    },
+    {
+      "question": "Quantas horas tem 20 dias?",
+      "answer": 480
+    },
+    {
+      "question": "Quantos meses existem em 21 anos?",
+      "answer": 252
+    },
+    {
+      "question": "Quantos dias existem em 21 semanas?",
+      "answer": 147
+    },
+    {
+      "question": "Quantas horas tem 21 dias?",
+      "answer": 504
+    },
+    {
+      "question": "Quantos meses existem em 22 anos?",
+      "answer": 264
+    },
+    {
+      "question": "Quantos dias existem em 22 semanas?",
+      "answer": 154
+    },
+    {
+      "question": "Quantas horas tem 22 dias?",
+      "answer": 528
+    },
+    {
+      "question": "Quantos meses existem em 23 anos?",
+      "answer": 276
+    },
+    {
+      "question": "Quantos dias existem em 23 semanas?",
+      "answer": 161
+    },
+    {
+      "question": "Quantas horas tem 23 dias?",
+      "answer": 552
+    },
+    {
+      "question": "Quantos meses existem em 24 anos?",
+      "answer": 288
+    },
+    {
+      "question": "Quantos dias existem em 24 semanas?",
+      "answer": 168
+    },
+    {
+      "question": "Quantas horas tem 24 dias?",
+      "answer": 576
+    },
+    {
+      "question": "Quantos meses existem em 25 anos?",
+      "answer": 300
+    },
+    {
+      "question": "Quantos dias existem em 25 semanas?",
+      "answer": 175
+    },
+    {
+      "question": "Quantas horas tem 25 dias?",
+      "answer": 600
+    },
+    {
+      "question": "Quantos meses existem em 26 anos?",
+      "answer": 312
+    },
+    {
+      "question": "Quantos dias existem em 26 semanas?",
+      "answer": 182
+    },
+    {
+      "question": "Quantas horas tem 26 dias?",
+      "answer": 624
+    },
+    {
+      "question": "Quantos meses existem em 27 anos?",
+      "answer": 324
+    },
+    {
+      "question": "Quantos dias existem em 27 semanas?",
+      "answer": 189
+    },
+    {
+      "question": "Quantas horas tem 27 dias?",
+      "answer": 648
+    },
+    {
+      "question": "Quantos meses existem em 28 anos?",
+      "answer": 336
+    },
+    {
+      "question": "Quantos dias existem em 28 semanas?",
+      "answer": 196
+    },
+    {
+      "question": "Quantas horas tem 28 dias?",
+      "answer": 672
+    },
+    {
+      "question": "Quantos meses existem em 29 anos?",
+      "answer": 348
+    },
+    {
+      "question": "Quantos dias existem em 29 semanas?",
+      "answer": 203
+    },
+    {
+      "question": "Quantas horas tem 29 dias?",
+      "answer": 696
+    },
+    {
+      "question": "Quantos meses existem em 30 anos?",
+      "answer": 360
+    },
+    {
+      "question": "Quantos dias existem em 30 semanas?",
+      "answer": 210
+    },
+    {
+      "question": "Quantas horas tem 30 dias?",
+      "answer": 720
+    },
+    {
+      "question": "Quantos meses existem em 31 anos?",
+      "answer": 372
+    },
+    {
+      "question": "Quantos dias existem em 31 semanas?",
+      "answer": 217
+    },
+    {
+      "question": "Quantas horas tem 31 dias?",
+      "answer": 744
+    },
+    {
+      "question": "Quantos meses existem em 32 anos?",
+      "answer": 384
+    },
+    {
+      "question": "Quantos dias existem em 32 semanas?",
+      "answer": 224
+    },
+    {
+      "question": "Quantas horas tem 32 dias?",
+      "answer": 768
+    },
+    {
+      "question": "Quantos meses existem em 33 anos?",
+      "answer": 396
+    },
+    {
+      "question": "Quantos dias existem em 33 semanas?",
+      "answer": 231
+    },
+    {
+      "question": "Quantas horas tem 33 dias?",
+      "answer": 792
+    },
+    {
+      "question": "Quantos meses existem em 34 anos?",
+      "answer": 408
+    },
+    {
+      "question": "Quantos dias existem em 34 semanas?",
+      "answer": 238
+    },
+    {
+      "question": "Quantas horas tem 34 dias?",
+      "answer": 816
+    },
+    {
+      "question": "Quantos meses existem em 35 anos?",
+      "answer": 420
+    },
+    {
+      "question": "Quantos dias existem em 35 semanas?",
+      "answer": 245
+    },
+    {
+      "question": "Quantas horas tem 35 dias?",
+      "answer": 840
+    },
+    {
+      "question": "Quantos meses existem em 36 anos?",
+      "answer": 432
+    },
+    {
+      "question": "Quantos dias existem em 36 semanas?",
+      "answer": 252
+    },
+    {
+      "question": "Quantas horas tem 36 dias?",
+      "answer": 864
+    },
+    {
+      "question": "Quantos meses existem em 37 anos?",
+      "answer": 444
+    },
+    {
+      "question": "Quantos dias existem em 37 semanas?",
+      "answer": 259
+    },
+    {
+      "question": "Quantas horas tem 37 dias?",
+      "answer": 888
+    },
+    {
+      "question": "Quantos meses existem em 38 anos?",
+      "answer": 456
+    },
+    {
+      "question": "Quantos dias existem em 38 semanas?",
+      "answer": 266
+    },
+    {
+      "question": "Quantas horas tem 38 dias?",
+      "answer": 912
+    },
+    {
+      "question": "Quantos meses existem em 39 anos?",
+      "answer": 468
+    },
+    {
+      "question": "Quantos dias existem em 39 semanas?",
+      "answer": 273
+    },
+    {
+      "question": "Quantas horas tem 39 dias?",
+      "answer": 936
+    },
+    {
+      "question": "Quantos meses existem em 40 anos?",
+      "answer": 480
+    },
+    {
+      "question": "Quantos dias existem em 40 semanas?",
+      "answer": 280
+    },
+    {
+      "question": "Quantas horas tem 40 dias?",
+      "answer": 960
+    },
+    {
+      "question": "Quantos meses existem em 41 anos?",
+      "answer": 492
+    },
+    {
+      "question": "Quantos dias existem em 41 semanas?",
+      "answer": 287
+    },
+    {
+      "question": "Quantas horas tem 41 dias?",
+      "answer": 984
+    },
+    {
+      "question": "Quantos meses existem em 42 anos?",
+      "answer": 504
+    },
+    {
+      "question": "Quantos dias existem em 42 semanas?",
+      "answer": 294
+    },
+    {
+      "question": "Quantas horas tem 42 dias?",
+      "answer": 1008
+    },
+    {
+      "question": "Quantos meses existem em 43 anos?",
+      "answer": 516
+    },
+    {
+      "question": "Quantos dias existem em 43 semanas?",
+      "answer": 301
+    },
+    {
+      "question": "Quantas horas tem 43 dias?",
+      "answer": 1032
+    },
+    {
+      "question": "Quantos meses existem em 44 anos?",
+      "answer": 528
+    },
+    {
+      "question": "Quantos dias existem em 44 semanas?",
+      "answer": 308
+    },
+    {
+      "question": "Quantas horas tem 44 dias?",
+      "answer": 1056
+    },
+    {
+      "question": "Quantos meses existem em 45 anos?",
+      "answer": 540
+    },
+    {
+      "question": "Quantos dias existem em 45 semanas?",
+      "answer": 315
+    },
+    {
+      "question": "Quantas horas tem 45 dias?",
+      "answer": 1080
+    },
+    {
+      "question": "Quantos meses existem em 46 anos?",
+      "answer": 552
+    },
+    {
+      "question": "Quantos dias existem em 46 semanas?",
+      "answer": 322
+    },
+    {
+      "question": "Quantas horas tem 46 dias?",
+      "answer": 1104
+    },
+    {
+      "question": "Quantos meses existem em 47 anos?",
+      "answer": 564
+    },
+    {
+      "question": "Quantos dias existem em 47 semanas?",
+      "answer": 329
+    },
+    {
+      "question": "Quantas horas tem 47 dias?",
+      "answer": 1128
+    },
+    {
+      "question": "Quantos meses existem em 48 anos?",
+      "answer": 576
+    },
+    {
+      "question": "Quantos dias existem em 48 semanas?",
+      "answer": 336
+    },
+    {
+      "question": "Quantas horas tem 48 dias?",
+      "answer": 1152
+    },
+    {
+      "question": "Quantos meses existem em 49 anos?",
+      "answer": 588
+    },
+    {
+      "question": "Quantos dias existem em 49 semanas?",
+      "answer": 343
+    },
+    {
+      "question": "Quantas horas tem 49 dias?",
+      "answer": 1176
+    },
+    {
+      "question": "Quantos meses existem em 50 anos?",
+      "answer": 600
+    },
+    {
+      "question": "Quantos dias existem em 50 semanas?",
+      "answer": 350
+    },
+    {
+      "question": "Quantas horas tem 50 dias?",
+      "answer": 1200
+    },
+    {
+      "question": "Quantos meses existem em 51 anos?",
+      "answer": 612
+    },
+    {
+      "question": "Quantos dias existem em 51 semanas?",
+      "answer": 357
+    },
+    {
+      "question": "Quantas horas tem 51 dias?",
+      "answer": 1224
+    },
+    {
+      "question": "Quantos meses existem em 52 anos?",
+      "answer": 624
+    },
+    {
+      "question": "Quantos dias existem em 52 semanas?",
+      "answer": 364
+    },
+    {
+      "question": "Quantas horas tem 52 dias?",
+      "answer": 1248
+    },
+    {
+      "question": "Quantos meses existem em 53 anos?",
+      "answer": 636
+    },
+    {
+      "question": "Quantos dias existem em 53 semanas?",
+      "answer": 371
+    },
+    {
+      "question": "Quantas horas tem 53 dias?",
+      "answer": 1272
+    },
+    {
+      "question": "Quantos meses existem em 54 anos?",
+      "answer": 648
+    },
+    {
+      "question": "Quantos dias existem em 54 semanas?",
+      "answer": 378
+    },
+    {
+      "question": "Quantas horas tem 54 dias?",
+      "answer": 1296
+    },
+    {
+      "question": "Quantos meses existem em 55 anos?",
+      "answer": 660
+    },
+    {
+      "question": "Quantos dias existem em 55 semanas?",
+      "answer": 385
+    },
+    {
+      "question": "Quantas horas tem 55 dias?",
+      "answer": 1320
+    },
+    {
+      "question": "Quantos meses existem em 56 anos?",
+      "answer": 672
+    },
+    {
+      "question": "Quantos dias existem em 56 semanas?",
+      "answer": 392
+    },
+    {
+      "question": "Quantas horas tem 56 dias?",
+      "answer": 1344
+    },
+    {
+      "question": "Quantos meses existem em 57 anos?",
+      "answer": 684
+    },
+    {
+      "question": "Quantos dias existem em 57 semanas?",
+      "answer": 399
+    },
+    {
+      "question": "Quantas horas tem 57 dias?",
+      "answer": 1368
+    },
+    {
+      "question": "Quantos meses existem em 58 anos?",
+      "answer": 696
+    },
+    {
+      "question": "Quantos dias existem em 58 semanas?",
+      "answer": 406
+    },
+    {
+      "question": "Quantas horas tem 58 dias?",
+      "answer": 1392
+    },
+    {
+      "question": "Quantos meses existem em 59 anos?",
+      "answer": 708
+    },
+    {
+      "question": "Quantos dias existem em 59 semanas?",
+      "answer": 413
+    },
+    {
+      "question": "Quantas horas tem 59 dias?",
+      "answer": 1416
+    },
+    {
+      "question": "Quantos meses existem em 60 anos?",
+      "answer": 720
+    },
+    {
+      "question": "Quantos dias existem em 60 semanas?",
+      "answer": 420
+    },
+    {
+      "question": "Quantas horas tem 60 dias?",
+      "answer": 1440
+    },
+    {
+      "question": "Quantos meses existem em 61 anos?",
+      "answer": 732
+    },
+    {
+      "question": "Quantos dias existem em 61 semanas?",
+      "answer": 427
+    },
+    {
+      "question": "Quantas horas tem 61 dias?",
+      "answer": 1464
+    },
+    {
+      "question": "Quantos meses existem em 62 anos?",
+      "answer": 744
+    },
+    {
+      "question": "Quantos dias existem em 62 semanas?",
+      "answer": 434
+    },
+    {
+      "question": "Quantas horas tem 62 dias?",
+      "answer": 1488
+    },
+    {
+      "question": "Quantos meses existem em 63 anos?",
+      "answer": 756
+    },
+    {
+      "question": "Quantos dias existem em 63 semanas?",
+      "answer": 441
+    },
+    {
+      "question": "Quantas horas tem 63 dias?",
+      "answer": 1512
+    },
+    {
+      "question": "Quantos meses existem em 64 anos?",
+      "answer": 768
+    },
+    {
+      "question": "Quantos dias existem em 64 semanas?",
+      "answer": 448
+    },
+    {
+      "question": "Quantas horas tem 64 dias?",
+      "answer": 1536
+    },
+    {
+      "question": "Quantos meses existem em 65 anos?",
+      "answer": 780
+    },
+    {
+      "question": "Quantos dias existem em 65 semanas?",
+      "answer": 455
+    },
+    {
+      "question": "Quantas horas tem 65 dias?",
+      "answer": 1560
+    },
+    {
+      "question": "Quantos meses existem em 66 anos?",
+      "answer": 792
+    },
+    {
+      "question": "Quantos dias existem em 66 semanas?",
+      "answer": 462
+    },
+    {
+      "question": "Quantas horas tem 66 dias?",
+      "answer": 1584
+    },
+    {
+      "question": "Quantos meses existem em 67 anos?",
+      "answer": 804
+    },
+    {
+      "question": "Quantos dias existem em 67 semanas?",
+      "answer": 469
+    },
+    {
+      "question": "Quantas horas tem 67 dias?",
+      "answer": 1608
+    },
+    {
+      "question": "Quantos meses existem em 68 anos?",
+      "answer": 816
+    },
+    {
+      "question": "Quantos dias existem em 68 semanas?",
+      "answer": 476
+    },
+    {
+      "question": "Quantas horas tem 68 dias?",
+      "answer": 1632
+    },
+    {
+      "question": "Quantos meses existem em 69 anos?",
+      "answer": 828
+    },
+    {
+      "question": "Quantos dias existem em 69 semanas?",
+      "answer": 483
+    },
+    {
+      "question": "Quantas horas tem 69 dias?",
+      "answer": 1656
+    },
+    {
+      "question": "Quantos meses existem em 70 anos?",
+      "answer": 840
+    },
+    {
+      "question": "Quantos dias existem em 70 semanas?",
+      "answer": 490
+    },
+    {
+      "question": "Quantas horas tem 70 dias?",
+      "answer": 1680
+    },
+    {
+      "question": "Quantos meses existem em 71 anos?",
+      "answer": 852
+    },
+    {
+      "question": "Quantos dias existem em 71 semanas?",
+      "answer": 497
+    },
+    {
+      "question": "Quantas horas tem 71 dias?",
+      "answer": 1704
+    },
+    {
+      "question": "Quantos meses existem em 72 anos?",
+      "answer": 864
+    },
+    {
+      "question": "Quantos dias existem em 72 semanas?",
+      "answer": 504
+    },
+    {
+      "question": "Quantas horas tem 72 dias?",
+      "answer": 1728
+    },
+    {
+      "question": "Quantos meses existem em 73 anos?",
+      "answer": 876
+    },
+    {
+      "question": "Quantos dias existem em 73 semanas?",
+      "answer": 511
+    },
+    {
+      "question": "Quantas horas tem 73 dias?",
+      "answer": 1752
+    },
+    {
+      "question": "Quantos meses existem em 74 anos?",
+      "answer": 888
+    },
+    {
+      "question": "Quantos dias existem em 74 semanas?",
+      "answer": 518
+    },
+    {
+      "question": "Quantas horas tem 74 dias?",
+      "answer": 1776
+    },
+    {
+      "question": "Quantos meses existem em 75 anos?",
+      "answer": 900
+    },
+    {
+      "question": "Quantos dias existem em 75 semanas?",
+      "answer": 525
+    },
+    {
+      "question": "Quantas horas tem 75 dias?",
+      "answer": 1800
+    },
+    {
+      "question": "Quantos meses existem em 76 anos?",
+      "answer": 912
+    },
+    {
+      "question": "Quantos dias existem em 76 semanas?",
+      "answer": 532
+    },
+    {
+      "question": "Quantas horas tem 76 dias?",
+      "answer": 1824
+    },
+    {
+      "question": "Quantos meses existem em 77 anos?",
+      "answer": 924
+    },
+    {
+      "question": "Quantos dias existem em 77 semanas?",
+      "answer": 539
+    },
+    {
+      "question": "Quantas horas tem 77 dias?",
+      "answer": 1848
+    },
+    {
+      "question": "Quantos meses existem em 78 anos?",
+      "answer": 936
+    },
+    {
+      "question": "Quantos dias existem em 78 semanas?",
+      "answer": 546
+    },
+    {
+      "question": "Quantas horas tem 78 dias?",
+      "answer": 1872
+    },
+    {
+      "question": "Quantos meses existem em 79 anos?",
+      "answer": 948
+    },
+    {
+      "question": "Quantos dias existem em 79 semanas?",
+      "answer": 553
+    },
+    {
+      "question": "Quantas horas tem 79 dias?",
+      "answer": 1896
+    },
+    {
+      "question": "Quantos meses existem em 80 anos?",
+      "answer": 960
+    },
+    {
+      "question": "Quantos dias existem em 80 semanas?",
+      "answer": 560
+    },
+    {
+      "question": "Quantas horas tem 80 dias?",
+      "answer": 1920
+    },
+    {
+      "question": "Quantos meses existem em 81 anos?",
+      "answer": 972
+    },
+    {
+      "question": "Quantos dias existem em 81 semanas?",
+      "answer": 567
+    },
+    {
+      "question": "Quantas horas tem 81 dias?",
+      "answer": 1944
+    },
+    {
+      "question": "Quantos meses existem em 82 anos?",
+      "answer": 984
+    },
+    {
+      "question": "Quantos dias existem em 82 semanas?",
+      "answer": 574
+    },
+    {
+      "question": "Quantas horas tem 82 dias?",
+      "answer": 1968
+    },
+    {
+      "question": "Quantos meses existem em 83 anos?",
+      "answer": 996
+    },
+    {
+      "question": "Quantos dias existem em 83 semanas?",
+      "answer": 581
+    },
+    {
+      "question": "Quantas horas tem 83 dias?",
+      "answer": 1992
+    },
+    {
+      "question": "Quantos meses existem em 84 anos?",
+      "answer": 1008
+    },
+    {
+      "question": "Quantos dias existem em 84 semanas?",
+      "answer": 588
+    },
+    {
+      "question": "Quantas horas tem 84 dias?",
+      "answer": 2016
+    },
+    {
+      "question": "Quantos meses existem em 85 anos?",
+      "answer": 1020
+    },
+    {
+      "question": "Quantos dias existem em 85 semanas?",
+      "answer": 595
+    },
+    {
+      "question": "Quantas horas tem 85 dias?",
+      "answer": 2040
+    },
+    {
+      "question": "Quantos meses existem em 86 anos?",
+      "answer": 1032
+    },
+    {
+      "question": "Quantos dias existem em 86 semanas?",
+      "answer": 602
+    },
+    {
+      "question": "Quantas horas tem 86 dias?",
+      "answer": 2064
+    },
+    {
+      "question": "Quantos meses existem em 87 anos?",
+      "answer": 1044
+    },
+    {
+      "question": "Quantos dias existem em 87 semanas?",
+      "answer": 609
+    },
+    {
+      "question": "Quantas horas tem 87 dias?",
+      "answer": 2088
+    },
+    {
+      "question": "Quantos meses existem em 88 anos?",
+      "answer": 1056
+    },
+    {
+      "question": "Quantos dias existem em 88 semanas?",
+      "answer": 616
+    },
+    {
+      "question": "Quantas horas tem 88 dias?",
+      "answer": 2112
+    },
+    {
+      "question": "Quantos meses existem em 89 anos?",
+      "answer": 1068
+    },
+    {
+      "question": "Quantos dias existem em 89 semanas?",
+      "answer": 623
+    },
+    {
+      "question": "Quantas horas tem 89 dias?",
+      "answer": 2136
+    },
+    {
+      "question": "Quantos meses existem em 90 anos?",
+      "answer": 1080
+    },
+    {
+      "question": "Quantos dias existem em 90 semanas?",
+      "answer": 630
+    },
+    {
+      "question": "Quantas horas tem 90 dias?",
+      "answer": 2160
+    },
+    {
+      "question": "Quantos meses existem em 91 anos?",
+      "answer": 1092
+    },
+    {
+      "question": "Quantos dias existem em 91 semanas?",
+      "answer": 637
+    },
+    {
+      "question": "Quantas horas tem 91 dias?",
+      "answer": 2184
+    },
+    {
+      "question": "Quantos meses existem em 92 anos?",
+      "answer": 1104
+    },
+    {
+      "question": "Quantos dias existem em 92 semanas?",
+      "answer": 644
+    },
+    {
+      "question": "Quantas horas tem 92 dias?",
+      "answer": 2208
+    },
+    {
+      "question": "Quantos meses existem em 93 anos?",
+      "answer": 1116
+    },
+    {
+      "question": "Quantos dias existem em 93 semanas?",
+      "answer": 651
+    },
+    {
+      "question": "Quantas horas tem 93 dias?",
+      "answer": 2232
+    },
+    {
+      "question": "Quantos meses existem em 94 anos?",
+      "answer": 1128
+    },
+    {
+      "question": "Quantos dias existem em 94 semanas?",
+      "answer": 658
+    },
+    {
+      "question": "Quantas horas tem 94 dias?",
+      "answer": 2256
+    },
+    {
+      "question": "Quantos meses existem em 95 anos?",
+      "answer": 1140
+    },
+    {
+      "question": "Quantos dias existem em 95 semanas?",
+      "answer": 665
+    },
+    {
+      "question": "Quantas horas tem 95 dias?",
+      "answer": 2280
+    },
+    {
+      "question": "Quantos meses existem em 96 anos?",
+      "answer": 1152
+    },
+    {
+      "question": "Quantos dias existem em 96 semanas?",
+      "answer": 672
+    },
+    {
+      "question": "Quantas horas tem 96 dias?",
+      "answer": 2304
+    },
+    {
+      "question": "Quantos meses existem em 97 anos?",
+      "answer": 1164
+    },
+    {
+      "question": "Quantos dias existem em 97 semanas?",
+      "answer": 679
+    },
+    {
+      "question": "Quantas horas tem 97 dias?",
+      "answer": 2328
+    },
+    {
+      "question": "Quantos meses existem em 98 anos?",
+      "answer": 1176
+    },
+    {
+      "question": "Quantos dias existem em 98 semanas?",
+      "answer": 686
+    },
+    {
+      "question": "Quantas horas tem 98 dias?",
+      "answer": 2352
+    },
+    {
+      "question": "Quantos meses existem em 99 anos?",
+      "answer": 1188
+    },
+    {
+      "question": "Quantos dias existem em 99 semanas?",
+      "answer": 693
+    },
+    {
+      "question": "Quantas horas tem 99 dias?",
+      "answer": 2376
+    },
+    {
+      "question": "Quantos meses existem em 100 anos?",
+      "answer": 1200
+    },
+    {
+      "question": "Quantos dias existem em 100 semanas?",
+      "answer": 700
+    },
+    {
+      "question": "Quantas horas tem 100 dias?",
+      "answer": 2400
+    },
+    {
+      "question": "Quantos meses existem em 101 anos?",
+      "answer": 1212
+    },
+    {
+      "question": "Quantos dias existem em 101 semanas?",
+      "answer": 707
+    },
+    {
+      "question": "Quantas horas tem 101 dias?",
+      "answer": 2424
+    },
+    {
+      "question": "Quantos meses existem em 102 anos?",
+      "answer": 1224
+    },
+    {
+      "question": "Quantos dias existem em 102 semanas?",
+      "answer": 714
+    },
+    {
+      "question": "Quantas horas tem 102 dias?",
+      "answer": 2448
+    },
+    {
+      "question": "Quantos meses existem em 103 anos?",
+      "answer": 1236
+    },
+    {
+      "question": "Quantos dias existem em 103 semanas?",
+      "answer": 721
+    },
+    {
+      "question": "Quantas horas tem 103 dias?",
+      "answer": 2472
+    },
+    {
+      "question": "Quantos meses existem em 104 anos?",
+      "answer": 1248
+    },
+    {
+      "question": "Quantos dias existem em 104 semanas?",
+      "answer": 728
+    },
+    {
+      "question": "Quantas horas tem 104 dias?",
+      "answer": 2496
+    },
+    {
+      "question": "Quantos meses existem em 105 anos?",
+      "answer": 1260
+    },
+    {
+      "question": "Quantos dias existem em 105 semanas?",
+      "answer": 735
+    },
+    {
+      "question": "Quantas horas tem 105 dias?",
+      "answer": 2520
+    },
+    {
+      "question": "Quantos meses existem em 106 anos?",
+      "answer": 1272
+    },
+    {
+      "question": "Quantos dias existem em 106 semanas?",
+      "answer": 742
+    },
+    {
+      "question": "Quantas horas tem 106 dias?",
+      "answer": 2544
+    },
+    {
+      "question": "Quantos meses existem em 107 anos?",
+      "answer": 1284
+    },
+    {
+      "question": "Quantos dias existem em 107 semanas?",
+      "answer": 749
+    },
+    {
+      "question": "Quantas horas tem 107 dias?",
+      "answer": 2568
+    },
+    {
+      "question": "Quantos meses existem em 108 anos?",
+      "answer": 1296
+    },
+    {
+      "question": "Quantos dias existem em 108 semanas?",
+      "answer": 756
+    },
+    {
+      "question": "Quantas horas tem 108 dias?",
+      "answer": 2592
+    },
+    {
+      "question": "Quantos meses existem em 109 anos?",
+      "answer": 1308
+    },
+    {
+      "question": "Quantos dias existem em 109 semanas?",
+      "answer": 763
+    },
+    {
+      "question": "Quantas horas tem 109 dias?",
+      "answer": 2616
+    },
+    {
+      "question": "Quantos meses existem em 110 anos?",
+      "answer": 1320
+    },
+    {
+      "question": "Quantos dias existem em 110 semanas?",
+      "answer": 770
+    },
+    {
+      "question": "Quantas horas tem 110 dias?",
+      "answer": 2640
+    },
+    {
+      "question": "Quantos meses existem em 111 anos?",
+      "answer": 1332
+    },
+    {
+      "question": "Quantos dias existem em 111 semanas?",
+      "answer": 777
+    },
+    {
+      "question": "Quantas horas tem 111 dias?",
+      "answer": 2664
+    },
+    {
+      "question": "Quantos meses existem em 112 anos?",
+      "answer": 1344
+    },
+    {
+      "question": "Quantos dias existem em 112 semanas?",
+      "answer": 784
+    },
+    {
+      "question": "Quantas horas tem 112 dias?",
+      "answer": 2688
+    },
+    {
+      "question": "Quantos meses existem em 113 anos?",
+      "answer": 1356
+    },
+    {
+      "question": "Quantos dias existem em 113 semanas?",
+      "answer": 791
+    },
+    {
+      "question": "Quantas horas tem 113 dias?",
+      "answer": 2712
+    },
+    {
+      "question": "Quantos meses existem em 114 anos?",
+      "answer": 1368
+    },
+    {
+      "question": "Quantos dias existem em 114 semanas?",
+      "answer": 798
+    },
+    {
+      "question": "Quantas horas tem 114 dias?",
+      "answer": 2736
+    },
+    {
+      "question": "Quantos meses existem em 115 anos?",
+      "answer": 1380
+    },
+    {
+      "question": "Quantos dias existem em 115 semanas?",
+      "answer": 805
+    },
+    {
+      "question": "Quantas horas tem 115 dias?",
+      "answer": 2760
+    },
+    {
+      "question": "Quantos meses existem em 116 anos?",
+      "answer": 1392
+    },
+    {
+      "question": "Quantos dias existem em 116 semanas?",
+      "answer": 812
+    },
+    {
+      "question": "Quantas horas tem 116 dias?",
+      "answer": 2784
+    },
+    {
+      "question": "Quantos meses existem em 117 anos?",
+      "answer": 1404
+    },
+    {
+      "question": "Quantos dias existem em 117 semanas?",
+      "answer": 819
+    },
+    {
+      "question": "Quantas horas tem 117 dias?",
+      "answer": 2808
+    },
+    {
+      "question": "Quantos meses existem em 118 anos?",
+      "answer": 1416
+    },
+    {
+      "question": "Quantos dias existem em 118 semanas?",
+      "answer": 826
+    },
+    {
+      "question": "Quantas horas tem 118 dias?",
+      "answer": 2832
+    },
+    {
+      "question": "Quantos meses existem em 119 anos?",
+      "answer": 1428
+    },
+    {
+      "question": "Quantos dias existem em 119 semanas?",
+      "answer": 833
+    },
+    {
+      "question": "Quantas horas tem 119 dias?",
+      "answer": 2856
+    },
+    {
+      "question": "Quantos meses existem em 120 anos?",
+      "answer": 1440
+    },
+    {
+      "question": "Quantos dias existem em 120 semanas?",
+      "answer": 840
+    },
+    {
+      "question": "Quantas horas tem 120 dias?",
+      "answer": 2880
+    },
+    {
+      "question": "Quantos meses existem em 121 anos?",
+      "answer": 1452
+    },
+    {
+      "question": "Quantos dias existem em 121 semanas?",
+      "answer": 847
+    },
+    {
+      "question": "Quantas horas tem 121 dias?",
+      "answer": 2904
+    },
+    {
+      "question": "Quantos meses existem em 122 anos?",
+      "answer": 1464
+    },
+    {
+      "question": "Quantos dias existem em 122 semanas?",
+      "answer": 854
+    },
+    {
+      "question": "Quantas horas tem 122 dias?",
+      "answer": 2928
+    },
+    {
+      "question": "Quantos meses existem em 123 anos?",
+      "answer": 1476
+    },
+    {
+      "question": "Quantos dias existem em 123 semanas?",
+      "answer": 861
+    },
+    {
+      "question": "Quantas horas tem 123 dias?",
+      "answer": 2952
+    },
+    {
+      "question": "Quantos meses existem em 124 anos?",
+      "answer": 1488
+    },
+    {
+      "question": "Quantos dias existem em 124 semanas?",
+      "answer": 868
+    },
+    {
+      "question": "Quantas horas tem 124 dias?",
+      "answer": 2976
+    },
+    {
+      "question": "Quantos meses existem em 125 anos?",
+      "answer": 1500
+    },
+    {
+      "question": "Quantos dias existem em 125 semanas?",
+      "answer": 875
+    },
+    {
+      "question": "Quantas horas tem 125 dias?",
+      "answer": 3000
+    },
+    {
+      "question": "Quantos meses existem em 126 anos?",
+      "answer": 1512
+    },
+    {
+      "question": "Quantos dias existem em 126 semanas?",
+      "answer": 882
+    },
+    {
+      "question": "Quantas horas tem 126 dias?",
+      "answer": 3024
+    },
+    {
+      "question": "Quantos meses existem em 127 anos?",
+      "answer": 1524
+    },
+    {
+      "question": "Quantos dias existem em 127 semanas?",
+      "answer": 889
+    },
+    {
+      "question": "Quantas horas tem 127 dias?",
+      "answer": 3048
+    },
+    {
+      "question": "Quantos meses existem em 128 anos?",
+      "answer": 1536
+    },
+    {
+      "question": "Quantos dias existem em 128 semanas?",
+      "answer": 896
+    },
+    {
+      "question": "Quantas horas tem 128 dias?",
+      "answer": 3072
+    },
+    {
+      "question": "Quantos meses existem em 129 anos?",
+      "answer": 1548
+    },
+    {
+      "question": "Quantos dias existem em 129 semanas?",
+      "answer": 903
+    },
+    {
+      "question": "Quantas horas tem 129 dias?",
+      "answer": 3096
+    },
+    {
+      "question": "Quantos meses existem em 130 anos?",
+      "answer": 1560
+    },
+    {
+      "question": "Quantos dias existem em 130 semanas?",
+      "answer": 910
+    },
+    {
+      "question": "Quantas horas tem 130 dias?",
+      "answer": 3120
+    },
+    {
+      "question": "Quantos meses existem em 131 anos?",
+      "answer": 1572
+    },
+    {
+      "question": "Quantos dias existem em 131 semanas?",
+      "answer": 917
+    },
+    {
+      "question": "Quantas horas tem 131 dias?",
+      "answer": 3144
+    },
+    {
+      "question": "Quantos meses existem em 132 anos?",
+      "answer": 1584
+    },
+    {
+      "question": "Quantos dias existem em 132 semanas?",
+      "answer": 924
+    },
+    {
+      "question": "Quantas horas tem 132 dias?",
+      "answer": 3168
+    },
+    {
+      "question": "Quantos meses existem em 133 anos?",
+      "answer": 1596
+    },
+    {
+      "question": "Quantos dias existem em 133 semanas?",
+      "answer": 931
+    },
+    {
+      "question": "Quantas horas tem 133 dias?",
+      "answer": 3192
+    },
+    {
+      "question": "Quantos meses existem em 134 anos?",
+      "answer": 1608
+    },
+    {
+      "question": "Quantos dias existem em 134 semanas?",
+      "answer": 938
+    },
+    {
+      "question": "Quantas horas tem 134 dias?",
+      "answer": 3216
+    },
+    {
+      "question": "Quantos meses existem em 135 anos?",
+      "answer": 1620
+    },
+    {
+      "question": "Quantos dias existem em 135 semanas?",
+      "answer": 945
+    },
+    {
+      "question": "Quantas horas tem 135 dias?",
+      "answer": 3240
+    },
+    {
+      "question": "Quantos meses existem em 136 anos?",
+      "answer": 1632
+    },
+    {
+      "question": "Quantos dias existem em 136 semanas?",
+      "answer": 952
+    },
+    {
+      "question": "Quantas horas tem 136 dias?",
+      "answer": 3264
+    },
+    {
+      "question": "Quantos meses existem em 137 anos?",
+      "answer": 1644
+    },
+    {
+      "question": "Quantos dias existem em 137 semanas?",
+      "answer": 959
+    },
+    {
+      "question": "Quantas horas tem 137 dias?",
+      "answer": 3288
+    },
+    {
+      "question": "Quantos meses existem em 138 anos?",
+      "answer": 1656
+    },
+    {
+      "question": "Quantos dias existem em 138 semanas?",
+      "answer": 966
+    },
+    {
+      "question": "Quantas horas tem 138 dias?",
+      "answer": 3312
+    },
+    {
+      "question": "Quantos meses existem em 139 anos?",
+      "answer": 1668
+    },
+    {
+      "question": "Quantos dias existem em 139 semanas?",
+      "answer": 973
+    },
+    {
+      "question": "Quantas horas tem 139 dias?",
+      "answer": 3336
+    },
+    {
+      "question": "Quantos meses existem em 140 anos?",
+      "answer": 1680
+    },
+    {
+      "question": "Quantos dias existem em 140 semanas?",
+      "answer": 980
+    },
+    {
+      "question": "Quantas horas tem 140 dias?",
+      "answer": 3360
+    },
+    {
+      "question": "Quantos meses existem em 141 anos?",
+      "answer": 1692
+    },
+    {
+      "question": "Quantos dias existem em 141 semanas?",
+      "answer": 987
+    },
+    {
+      "question": "Quantas horas tem 141 dias?",
+      "answer": 3384
+    },
+    {
+      "question": "Quantos meses existem em 142 anos?",
+      "answer": 1704
+    },
+    {
+      "question": "Quantos dias existem em 142 semanas?",
+      "answer": 994
+    },
+    {
+      "question": "Quantas horas tem 142 dias?",
+      "answer": 3408
+    },
+    {
+      "question": "Quantos meses existem em 143 anos?",
+      "answer": 1716
+    },
+    {
+      "question": "Quantos dias existem em 143 semanas?",
+      "answer": 1001
+    },
+    {
+      "question": "Quantas horas tem 143 dias?",
+      "answer": 3432
+    },
+    {
+      "question": "Quantos meses existem em 144 anos?",
+      "answer": 1728
+    },
+    {
+      "question": "Quantos dias existem em 144 semanas?",
+      "answer": 1008
+    },
+    {
+      "question": "Quantas horas tem 144 dias?",
+      "answer": 3456
+    },
+    {
+      "question": "Quantos meses existem em 145 anos?",
+      "answer": 1740
+    },
+    {
+      "question": "Quantos dias existem em 145 semanas?",
+      "answer": 1015
+    },
+    {
+      "question": "Quantas horas tem 145 dias?",
+      "answer": 3480
+    },
+    {
+      "question": "Quantos meses existem em 146 anos?",
+      "answer": 1752
+    },
+    {
+      "question": "Quantos dias existem em 146 semanas?",
+      "answer": 1022
+    },
+    {
+      "question": "Quantas horas tem 146 dias?",
+      "answer": 3504
+    },
+    {
+      "question": "Quantos meses existem em 147 anos?",
+      "answer": 1764
+    },
+    {
+      "question": "Quantos dias existem em 147 semanas?",
+      "answer": 1029
+    },
+    {
+      "question": "Quantas horas tem 147 dias?",
+      "answer": 3528
+    },
+    {
+      "question": "Quantos meses existem em 148 anos?",
+      "answer": 1776
+    },
+    {
+      "question": "Quantos dias existem em 148 semanas?",
+      "answer": 1036
+    },
+    {
+      "question": "Quantas horas tem 148 dias?",
+      "answer": 3552
+    },
+    {
+      "question": "Quantos meses existem em 149 anos?",
+      "answer": 1788
+    },
+    {
+      "question": "Quantos dias existem em 149 semanas?",
+      "answer": 1043
+    },
+    {
+      "question": "Quantas horas tem 149 dias?",
+      "answer": 3576
+    },
+    {
+      "question": "Quantos meses existem em 150 anos?",
+      "answer": 1800
+    },
+    {
+      "question": "Quantos dias existem em 150 semanas?",
+      "answer": 1050
+    },
+    {
+      "question": "Quantas horas tem 150 dias?",
+      "answer": 3600
+    },
+    {
+      "question": "Quantos meses existem em 151 anos?",
+      "answer": 1812
+    },
+    {
+      "question": "Quantos dias existem em 151 semanas?",
+      "answer": 1057
+    },
+    {
+      "question": "Quantas horas tem 151 dias?",
+      "answer": 3624
+    },
+    {
+      "question": "Qual o resultado de 1 multiplicado por 15?",
+      "answer": 15
+    },
+    {
+      "question": "Qual o resultado de 1 multiplicado por 25?",
+      "answer": 25
+    },
+    {
+      "question": "Qual o resultado de 1 multiplicado por 50?",
+      "answer": 50
+    },
+    {
+      "question": "Quantos centímetros existem em 1 metros?",
+      "answer": 100
+    },
+    {
+      "question": "Qual o resultado de 2 multiplicado por 15?",
+      "answer": 30
+    },
+    {
+      "question": "Qual o resultado de 2 multiplicado por 25?",
+      "answer": 50
+    },
+    {
+      "question": "Qual o resultado de 2 multiplicado por 50?",
+      "answer": 100
+    },
+    {
+      "question": "Quantos centímetros existem em 2 metros?",
+      "answer": 200
+    },
+    {
+      "question": "Qual o resultado de 3 multiplicado por 15?",
+      "answer": 45
+    },
+    {
+      "question": "Qual o resultado de 3 multiplicado por 25?",
+      "answer": 75
+    },
+    {
+      "question": "Qual o resultado de 3 multiplicado por 50?",
+      "answer": 150
+    },
+    {
+      "question": "Quantos centímetros existem em 3 metros?",
+      "answer": 300
+    },
+    {
+      "question": "Qual o resultado de 4 multiplicado por 15?",
+      "answer": 60
+    },
+    {
+      "question": "Qual o resultado de 4 multiplicado por 25?",
+      "answer": 100
+    },
+    {
+      "question": "Qual o resultado de 4 multiplicado por 50?",
+      "answer": 200
+    },
+    {
+      "question": "Quantos centímetros existem em 4 metros?",
+      "answer": 400
+    },
+    {
+      "question": "Qual o resultado de 5 multiplicado por 15?",
+      "answer": 75
+    },
+    {
+      "question": "Qual o resultado de 5 multiplicado por 25?",
+      "answer": 125
+    },
+    {
+      "question": "Qual o resultado de 5 multiplicado por 50?",
+      "answer": 250
+    },
+    {
+      "question": "Quantos centímetros existem em 5 metros?",
+      "answer": 500
+    },
+    {
+      "question": "Qual o resultado de 6 multiplicado por 15?",
+      "answer": 90
+    },
+    {
+      "question": "Qual o resultado de 6 multiplicado por 25?",
+      "answer": 150
+    },
+    {
+      "question": "Qual o resultado de 6 multiplicado por 50?",
+      "answer": 300
+    },
+    {
+      "question": "Quantos centímetros existem em 6 metros?",
+      "answer": 600
+    },
+    {
+      "question": "Qual o resultado de 7 multiplicado por 15?",
+      "answer": 105
+    },
+    {
+      "question": "Qual o resultado de 7 multiplicado por 25?",
+      "answer": 175
+    },
+    {
+      "question": "Qual o resultado de 7 multiplicado por 50?",
+      "answer": 350
+    },
+    {
+      "question": "Quantos centímetros existem em 7 metros?",
+      "answer": 700
+    },
+    {
+      "question": "Qual o resultado de 8 multiplicado por 15?",
+      "answer": 120
+    },
+    {
+      "question": "Qual o resultado de 8 multiplicado por 25?",
+      "answer": 200
+    },
+    {
+      "question": "Qual o resultado de 8 multiplicado por 50?",
+      "answer": 400
+    },
+    {
+      "question": "Quantos centímetros existem em 8 metros?",
+      "answer": 800
+    },
+    {
+      "question": "Qual o resultado de 9 multiplicado por 15?",
+      "answer": 135
+    },
+    {
+      "question": "Qual o resultado de 9 multiplicado por 25?",
+      "answer": 225
+    },
+    {
+      "question": "Qual o resultado de 9 multiplicado por 50?",
+      "answer": 450
+    },
+    {
+      "question": "Quantos centímetros existem em 9 metros?",
+      "answer": 900
+    },
+    {
+      "question": "Qual o resultado de 10 multiplicado por 15?",
+      "answer": 150
+    },
+    {
+      "question": "Qual o resultado de 10 multiplicado por 25?",
+      "answer": 250
+    },
+    {
+      "question": "Qual o resultado de 10 multiplicado por 50?",
+      "answer": 500
+    },
+    {
+      "question": "Quantos centímetros existem em 10 metros?",
+      "answer": 1000
+    },
+    {
+      "question": "Qual o resultado de 11 multiplicado por 15?",
+      "answer": 165
+    },
+    {
+      "question": "Qual o resultado de 11 multiplicado por 25?",
+      "answer": 275
+    },
+    {
+      "question": "Qual o resultado de 11 multiplicado por 50?",
+      "answer": 550
+    },
+    {
+      "question": "Quantos centímetros existem em 11 metros?",
+      "answer": 1100
+    },
+    {
+      "question": "Qual o resultado de 12 multiplicado por 15?",
+      "answer": 180
+    },
+    {
+      "question": "Qual o resultado de 12 multiplicado por 25?",
+      "answer": 300
+    },
+    {
+      "question": "Qual o resultado de 12 multiplicado por 50?",
+      "answer": 600
+    },
+    {
+      "question": "Quantos centímetros existem em 12 metros?",
+      "answer": 1200
+    },
+    {
+      "question": "Qual o resultado de 13 multiplicado por 15?",
+      "answer": 195
+    },
+    {
+      "question": "Qual o resultado de 13 multiplicado por 25?",
+      "answer": 325
+    },
+    {
+      "question": "Qual o resultado de 13 multiplicado por 50?",
+      "answer": 650
+    },
+    {
+      "question": "Quantos centímetros existem em 13 metros?",
+      "answer": 1300
+    },
+    {
+      "question": "Qual o resultado de 14 multiplicado por 15?",
+      "answer": 210
+    },
+    {
+      "question": "Qual o resultado de 14 multiplicado por 25?",
+      "answer": 350
+    },
+    {
+      "question": "Qual o resultado de 14 multiplicado por 50?",
+      "answer": 700
+    },
+    {
+      "question": "Quantos centímetros existem em 14 metros?",
+      "answer": 1400
+    },
+    {
+      "question": "Qual o resultado de 15 multiplicado por 15?",
+      "answer": 225
+    },
+    {
+      "question": "Qual o resultado de 15 multiplicado por 25?",
+      "answer": 375
+    },
+    {
+      "question": "Qual o resultado de 15 multiplicado por 50?",
+      "answer": 750
+    },
+    {
+      "question": "Quantos centímetros existem em 15 metros?",
+      "answer": 1500
+    },
+    {
+      "question": "Qual o resultado de 16 multiplicado por 15?",
+      "answer": 240
+    },
+    {
+      "question": "Qual o resultado de 16 multiplicado por 25?",
+      "answer": 400
+    },
+    {
+      "question": "Qual o resultado de 16 multiplicado por 50?",
+      "answer": 800
+    },
+    {
+      "question": "Quantos centímetros existem em 16 metros?",
+      "answer": 1600
+    },
+    {
+      "question": "Qual o resultado de 17 multiplicado por 15?",
+      "answer": 255
+    },
+    {
+      "question": "Qual o resultado de 17 multiplicado por 25?",
+      "answer": 425
+    },
+    {
+      "question": "Qual o resultado de 17 multiplicado por 50?",
+      "answer": 850
+    },
+    {
+      "question": "Quantos centímetros existem em 17 metros?",
+      "answer": 1700
+    },
+    {
+      "question": "Qual o resultado de 18 multiplicado por 15?",
+      "answer": 270
+    },
+    {
+      "question": "Qual o resultado de 18 multiplicado por 25?",
+      "answer": 450
+    },
+    {
+      "question": "Qual o resultado de 18 multiplicado por 50?",
+      "answer": 900
+    },
+    {
+      "question": "Quantos centímetros existem em 18 metros?",
+      "answer": 1800
+    },
+    {
+      "question": "Qual o resultado de 19 multiplicado por 15?",
+      "answer": 285
+    },
+    {
+      "question": "Qual o resultado de 19 multiplicado por 25?",
+      "answer": 475
+    },
+    {
+      "question": "Qual o resultado de 19 multiplicado por 50?",
+      "answer": 950
+    },
+    {
+      "question": "Quantos centímetros existem em 19 metros?",
+      "answer": 1900
+    },
+    {
+      "question": "Qual o resultado de 20 multiplicado por 15?",
+      "answer": 300
+    },
+    {
+      "question": "Qual o resultado de 20 multiplicado por 25?",
+      "answer": 500
+    },
+    {
+      "question": "Qual o resultado de 20 multiplicado por 50?",
+      "answer": 1000
+    },
+    {
+      "question": "Quantos centímetros existem em 20 metros?",
+      "answer": 2000
+    },
+    {
+      "question": "Qual o resultado de 21 multiplicado por 15?",
+      "answer": 315
+    },
+    {
+      "question": "Qual o resultado de 21 multiplicado por 25?",
+      "answer": 525
+    },
+    {
+      "question": "Qual o resultado de 21 multiplicado por 50?",
+      "answer": 1050
+    },
+    {
+      "question": "Quantos centímetros existem em 21 metros?",
+      "answer": 2100
+    },
+    {
+      "question": "Qual o resultado de 22 multiplicado por 15?",
+      "answer": 330
+    },
+    {
+      "question": "Qual o resultado de 22 multiplicado por 25?",
+      "answer": 550
+    },
+    {
+      "question": "Qual o resultado de 22 multiplicado por 50?",
+      "answer": 1100
+    },
+    {
+      "question": "Quantos centímetros existem em 22 metros?",
+      "answer": 2200
+    },
+    {
+      "question": "Qual o resultado de 23 multiplicado por 15?",
+      "answer": 345
+    },
+    {
+      "question": "Qual o resultado de 23 multiplicado por 25?",
+      "answer": 575
+    },
+    {
+      "question": "Qual o resultado de 23 multiplicado por 50?",
+      "answer": 1150
+    },
+    {
+      "question": "Quantos centímetros existem em 23 metros?",
+      "answer": 2300
+    },
+    {
+      "question": "Qual o resultado de 24 multiplicado por 15?",
+      "answer": 360
+    },
+    {
+      "question": "Qual o resultado de 24 multiplicado por 25?",
+      "answer": 600
+    },
+    {
+      "question": "Qual o resultado de 24 multiplicado por 50?",
+      "answer": 1200
+    },
+    {
+      "question": "Quantos centímetros existem em 24 metros?",
+      "answer": 2400
+    },
+    {
+      "question": "Qual o resultado de 25 multiplicado por 15?",
+      "answer": 375
+    },
+    {
+      "question": "Qual o resultado de 25 multiplicado por 25?",
+      "answer": 625
+    },
+    {
+      "question": "Qual o resultado de 25 multiplicado por 50?",
+      "answer": 1250
+    },
+    {
+      "question": "Quantos centímetros existem em 25 metros?",
+      "answer": 2500
+    },
+    {
+      "question": "Qual o resultado de 26 multiplicado por 15?",
+      "answer": 390
+    },
+    {
+      "question": "Qual o resultado de 26 multiplicado por 25?",
+      "answer": 650
+    },
+    {
+      "question": "Qual o resultado de 26 multiplicado por 50?",
+      "answer": 1300
+    },
+    {
+      "question": "Quantos centímetros existem em 26 metros?",
+      "answer": 2600
+    },
+    {
+      "question": "Qual o resultado de 27 multiplicado por 15?",
+      "answer": 405
+    },
+    {
+      "question": "Qual o resultado de 27 multiplicado por 25?",
+      "answer": 675
+    },
+    {
+      "question": "Qual o resultado de 27 multiplicado por 50?",
+      "answer": 1350
+    },
+    {
+      "question": "Quantos centímetros existem em 27 metros?",
+      "answer": 2700
+    },
+    {
+      "question": "Qual o resultado de 28 multiplicado por 15?",
+      "answer": 420
+    },
+    {
+      "question": "Qual o resultado de 28 multiplicado por 25?",
+      "answer": 700
+    },
+    {
+      "question": "Qual o resultado de 28 multiplicado por 50?",
+      "answer": 1400
+    },
+    {
+      "question": "Quantos centímetros existem em 28 metros?",
+      "answer": 2800
+    },
+    {
+      "question": "Qual o resultado de 29 multiplicado por 15?",
+      "answer": 435
+    },
+    {
+      "question": "Qual o resultado de 29 multiplicado por 25?",
+      "answer": 725
+    },
+    {
+      "question": "Qual o resultado de 29 multiplicado por 50?",
+      "answer": 1450
+    },
+    {
+      "question": "Quantos centímetros existem em 29 metros?",
+      "answer": 2900
+    },
+    {
+      "question": "Qual o resultado de 30 multiplicado por 15?",
+      "answer": 450
+    },
+    {
+      "question": "Qual o resultado de 30 multiplicado por 25?",
+      "answer": 750
+    },
+    {
+      "question": "Qual o resultado de 30 multiplicado por 50?",
+      "answer": 1500
+    },
+    {
+      "question": "Quantos centímetros existem em 30 metros?",
+      "answer": 3000
+    },
+    {
+      "question": "Qual o resultado de 31 multiplicado por 15?",
+      "answer": 465
+    },
+    {
+      "question": "Qual o resultado de 31 multiplicado por 25?",
+      "answer": 775
+    },
+    {
+      "question": "Qual o resultado de 31 multiplicado por 50?",
+      "answer": 1550
+    },
+    {
+      "question": "Quantos centímetros existem em 31 metros?",
+      "answer": 3100
+    },
+    {
+      "question": "Qual o resultado de 32 multiplicado por 15?",
+      "answer": 480
+    },
+    {
+      "question": "Qual o resultado de 32 multiplicado por 25?",
+      "answer": 800
+    },
+    {
+      "question": "Qual o resultado de 32 multiplicado por 50?",
+      "answer": 1600
+    },
+    {
+      "question": "Quantos centímetros existem em 32 metros?",
+      "answer": 3200
+    },
+    {
+      "question": "Qual o resultado de 33 multiplicado por 15?",
+      "answer": 495
+    },
+    {
+      "question": "Qual o resultado de 33 multiplicado por 25?",
+      "answer": 825
+    },
+    {
+      "question": "Qual o resultado de 33 multiplicado por 50?",
+      "answer": 1650
+    },
+    {
+      "question": "Quantos centímetros existem em 33 metros?",
+      "answer": 3300
+    },
+    {
+      "question": "Qual o resultado de 34 multiplicado por 15?",
+      "answer": 510
+    },
+    {
+      "question": "Qual o resultado de 34 multiplicado por 25?",
+      "answer": 850
+    },
+    {
+      "question": "Qual o resultado de 34 multiplicado por 50?",
+      "answer": 1700
+    },
+    {
+      "question": "Quantos centímetros existem em 34 metros?",
+      "answer": 3400
+    },
+    {
+      "question": "Qual o resultado de 35 multiplicado por 15?",
+      "answer": 525
+    },
+    {
+      "question": "Qual o resultado de 35 multiplicado por 25?",
+      "answer": 875
+    },
+    {
+      "question": "Qual o resultado de 35 multiplicado por 50?",
+      "answer": 1750
+    },
+    {
+      "question": "Quantos centímetros existem em 35 metros?",
+      "answer": 3500
+    },
+    {
+      "question": "Qual o resultado de 36 multiplicado por 15?",
+      "answer": 540
+    },
+    {
+      "question": "Qual o resultado de 36 multiplicado por 25?",
+      "answer": 900
+    },
+    {
+      "question": "Qual o resultado de 36 multiplicado por 50?",
+      "answer": 1800
+    },
+    {
+      "question": "Quantos centímetros existem em 36 metros?",
+      "answer": 3600
+    },
+    {
+      "question": "Qual o resultado de 37 multiplicado por 15?",
+      "answer": 555
+    },
+    {
+      "question": "Qual o resultado de 37 multiplicado por 25?",
+      "answer": 925
+    },
+    {
+      "question": "Qual o resultado de 37 multiplicado por 50?",
+      "answer": 1850
+    },
+    {
+      "question": "Quantos centímetros existem em 37 metros?",
+      "answer": 3700
+    },
+    {
+      "question": "Qual o resultado de 38 multiplicado por 15?",
+      "answer": 570
+    },
+    {
+      "question": "Qual o resultado de 38 multiplicado por 25?",
+      "answer": 950
+    },
+    {
+      "question": "Qual o resultado de 38 multiplicado por 50?",
+      "answer": 1900
+    },
+    {
+      "question": "Quantos centímetros existem em 38 metros?",
+      "answer": 3800
+    },
+    {
+      "question": "Qual o resultado de 39 multiplicado por 15?",
+      "answer": 585
+    },
+    {
+      "question": "Qual o resultado de 39 multiplicado por 25?",
+      "answer": 975
+    },
+    {
+      "question": "Qual o resultado de 39 multiplicado por 50?",
+      "answer": 1950
+    },
+    {
+      "question": "Quantos centímetros existem em 39 metros?",
+      "answer": 3900
+    },
+    {
+      "question": "Qual o resultado de 40 multiplicado por 15?",
+      "answer": 600
+    },
+    {
+      "question": "Qual o resultado de 40 multiplicado por 25?",
+      "answer": 1000
+    },
+    {
+      "question": "Qual o resultado de 40 multiplicado por 50?",
+      "answer": 2000
+    },
+    {
+      "question": "Quantos centímetros existem em 40 metros?",
+      "answer": 4000
+    },
+    {
+      "question": "Qual o resultado de 41 multiplicado por 15?",
+      "answer": 615
+    },
+    {
+      "question": "Qual o resultado de 41 multiplicado por 25?",
+      "answer": 1025
+    },
+    {
+      "question": "Qual o resultado de 41 multiplicado por 50?",
+      "answer": 2050
+    },
+    {
+      "question": "Quantos centímetros existem em 41 metros?",
+      "answer": 4100
+    },
+    {
+      "question": "Qual o resultado de 42 multiplicado por 15?",
+      "answer": 630
+    },
+    {
+      "question": "Qual o resultado de 42 multiplicado por 25?",
+      "answer": 1050
+    },
+    {
+      "question": "Qual o resultado de 42 multiplicado por 50?",
+      "answer": 2100
+    },
+    {
+      "question": "Quantos centímetros existem em 42 metros?",
+      "answer": 4200
+    },
+    {
+      "question": "Qual o resultado de 43 multiplicado por 15?",
+      "answer": 645
+    },
+    {
+      "question": "Qual o resultado de 43 multiplicado por 25?",
+      "answer": 1075
+    },
+    {
+      "question": "Qual o resultado de 43 multiplicado por 50?",
+      "answer": 2150
+    },
+    {
+      "question": "Quantos centímetros existem em 43 metros?",
+      "answer": 4300
+    },
+    {
+      "question": "Qual o resultado de 44 multiplicado por 15?",
+      "answer": 660
+    },
+    {
+      "question": "Qual o resultado de 44 multiplicado por 25?",
+      "answer": 1100
+    },
+    {
+      "question": "Qual o resultado de 44 multiplicado por 50?",
+      "answer": 2200
+    },
+    {
+      "question": "Quantos centímetros existem em 44 metros?",
+      "answer": 4400
+    },
+    {
+      "question": "Qual o resultado de 45 multiplicado por 15?",
+      "answer": 675
+    },
+    {
+      "question": "Qual o resultado de 45 multiplicado por 25?",
+      "answer": 1125
+    },
+    {
+      "question": "Qual o resultado de 45 multiplicado por 50?",
+      "answer": 2250
+    },
+    {
+      "question": "Quantos centímetros existem em 45 metros?",
+      "answer": 4500
+    },
+    {
+      "question": "Qual o resultado de 46 multiplicado por 15?",
+      "answer": 690
+    },
+    {
+      "question": "Qual o resultado de 46 multiplicado por 25?",
+      "answer": 1150
+    },
+    {
+      "question": "Qual o resultado de 46 multiplicado por 50?",
+      "answer": 2300
+    },
+    {
+      "question": "Quantos centímetros existem em 46 metros?",
+      "answer": 4600
+    },
+    {
+      "question": "Qual o resultado de 47 multiplicado por 15?",
+      "answer": 705
+    },
+    {
+      "question": "Qual o resultado de 47 multiplicado por 25?",
+      "answer": 1175
+    },
+    {
+      "question": "Qual o resultado de 47 multiplicado por 50?",
+      "answer": 2350
+    },
+    {
+      "question": "Quantos centímetros existem em 47 metros?",
+      "answer": 4700
+    },
+    {
+      "question": "Qual o resultado de 48 multiplicado por 15?",
+      "answer": 720
+    },
+    {
+      "question": "Qual o resultado de 48 multiplicado por 25?",
+      "answer": 1200
+    },
+    {
+      "question": "Qual o resultado de 48 multiplicado por 50?",
+      "answer": 2400
+    },
+    {
+      "question": "Quantos centímetros existem em 48 metros?",
+      "answer": 4800
+    },
+    {
+      "question": "Qual o resultado de 49 multiplicado por 15?",
+      "answer": 735
+    },
+    {
+      "question": "Qual o resultado de 49 multiplicado por 25?",
+      "answer": 1225
+    },
+    {
+      "question": "Qual o resultado de 49 multiplicado por 50?",
+      "answer": 2450
+    },
+    {
+      "question": "Quantos centímetros existem em 49 metros?",
+      "answer": 4900
+    },
+    {
+      "question": "Qual o resultado de 50 multiplicado por 15?",
+      "answer": 750
+    },
+    {
+      "question": "Qual o resultado de 50 multiplicado por 25?",
+      "answer": 1250
+    },
+    {
+      "question": "Qual o resultado de 50 multiplicado por 50?",
+      "answer": 2500
+    },
+    {
+      "question": "Quantos centímetros existem em 50 metros?",
+      "answer": 5000
+    },
+    {
+      "question": "Qual o resultado de 51 multiplicado por 15?",
+      "answer": 765
+    },
+    {
+      "question": "Qual o resultado de 51 multiplicado por 25?",
+      "answer": 1275
+    },
+    {
+      "question": "Qual o resultado de 51 multiplicado por 50?",
+      "answer": 2550
+    },
+    {
+      "question": "Quantos centímetros existem em 51 metros?",
+      "answer": 5100
+    },
+    {
+      "question": "Qual o resultado de 52 multiplicado por 15?",
+      "answer": 780
+    },
+    {
+      "question": "Qual o resultado de 52 multiplicado por 25?",
+      "answer": 1300
+    },
+    {
+      "question": "Qual o resultado de 52 multiplicado por 50?",
+      "answer": 2600
+    },
+    {
+      "question": "Quantos centímetros existem em 52 metros?",
+      "answer": 5200
+    },
+    {
+      "question": "Qual o resultado de 53 multiplicado por 15?",
+      "answer": 795
+    },
+    {
+      "question": "Qual o resultado de 53 multiplicado por 25?",
+      "answer": 1325
+    },
+    {
+      "question": "Qual o resultado de 53 multiplicado por 50?",
+      "answer": 2650
+    },
+    {
+      "question": "Quantos centímetros existem em 53 metros?",
+      "answer": 5300
+    },
+    {
+      "question": "Qual o resultado de 54 multiplicado por 15?",
+      "answer": 810
+    },
+    {
+      "question": "Qual o resultado de 54 multiplicado por 25?",
+      "answer": 1350
+    },
+    {
+      "question": "Qual o resultado de 54 multiplicado por 50?",
+      "answer": 2700
+    },
+    {
+      "question": "Quantos centímetros existem em 54 metros?",
+      "answer": 5400
+    },
+    {
+      "question": "Qual o resultado de 55 multiplicado por 15?",
+      "answer": 825
+    },
+    {
+      "question": "Qual o resultado de 55 multiplicado por 25?",
+      "answer": 1375
+    },
+    {
+      "question": "Qual o resultado de 55 multiplicado por 50?",
+      "answer": 2750
+    },
+    {
+      "question": "Quantos centímetros existem em 55 metros?",
+      "answer": 5500
+    },
+    {
+      "question": "Qual o resultado de 56 multiplicado por 15?",
+      "answer": 840
+    },
+    {
+      "question": "Qual o resultado de 56 multiplicado por 25?",
+      "answer": 1400
+    },
+    {
+      "question": "Qual o resultado de 56 multiplicado por 50?",
+      "answer": 2800
+    },
+    {
+      "question": "Quantos centímetros existem em 56 metros?",
+      "answer": 5600
+    },
+    {
+      "question": "Qual o resultado de 57 multiplicado por 15?",
+      "answer": 855
+    },
+    {
+      "question": "Qual o resultado de 57 multiplicado por 25?",
+      "answer": 1425
+    },
+    {
+      "question": "Qual o resultado de 57 multiplicado por 50?",
+      "answer": 2850
+    },
+    {
+      "question": "Quantos centímetros existem em 57 metros?",
+      "answer": 5700
+    },
+    {
+      "question": "Qual o resultado de 58 multiplicado por 15?",
+      "answer": 870
+    },
+    {
+      "question": "Qual o resultado de 58 multiplicado por 25?",
+      "answer": 1450
+    },
+    {
+      "question": "Qual o resultado de 58 multiplicado por 50?",
+      "answer": 2900
+    },
+    {
+      "question": "Quantos centímetros existem em 58 metros?",
+      "answer": 5800
+    },
+    {
+      "question": "Qual o resultado de 59 multiplicado por 15?",
+      "answer": 885
+    },
+    {
+      "question": "Qual o resultado de 59 multiplicado por 25?",
+      "answer": 1475
+    },
+    {
+      "question": "Qual o resultado de 59 multiplicado por 50?",
+      "answer": 2950
+    },
+    {
+      "question": "Quantos centímetros existem em 59 metros?",
+      "answer": 5900
+    },
+    {
+      "question": "Qual o resultado de 60 multiplicado por 15?",
+      "answer": 900
+    },
+    {
+      "question": "Qual o resultado de 60 multiplicado por 25?",
+      "answer": 1500
+    },
+    {
+      "question": "Qual o resultado de 60 multiplicado por 50?",
+      "answer": 3000
+    },
+    {
+      "question": "Quantos centímetros existem em 60 metros?",
+      "answer": 6000
+    },
+    {
+      "question": "Qual o resultado de 61 multiplicado por 15?",
+      "answer": 915
+    },
+    {
+      "question": "Qual o resultado de 61 multiplicado por 25?",
+      "answer": 1525
+    },
+    {
+      "question": "Qual o resultado de 61 multiplicado por 50?",
+      "answer": 3050
+    },
+    {
+      "question": "Quantos centímetros existem em 61 metros?",
+      "answer": 6100
+    },
+    {
+      "question": "Qual o resultado de 62 multiplicado por 15?",
+      "answer": 930
+    },
+    {
+      "question": "Qual o resultado de 62 multiplicado por 25?",
+      "answer": 1550
+    },
+    {
+      "question": "Qual o resultado de 62 multiplicado por 50?",
+      "answer": 3100
+    },
+    {
+      "question": "Quantos centímetros existem em 62 metros?",
+      "answer": 6200
+    },
+    {
+      "question": "Qual o resultado de 63 multiplicado por 15?",
+      "answer": 945
+    },
+    {
+      "question": "Qual o resultado de 63 multiplicado por 25?",
+      "answer": 1575
+    },
+    {
+      "question": "Qual o resultado de 63 multiplicado por 50?",
+      "answer": 3150
+    },
+    {
+      "question": "Quantos centímetros existem em 63 metros?",
+      "answer": 6300
+    },
+    {
+      "question": "Qual o resultado de 64 multiplicado por 15?",
+      "answer": 960
+    },
+    {
+      "question": "Qual o resultado de 64 multiplicado por 25?",
+      "answer": 1600
+    },
+    {
+      "question": "Qual o resultado de 64 multiplicado por 50?",
+      "answer": 3200
+    },
+    {
+      "question": "Quantos centímetros existem em 64 metros?",
+      "answer": 6400
+    },
+    {
+      "question": "Qual o resultado de 65 multiplicado por 15?",
+      "answer": 975
+    },
+    {
+      "question": "Qual o resultado de 65 multiplicado por 25?",
+      "answer": 1625
+    },
+    {
+      "question": "Qual o resultado de 65 multiplicado por 50?",
+      "answer": 3250
+    },
+    {
+      "question": "Quantos centímetros existem em 65 metros?",
+      "answer": 6500
+    },
+    {
+      "question": "Qual o resultado de 66 multiplicado por 15?",
+      "answer": 990
+    },
+    {
+      "question": "Qual o resultado de 66 multiplicado por 25?",
+      "answer": 1650
+    },
+    {
+      "question": "Qual o resultado de 66 multiplicado por 50?",
+      "answer": 3300
+    },
+    {
+      "question": "Quantos centímetros existem em 66 metros?",
+      "answer": 6600
+    },
+    {
+      "question": "Qual o resultado de 67 multiplicado por 15?",
+      "answer": 1005
+    },
+    {
+      "question": "Qual o resultado de 67 multiplicado por 25?",
+      "answer": 1675
+    },
+    {
+      "question": "Qual o resultado de 67 multiplicado por 50?",
+      "answer": 3350
+    },
+    {
+      "question": "Quantos centímetros existem em 67 metros?",
+      "answer": 6700
+    },
+    {
+      "question": "Qual o resultado de 68 multiplicado por 15?",
+      "answer": 1020
+    },
+    {
+      "question": "Qual o resultado de 68 multiplicado por 25?",
+      "answer": 1700
+    },
+    {
+      "question": "Qual o resultado de 68 multiplicado por 50?",
+      "answer": 3400
+    },
+    {
+      "question": "Quantos centímetros existem em 68 metros?",
+      "answer": 6800
+    },
+    {
+      "question": "Qual o resultado de 69 multiplicado por 15?",
+      "answer": 1035
+    },
+    {
+      "question": "Qual o resultado de 69 multiplicado por 25?",
+      "answer": 1725
+    },
+    {
+      "question": "Qual o resultado de 69 multiplicado por 50?",
+      "answer": 3450
+    },
+    {
+      "question": "Quantos centímetros existem em 69 metros?",
+      "answer": 6900
+    },
+    {
+      "question": "Qual o resultado de 70 multiplicado por 15?",
+      "answer": 1050
+    },
+    {
+      "question": "Qual o resultado de 70 multiplicado por 25?",
+      "answer": 1750
+    },
+    {
+      "question": "Qual o resultado de 70 multiplicado por 50?",
+      "answer": 3500
+    },
+    {
+      "question": "Quantos centímetros existem em 70 metros?",
+      "answer": 7000
+    },
+    {
+      "question": "Qual o resultado de 71 multiplicado por 15?",
+      "answer": 1065
+    },
+    {
+      "question": "Qual o resultado de 71 multiplicado por 25?",
+      "answer": 1775
+    },
+    {
+      "question": "Qual o resultado de 71 multiplicado por 50?",
+      "answer": 3550
+    },
+    {
+      "question": "Quantos centímetros existem em 71 metros?",
+      "answer": 7100
+    },
+    {
+      "question": "Qual o resultado de 72 multiplicado por 15?",
+      "answer": 1080
+    },
+    {
+      "question": "Qual o resultado de 72 multiplicado por 25?",
+      "answer": 1800
+    },
+    {
+      "question": "Qual o resultado de 72 multiplicado por 50?",
+      "answer": 3600
+    },
+    {
+      "question": "Quantos centímetros existem em 72 metros?",
+      "answer": 7200
+    },
+    {
+      "question": "Qual o resultado de 73 multiplicado por 15?",
+      "answer": 1095
+    },
+    {
+      "question": "Qual o resultado de 73 multiplicado por 25?",
+      "answer": 1825
+    },
+    {
+      "question": "Qual o resultado de 73 multiplicado por 50?",
+      "answer": 3650
+    },
+    {
+      "question": "Quantos centímetros existem em 73 metros?",
+      "answer": 7300
+    },
+    {
+      "question": "Qual o resultado de 74 multiplicado por 15?",
+      "answer": 1110
+    },
+    {
+      "question": "Qual o resultado de 74 multiplicado por 25?",
+      "answer": 1850
+    },
+    {
+      "question": "Qual o resultado de 74 multiplicado por 50?",
+      "answer": 3700
+    },
+    {
+      "question": "Quantos centímetros existem em 74 metros?",
+      "answer": 7400
+    },
+    {
+      "question": "Qual o resultado de 75 multiplicado por 15?",
+      "answer": 1125
+    },
+    {
+      "question": "Qual o resultado de 75 multiplicado por 25?",
+      "answer": 1875
+    },
+    {
+      "question": "Qual o resultado de 75 multiplicado por 50?",
+      "answer": 3750
+    },
+    {
+      "question": "Quantos centímetros existem em 75 metros?",
+      "answer": 7500
+    },
+    {
+      "question": "Qual o resultado de 76 multiplicado por 15?",
+      "answer": 1140
+    },
+    {
+      "question": "Qual o resultado de 76 multiplicado por 25?",
+      "answer": 1900
+    },
+    {
+      "question": "Qual o resultado de 76 multiplicado por 50?",
+      "answer": 3800
+    },
+    {
+      "question": "Quantos centímetros existem em 76 metros?",
+      "answer": 7600
+    },
+    {
+      "question": "Qual o resultado de 77 multiplicado por 15?",
+      "answer": 1155
+    },
+    {
+      "question": "Qual o resultado de 77 multiplicado por 25?",
+      "answer": 1925
+    },
+    {
+      "question": "Qual o resultado de 77 multiplicado por 50?",
+      "answer": 3850
+    },
+    {
+      "question": "Quantos centímetros existem em 77 metros?",
+      "answer": 7700
+    },
+    {
+      "question": "Qual o resultado de 78 multiplicado por 15?",
+      "answer": 1170
+    },
+    {
+      "question": "Qual o resultado de 78 multiplicado por 25?",
+      "answer": 1950
+    },
+    {
+      "question": "Qual o resultado de 78 multiplicado por 50?",
+      "answer": 3900
+    },
+    {
+      "question": "Quantos centímetros existem em 78 metros?",
+      "answer": 7800
+    },
+    {
+      "question": "Qual o resultado de 79 multiplicado por 15?",
+      "answer": 1185
+    },
+    {
+      "question": "Qual o resultado de 79 multiplicado por 25?",
+      "answer": 1975
+    },
+    {
+      "question": "Qual o resultado de 79 multiplicado por 50?",
+      "answer": 3950
+    },
+    {
+      "question": "Quantos centímetros existem em 79 metros?",
+      "answer": 7900
+    },
+    {
+      "question": "Qual o resultado de 80 multiplicado por 15?",
+      "answer": 1200
+    },
+    {
+      "question": "Qual o resultado de 80 multiplicado por 25?",
+      "answer": 2000
+    },
+    {
+      "question": "Qual o resultado de 80 multiplicado por 50?",
+      "answer": 4000
+    },
+    {
+      "question": "Quantos centímetros existem em 80 metros?",
+      "answer": 8000
+    },
+    {
+      "question": "Qual o resultado de 81 multiplicado por 15?",
+      "answer": 1215
+    },
+    {
+      "question": "Qual o resultado de 81 multiplicado por 25?",
+      "answer": 2025
+    },
+    {
+      "question": "Qual o resultado de 81 multiplicado por 50?",
+      "answer": 4050
+    },
+    {
+      "question": "Quantos centímetros existem em 81 metros?",
+      "answer": 8100
+    },
+    {
+      "question": "Qual o resultado de 82 multiplicado por 15?",
+      "answer": 1230
+    },
+    {
+      "question": "Qual o resultado de 82 multiplicado por 25?",
+      "answer": 2050
+    },
+    {
+      "question": "Qual o resultado de 82 multiplicado por 50?",
+      "answer": 4100
+    },
+    {
+      "question": "Quantos centímetros existem em 82 metros?",
+      "answer": 8200
+    },
+    {
+      "question": "Qual o resultado de 83 multiplicado por 15?",
+      "answer": 1245
+    },
+    {
+      "question": "Qual o resultado de 83 multiplicado por 25?",
+      "answer": 2075
+    },
+    {
+      "question": "Qual o resultado de 83 multiplicado por 50?",
+      "answer": 4150
+    },
+    {
+      "question": "Quantos centímetros existem em 83 metros?",
+      "answer": 8300
+    },
+    {
+      "question": "Qual o resultado de 84 multiplicado por 15?",
+      "answer": 1260
+    },
+    {
+      "question": "Qual o resultado de 84 multiplicado por 25?",
+      "answer": 2100
+    },
+    {
+      "question": "Qual o resultado de 84 multiplicado por 50?",
+      "answer": 4200
+    },
+    {
+      "question": "Quantos centímetros existem em 84 metros?",
+      "answer": 8400
+    },
+    {
+      "question": "Qual o resultado de 85 multiplicado por 15?",
+      "answer": 1275
+    },
+    {
+      "question": "Qual o resultado de 85 multiplicado por 25?",
+      "answer": 2125
+    },
+    {
+      "question": "Qual o resultado de 85 multiplicado por 50?",
+      "answer": 4250
+    },
+    {
+      "question": "Quantos centímetros existem em 85 metros?",
+      "answer": 8500
+    },
+    {
+      "question": "Qual o resultado de 86 multiplicado por 15?",
+      "answer": 1290
+    },
+    {
+      "question": "Qual o resultado de 86 multiplicado por 25?",
+      "answer": 2150
+    },
+    {
+      "question": "Qual o resultado de 86 multiplicado por 50?",
+      "answer": 4300
+    },
+    {
+      "question": "Quantos centímetros existem em 86 metros?",
+      "answer": 8600
+    },
+    {
+      "question": "Qual o resultado de 87 multiplicado por 15?",
+      "answer": 1305
+    },
+    {
+      "question": "Qual o resultado de 87 multiplicado por 25?",
+      "answer": 2175
+    },
+    {
+      "question": "Qual o resultado de 87 multiplicado por 50?",
+      "answer": 4350
+    },
+    {
+      "question": "Quantos centímetros existem em 87 metros?",
+      "answer": 8700
+    },
+    {
+      "question": "Qual o resultado de 88 multiplicado por 15?",
+      "answer": 1320
+    },
+    {
+      "question": "Qual o resultado de 88 multiplicado por 25?",
+      "answer": 2200
+    },
+    {
+      "question": "Qual o resultado de 88 multiplicado por 50?",
+      "answer": 4400
+    },
+    {
+      "question": "Quantos centímetros existem em 88 metros?",
+      "answer": 8800
+    },
+    {
+      "question": "Qual o resultado de 89 multiplicado por 15?",
+      "answer": 1335
+    },
+    {
+      "question": "Qual o resultado de 89 multiplicado por 25?",
+      "answer": 2225
+    },
+    {
+      "question": "Qual o resultado de 89 multiplicado por 50?",
+      "answer": 4450
+    },
+    {
+      "question": "Quantos centímetros existem em 89 metros?",
+      "answer": 8900
+    },
+    {
+      "question": "Qual o resultado de 90 multiplicado por 15?",
+      "answer": 1350
+    },
+    {
+      "question": "Qual o resultado de 90 multiplicado por 25?",
+      "answer": 2250
+    },
+    {
+      "question": "Qual o resultado de 90 multiplicado por 50?",
+      "answer": 4500
+    },
+    {
+      "question": "Quantos centímetros existem em 90 metros?",
+      "answer": 9000
+    },
+    {
+      "question": "Qual o resultado de 91 multiplicado por 15?",
+      "answer": 1365
+    },
+    {
+      "question": "Qual o resultado de 91 multiplicado por 25?",
+      "answer": 2275
+    },
+    {
+      "question": "Qual o resultado de 91 multiplicado por 50?",
+      "answer": 4550
+    },
+    {
+      "question": "Quantos centímetros existem em 91 metros?",
+      "answer": 9100
+    },
+    {
+      "question": "Qual o resultado de 92 multiplicado por 15?",
+      "answer": 1380
+    },
+    {
+      "question": "Qual o resultado de 92 multiplicado por 25?",
+      "answer": 2300
+    },
+    {
+      "question": "Qual o resultado de 92 multiplicado por 50?",
+      "answer": 4600
+    },
+    {
+      "question": "Quantos centímetros existem em 92 metros?",
+      "answer": 9200
+    },
+    {
+      "question": "Qual o resultado de 93 multiplicado por 15?",
+      "answer": 1395
+    },
+    {
+      "question": "Qual o resultado de 93 multiplicado por 25?",
+      "answer": 2325
+    },
+    {
+      "question": "Qual o resultado de 93 multiplicado por 50?",
+      "answer": 4650
+    },
+    {
+      "question": "Quantos centímetros existem em 93 metros?",
+      "answer": 9300
+    },
+    {
+      "question": "Qual o resultado de 94 multiplicado por 15?",
+      "answer": 1410
+    },
+    {
+      "question": "Qual o resultado de 94 multiplicado por 25?",
+      "answer": 2350
+    },
+    {
+      "question": "Qual o resultado de 94 multiplicado por 50?",
+      "answer": 4700
+    },
+    {
+      "question": "Quantos centímetros existem em 94 metros?",
+      "answer": 9400
+    },
+    {
+      "question": "Qual o resultado de 95 multiplicado por 15?",
+      "answer": 1425
+    },
+    {
+      "question": "Qual o resultado de 95 multiplicado por 25?",
+      "answer": 2375
+    },
+    {
+      "question": "Qual o resultado de 95 multiplicado por 50?",
+      "answer": 4750
+    },
+    {
+      "question": "Quantos centímetros existem em 95 metros?",
+      "answer": 9500
+    },
+    {
+      "question": "Qual o resultado de 96 multiplicado por 15?",
+      "answer": 1440
+    },
+    {
+      "question": "Qual o resultado de 96 multiplicado por 25?",
+      "answer": 2400
+    },
+    {
+      "question": "Qual o resultado de 96 multiplicado por 50?",
+      "answer": 4800
+    },
+    {
+      "question": "Quantos centímetros existem em 96 metros?",
+      "answer": 9600
+    },
+    {
+      "question": "Qual o resultado de 97 multiplicado por 15?",
+      "answer": 1455
+    },
+    {
+      "question": "Qual o resultado de 97 multiplicado por 25?",
+      "answer": 2425
+    },
+    {
+      "question": "Qual o resultado de 97 multiplicado por 50?",
+      "answer": 4850
+    },
+    {
+      "question": "Quantos centímetros existem em 97 metros?",
+      "answer": 9700
+    },
+    {
+      "question": "Qual o resultado de 98 multiplicado por 15?",
+      "answer": 1470
+    },
+    {
+      "question": "Qual o resultado de 98 multiplicado por 25?",
+      "answer": 2450
+    },
+    {
+      "question": "Qual o resultado de 98 multiplicado por 50?",
+      "answer": 4900
+    },
+    {
+      "question": "Quantos centímetros existem em 98 metros?",
+      "answer": 9800
+    },
+    {
+      "question": "Qual o resultado de 99 multiplicado por 15?",
+      "answer": 1485
+    },
+    {
+      "question": "Qual o resultado de 99 multiplicado por 25?",
+      "answer": 2475
+    },
+    {
+      "question": "Qual o resultado de 99 multiplicado por 50?",
+      "answer": 4950
+    },
+    {
+      "question": "Quantos centímetros existem em 99 metros?",
+      "answer": 9900
+    },
+    {
+      "question": "Qual o resultado de 100 multiplicado por 15?",
+      "answer": 1500
+    },
+    {
+      "question": "Qual o resultado de 100 multiplicado por 25?",
+      "answer": 2500
+    },
+    {
+      "question": "Qual o resultado de 100 multiplicado por 50?",
+      "answer": 5000
+    },
+    {
+      "question": "Quantos centímetros existem em 100 metros?",
+      "answer": 10000
+    },
+    {
+      "question": "Qual o resultado de 101 multiplicado por 15?",
+      "answer": 1515
+    },
+    {
+      "question": "Qual o resultado de 101 multiplicado por 25?",
+      "answer": 2525
+    },
+    {
+      "question": "Qual o resultado de 101 multiplicado por 50?",
+      "answer": 5050
+    },
+    {
+      "question": "Quantos centímetros existem em 101 metros?",
+      "answer": 10100
+    },
+    {
+      "question": "Qual o resultado de 102 multiplicado por 15?",
+      "answer": 1530
+    },
+    {
+      "question": "Qual o resultado de 102 multiplicado por 25?",
+      "answer": 2550
+    },
+    {
+      "question": "Qual o resultado de 102 multiplicado por 50?",
+      "answer": 5100
+    },
+    {
+      "question": "Quantos centímetros existem em 102 metros?",
+      "answer": 10200
+    },
+    {
+      "question": "Qual o resultado de 103 multiplicado por 15?",
+      "answer": 1545
+    },
+    {
+      "question": "Qual o resultado de 103 multiplicado por 25?",
+      "answer": 2575
+    },
+    {
+      "question": "Qual o resultado de 103 multiplicado por 50?",
+      "answer": 5150
+    },
+    {
+      "question": "Quantos centímetros existem em 103 metros?",
+      "answer": 10300
+    },
+    {
+      "question": "Qual o resultado de 104 multiplicado por 15?",
+      "answer": 1560
+    },
+    {
+      "question": "Qual o resultado de 104 multiplicado por 25?",
+      "answer": 2600
+    },
+    {
+      "question": "Qual o resultado de 104 multiplicado por 50?",
+      "answer": 5200
+    },
+    {
+      "question": "Quantos centímetros existem em 104 metros?",
+      "answer": 10400
+    },
+    {
+      "question": "Qual o resultado de 105 multiplicado por 15?",
+      "answer": 1575
+    },
+    {
+      "question": "Qual o resultado de 105 multiplicado por 25?",
+      "answer": 2625
+    },
+    {
+      "question": "Qual o resultado de 105 multiplicado por 50?",
+      "answer": 5250
+    },
+    {
+      "question": "Quantos centímetros existem em 105 metros?",
+      "answer": 10500
+    },
+    {
+      "question": "Qual o resultado de 106 multiplicado por 15?",
+      "answer": 1590
+    },
+    {
+      "question": "Qual o resultado de 106 multiplicado por 25?",
+      "answer": 2650
+    },
+    {
+      "question": "Qual o resultado de 106 multiplicado por 50?",
+      "answer": 5300
+    },
+    {
+      "question": "Quantos centímetros existem em 106 metros?",
+      "answer": 10600
+    },
+    {
+      "question": "Qual o resultado de 107 multiplicado por 15?",
+      "answer": 1605
+    },
+    {
+      "question": "Qual o resultado de 107 multiplicado por 25?",
+      "answer": 2675
+    },
+    {
+      "question": "Qual o resultado de 107 multiplicado por 50?",
+      "answer": 5350
+    },
+    {
+      "question": "Quantos centímetros existem em 107 metros?",
+      "answer": 10700
+    },
+    {
+      "question": "Qual o resultado de 108 multiplicado por 15?",
+      "answer": 1620
+    },
+    {
+      "question": "Qual o resultado de 108 multiplicado por 25?",
+      "answer": 2700
+    },
+    {
+      "question": "Qual o resultado de 108 multiplicado por 50?",
+      "answer": 5400
+    },
+    {
+      "question": "Quantos centímetros existem em 108 metros?",
+      "answer": 10800
+    },
+    {
+      "question": "Qual o resultado de 109 multiplicado por 15?",
+      "answer": 1635
+    },
+    {
+      "question": "Qual o resultado de 109 multiplicado por 25?",
+      "answer": 2725
+    },
+    {
+      "question": "Qual o resultado de 109 multiplicado por 50?",
+      "answer": 5450
+    },
+    {
+      "question": "Quantos centímetros existem em 109 metros?",
+      "answer": 10900
+    },
+    {
+      "question": "Qual o resultado de 110 multiplicado por 15?",
+      "answer": 1650
+    },
+    {
+      "question": "Qual o resultado de 110 multiplicado por 25?",
+      "answer": 2750
+    },
+    {
+      "question": "Qual o resultado de 110 multiplicado por 50?",
+      "answer": 5500
+    },
+    {
+      "question": "Quantos centímetros existem em 110 metros?",
+      "answer": 11000
+    },
+    {
+      "question": "Qual o resultado de 111 multiplicado por 15?",
+      "answer": 1665
+    },
+    {
+      "question": "Qual o resultado de 111 multiplicado por 25?",
+      "answer": 2775
+    },
+    {
+      "question": "Qual o resultado de 111 multiplicado por 50?",
+      "answer": 5550
+    },
+    {
+      "question": "Quantos centímetros existem em 111 metros?",
+      "answer": 11100
+    },
+    {
+      "question": "Qual o resultado de 112 multiplicado por 15?",
+      "answer": 1680
+    },
+    {
+      "question": "Qual o resultado de 112 multiplicado por 25?",
+      "answer": 2800
+    },
+    {
+      "question": "Qual o resultado de 112 multiplicado por 50?",
+      "answer": 5600
+    },
+    {
+      "question": "Quantos centímetros existem em 112 metros?",
+      "answer": 11200
+    },
+    {
+      "question": "Qual o resultado de 113 multiplicado por 15?",
+      "answer": 1695
+    },
+    {
+      "question": "Qual o resultado de 113 multiplicado por 25?",
+      "answer": 2825
+    },
+    {
+      "question": "Qual o resultado de 113 multiplicado por 50?",
+      "answer": 5650
+    },
+    {
+      "question": "Quantos centímetros existem em 113 metros?",
+      "answer": 11300
+    },
+    {
+      "question": "Qual o resultado de 114 multiplicado por 15?",
+      "answer": 1710
+    },
+    {
+      "question": "Qual o resultado de 114 multiplicado por 25?",
+      "answer": 2850
+    },
+    {
+      "question": "Qual o resultado de 114 multiplicado por 50?",
+      "answer": 5700
+    },
+    {
+      "question": "Quantos centímetros existem em 114 metros?",
+      "answer": 11400
+    },
+    {
+      "question": "Qual o resultado de 115 multiplicado por 15?",
+      "answer": 1725
+    },
+    {
+      "question": "Qual o resultado de 115 multiplicado por 25?",
+      "answer": 2875
+    },
+    {
+      "question": "Qual o resultado de 115 multiplicado por 50?",
+      "answer": 5750
+    },
+    {
+      "question": "Quantos centímetros existem em 115 metros?",
+      "answer": 11500
+    },
+    {
+      "question": "Qual o resultado de 116 multiplicado por 15?",
+      "answer": 1740
+    },
+    {
+      "question": "Qual o resultado de 116 multiplicado por 25?",
+      "answer": 2900
+    },
+    {
+      "question": "Qual o resultado de 116 multiplicado por 50?",
+      "answer": 5800
+    },
+    {
+      "question": "Quantos centímetros existem em 116 metros?",
+      "answer": 11600
+    },
+    {
+      "question": "Qual o resultado de 117 multiplicado por 15?",
+      "answer": 1755
+    },
+    {
+      "question": "Qual o resultado de 117 multiplicado por 25?",
+      "answer": 2925
+    },
+    {
+      "question": "Qual o resultado de 117 multiplicado por 50?",
+      "answer": 5850
+    },
+    {
+      "question": "Quantos centímetros existem em 117 metros?",
+      "answer": 11700
+    },
+    {
+      "question": "Qual o resultado de 118 multiplicado por 15?",
+      "answer": 1770
+    },
+    {
+      "question": "Qual o resultado de 118 multiplicado por 25?",
+      "answer": 2950
+    },
+    {
+      "question": "Qual o resultado de 118 multiplicado por 50?",
+      "answer": 5900
+    },
+    {
+      "question": "Quantos centímetros existem em 118 metros?",
+      "answer": 11800
+    },
+    {
+      "question": "Qual o resultado de 119 multiplicado por 15?",
+      "answer": 1785
+    },
+    {
+      "question": "Qual o resultado de 119 multiplicado por 25?",
+      "answer": 2975
+    },
+    {
+      "question": "Qual o resultado de 119 multiplicado por 50?",
+      "answer": 5950
+    },
+    {
+      "question": "Quantos centímetros existem em 119 metros?",
+      "answer": 11900
+    },
+    {
+      "question": "Qual o resultado de 120 multiplicado por 15?",
+      "answer": 1800
+    },
+    {
+      "question": "Qual o resultado de 120 multiplicado por 25?",
+      "answer": 3000
+    },
+    {
+      "question": "Qual o resultado de 120 multiplicado por 50?",
+      "answer": 6000
+    },
+    {
+      "question": "Quantos centímetros existem em 120 metros?",
+      "answer": 12000
+    },
+    {
+      "question": "Qual o resultado de 121 multiplicado por 15?",
+      "answer": 1815
+    },
+    {
+      "question": "Qual o resultado de 121 multiplicado por 25?",
+      "answer": 3025
+    },
+    {
+      "question": "Qual o resultado de 121 multiplicado por 50?",
+      "answer": 6050
+    },
+    {
+      "question": "Quantos centímetros existem em 121 metros?",
+      "answer": 12100
+    },
+    {
+      "question": "Qual o resultado de 122 multiplicado por 15?",
+      "answer": 1830
+    },
+    {
+      "question": "Qual o resultado de 122 multiplicado por 25?",
+      "answer": 3050
+    },
+    {
+      "question": "Qual o resultado de 122 multiplicado por 50?",
+      "answer": 6100
+    },
+    {
+      "question": "Quantos centímetros existem em 122 metros?",
+      "answer": 12200
+    },
+    {
+      "question": "Qual o resultado de 123 multiplicado por 15?",
+      "answer": 1845
+    },
+    {
+      "question": "Qual o resultado de 123 multiplicado por 25?",
+      "answer": 3075
+    },
+    {
+      "question": "Qual o resultado de 123 multiplicado por 50?",
+      "answer": 6150
+    },
+    {
+      "question": "Quantos centímetros existem em 123 metros?",
+      "answer": 12300
+    },
+    {
+      "question": "Qual o resultado de 124 multiplicado por 15?",
+      "answer": 1860
+    },
+    {
+      "question": "Qual o resultado de 124 multiplicado por 25?",
+      "answer": 3100
+    },
+    {
+      "question": "Qual o resultado de 124 multiplicado por 50?",
+      "answer": 6200
+    },
+    {
+      "question": "Quantos centímetros existem em 124 metros?",
+      "answer": 12400
+    },
+    {
+      "question": "Qual o resultado de 125 multiplicado por 15?",
+      "answer": 1875
+    },
+    {
+      "question": "Qual o resultado de 125 multiplicado por 25?",
+      "answer": 3125
+    },
+    {
+      "question": "Qual o resultado de 125 multiplicado por 50?",
+      "answer": 6250
+    },
+    {
+      "question": "Quantos centímetros existem em 125 metros?",
+      "answer": 12500
+    },
+    {
+      "question": "Qual o resultado de 126 multiplicado por 15?",
+      "answer": 1890
+    },
+    {
+      "question": "Qual o resultado de 126 multiplicado por 25?",
+      "answer": 3150
+    },
+    {
+      "question": "Qual o resultado de 126 multiplicado por 50?",
+      "answer": 6300
+    },
+    {
+      "question": "Quantos centímetros existem em 126 metros?",
+      "answer": 12600
+    },
+    {
+      "question": "Qual o resultado de 127 multiplicado por 15?",
+      "answer": 1905
+    },
+    {
+      "question": "Qual o resultado de 127 multiplicado por 25?",
+      "answer": 3175
+    },
+    {
+      "question": "Qual o resultado de 127 multiplicado por 50?",
+      "answer": 6350
+    },
+    {
+      "question": "Quantos centímetros existem em 127 metros?",
+      "answer": 12700
+    },
+    {
+      "question": "Qual o resultado de 128 multiplicado por 15?",
+      "answer": 1920
+    },
+    {
+      "question": "Qual o resultado de 128 multiplicado por 25?",
+      "answer": 3200
+    },
+    {
+      "question": "Qual o resultado de 128 multiplicado por 50?",
+      "answer": 6400
+    },
+    {
+      "question": "Quantos centímetros existem em 128 metros?",
+      "answer": 12800
+    },
+    {
+      "question": "Qual o resultado de 129 multiplicado por 15?",
+      "answer": 1935
+    },
+    {
+      "question": "Qual o resultado de 129 multiplicado por 25?",
+      "answer": 3225
+    },
+    {
+      "question": "Qual o resultado de 129 multiplicado por 50?",
+      "answer": 6450
+    },
+    {
+      "question": "Quantos centímetros existem em 129 metros?",
+      "answer": 12900
+    },
+    {
+      "question": "Qual o resultado de 130 multiplicado por 15?",
+      "answer": 1950
+    },
+    {
+      "question": "Qual o resultado de 130 multiplicado por 25?",
+      "answer": 3250
+    },
+    {
+      "question": "Qual o resultado de 130 multiplicado por 50?",
+      "answer": 6500
+    },
+    {
+      "question": "Quantos centímetros existem em 130 metros?",
+      "answer": 13000
+    },
+    {
+      "question": "Qual o resultado de 131 multiplicado por 15?",
+      "answer": 1965
+    },
+    {
+      "question": "Qual o resultado de 131 multiplicado por 25?",
+      "answer": 3275
+    },
+    {
+      "question": "Qual o resultado de 131 multiplicado por 50?",
+      "answer": 6550
+    },
+    {
+      "question": "Quantos centímetros existem em 131 metros?",
+      "answer": 13100
+    },
+    {
+      "question": "Qual o resultado de 132 multiplicado por 15?",
+      "answer": 1980
+    },
+    {
+      "question": "Qual o resultado de 132 multiplicado por 25?",
+      "answer": 3300
+    },
+    {
+      "question": "Qual o resultado de 132 multiplicado por 50?",
+      "answer": 6600
+    },
+    {
+      "question": "Quantos centímetros existem em 132 metros?",
+      "answer": 13200
+    },
+    {
+      "question": "Qual o resultado de 133 multiplicado por 15?",
+      "answer": 1995
+    },
+    {
+      "question": "Qual o resultado de 133 multiplicado por 25?",
+      "answer": 3325
+    },
+    {
+      "question": "Qual o resultado de 133 multiplicado por 50?",
+      "answer": 6650
+    },
+    {
+      "question": "Quantos centímetros existem em 133 metros?",
+      "answer": 13300
+    },
+    {
+      "question": "Qual o resultado de 134 multiplicado por 15?",
+      "answer": 2010
+    },
+    {
+      "question": "Qual o resultado de 134 multiplicado por 25?",
+      "answer": 3350
+    },
+    {
+      "question": "Qual o resultado de 134 multiplicado por 50?",
+      "answer": 6700
+    },
+    {
+      "question": "Quantos centímetros existem em 134 metros?",
+      "answer": 13400
+    },
+    {
+      "question": "Qual o resultado de 135 multiplicado por 15?",
+      "answer": 2025
+    },
+    {
+      "question": "Qual o resultado de 135 multiplicado por 25?",
+      "answer": 3375
+    },
+    {
+      "question": "Qual o resultado de 135 multiplicado por 50?",
+      "answer": 6750
+    },
+    {
+      "question": "Quantos centímetros existem em 135 metros?",
+      "answer": 13500
+    },
+    {
+      "question": "Qual o resultado de 136 multiplicado por 15?",
+      "answer": 2040
+    },
+    {
+      "question": "Qual o resultado de 136 multiplicado por 25?",
+      "answer": 3400
+    },
+    {
+      "question": "Qual o resultado de 136 multiplicado por 50?",
+      "answer": 6800
+    },
+    {
+      "question": "Quantos centímetros existem em 136 metros?",
+      "answer": 13600
+    },
+    {
+      "question": "Qual o resultado de 137 multiplicado por 15?",
+      "answer": 2055
+    },
+    {
+      "question": "Qual o resultado de 137 multiplicado por 25?",
+      "answer": 3425
+    },
+    {
+      "question": "Qual o resultado de 137 multiplicado por 50?",
+      "answer": 6850
+    },
+    {
+      "question": "Quantos centímetros existem em 137 metros?",
+      "answer": 13700
+    },
+    {
+      "question": "Qual o resultado de 138 multiplicado por 15?",
+      "answer": 2070
+    },
+    {
+      "question": "Qual o resultado de 138 multiplicado por 25?",
+      "answer": 3450
+    },
+    {
+      "question": "Qual o resultado de 138 multiplicado por 50?",
+      "answer": 6900
+    },
+    {
+      "question": "Quantos centímetros existem em 138 metros?",
+      "answer": 13800
+    },
+    {
+      "question": "Qual o resultado de 139 multiplicado por 15?",
+      "answer": 2085
+    },
+    {
+      "question": "Qual o resultado de 139 multiplicado por 25?",
+      "answer": 3475
+    },
+    {
+      "question": "Qual o resultado de 139 multiplicado por 50?",
+      "answer": 6950
+    },
+    {
+      "question": "Quantos centímetros existem em 139 metros?",
+      "answer": 13900
+    },
+    {
+      "question": "Qual o resultado de 140 multiplicado por 15?",
+      "answer": 2100
+    },
+    {
+      "question": "Qual o resultado de 140 multiplicado por 25?",
+      "answer": 3500
+    },
+    {
+      "question": "Qual o resultado de 140 multiplicado por 50?",
+      "answer": 7000
+    },
+    {
+      "question": "Quantos centímetros existem em 140 metros?",
+      "answer": 14000
+    },
+    {
+      "question": "Qual o resultado de 141 multiplicado por 15?",
+      "answer": 2115
+    },
+    {
+      "question": "Qual o resultado de 141 multiplicado por 25?",
+      "answer": 3525
+    },
+    {
+      "question": "Qual o resultado de 141 multiplicado por 50?",
+      "answer": 7050
+    },
+    {
+      "question": "Quantos centímetros existem em 141 metros?",
+      "answer": 14100
+    },
+    {
+      "question": "Qual o resultado de 142 multiplicado por 15?",
+      "answer": 2130
+    },
+    {
+      "question": "Qual o resultado de 142 multiplicado por 25?",
+      "answer": 3550
+    },
+    {
+      "question": "Qual o resultado de 142 multiplicado por 50?",
+      "answer": 7100
+    },
+    {
+      "question": "Quantos centímetros existem em 142 metros?",
+      "answer": 14200
+    },
+    {
+      "question": "Qual o resultado de 143 multiplicado por 15?",
+      "answer": 2145
+    },
+    {
+      "question": "Qual o resultado de 143 multiplicado por 25?",
+      "answer": 3575
+    },
+    {
+      "question": "Qual o resultado de 143 multiplicado por 50?",
+      "answer": 7150
+    },
+    {
+      "question": "Quantos centímetros existem em 143 metros?",
+      "answer": 14300
+    },
+    {
+      "question": "Qual o resultado de 144 multiplicado por 15?",
+      "answer": 2160
+    },
+    {
+      "question": "Qual o resultado de 144 multiplicado por 25?",
+      "answer": 3600
+    },
+    {
+      "question": "Qual o resultado de 144 multiplicado por 50?",
+      "answer": 7200
+    },
+    {
+      "question": "Quantos centímetros existem em 144 metros?",
+      "answer": 14400
+    },
+    {
+      "question": "Qual o resultado de 145 multiplicado por 15?",
+      "answer": 2175
+    },
+    {
+      "question": "Qual o resultado de 145 multiplicado por 25?",
+      "answer": 3625
+    },
+    {
+      "question": "Qual o resultado de 145 multiplicado por 50?",
+      "answer": 7250
+    },
+    {
+      "question": "Quantos centímetros existem em 145 metros?",
+      "answer": 14500
+    },
+    {
+      "question": "Qual o resultado de 146 multiplicado por 15?",
+      "answer": 2190
+    },
+    {
+      "question": "Qual o resultado de 146 multiplicado por 25?",
+      "answer": 3650
+    },
+    {
+      "question": "Qual o resultado de 146 multiplicado por 50?",
+      "answer": 7300
+    },
+    {
+      "question": "Quantos centímetros existem em 146 metros?",
+      "answer": 14600
+    },
+    {
+      "question": "Qual o resultado de 147 multiplicado por 15?",
+      "answer": 2205
+    },
+    {
+      "question": "Qual o resultado de 147 multiplicado por 25?",
+      "answer": 3675
+    },
+    {
+      "question": "Qual o resultado de 147 multiplicado por 50?",
+      "answer": 7350
+    },
+    {
+      "question": "Quantos centímetros existem em 147 metros?",
+      "answer": 14700
+    },
+    {
+      "question": "Qual o resultado de 148 multiplicado por 15?",
+      "answer": 2220
+    },
+    {
+      "question": "Qual o resultado de 148 multiplicado por 25?",
+      "answer": 3700
+    },
+    {
+      "question": "Qual o resultado de 148 multiplicado por 50?",
+      "answer": 7400
+    },
+    {
+      "question": "Quantos centímetros existem em 148 metros?",
+      "answer": 14800
+    },
+    {
+      "question": "Qual o resultado de 149 multiplicado por 15?",
+      "answer": 2235
+    },
+    {
+      "question": "Qual o resultado de 149 multiplicado por 25?",
+      "answer": 3725
+    },
+    {
+      "question": "Qual o resultado de 149 multiplicado por 50?",
+      "answer": 7450
+    },
+    {
+      "question": "Quantos centímetros existem em 149 metros?",
+      "answer": 14900
+    },
+    {
+      "question": "Qual o resultado de 150 multiplicado por 15?",
+      "answer": 2250
+    },
+    {
+      "question": "Qual o resultado de 150 multiplicado por 25?",
+      "answer": 3750
+    },
+    {
+      "question": "Qual o resultado de 150 multiplicado por 50?",
+      "answer": 7500
+    },
+    {
+      "question": "Quantos centímetros existem em 150 metros?",
+      "answer": 15000
+    },
+    {
+      "question": "Qual o resultado de 151 multiplicado por 15?",
+      "answer": 2265
+    },
+    {
+      "question": "Qual o resultado de 151 multiplicado por 25?",
+      "answer": 3775
+    },
+    {
+      "question": "Qual o resultado de 151 multiplicado por 50?",
+      "answer": 7550
+    },
+    {
+      "question": "Quantos centímetros existem em 151 metros?",
+      "answer": 15100
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1?",
+      "answer": 1
+    },
+    {
+      "question": "Qual é a raiz quadrada de 4?",
+      "answer": 2
+    },
+    {
+      "question": "Qual é a raiz quadrada de 9?",
+      "answer": 3
+    },
+    {
+      "question": "Qual é a raiz quadrada de 16?",
+      "answer": 4
+    },
+    {
+      "question": "Qual é a raiz quadrada de 25?",
+      "answer": 5
+    },
+    {
+      "question": "Qual é a raiz quadrada de 36?",
+      "answer": 6
+    },
+    {
+      "question": "Qual é a raiz quadrada de 49?",
+      "answer": 7
+    },
+    {
+      "question": "Qual é a raiz quadrada de 64?",
+      "answer": 8
+    },
+    {
+      "question": "Qual é a raiz quadrada de 81?",
+      "answer": 9
+    },
+    {
+      "question": "Qual é a raiz quadrada de 100?",
+      "answer": 10
+    },
+    {
+      "question": "Qual é a raiz quadrada de 121?",
+      "answer": 11
+    },
+    {
+      "question": "Qual é a raiz quadrada de 144?",
+      "answer": 12
+    },
+    {
+      "question": "Qual é a raiz quadrada de 169?",
+      "answer": 13
+    },
+    {
+      "question": "Qual é a raiz quadrada de 196?",
+      "answer": 14
+    },
+    {
+      "question": "Qual é a raiz quadrada de 225?",
+      "answer": 15
+    },
+    {
+      "question": "Qual é a raiz quadrada de 256?",
+      "answer": 16
+    },
+    {
+      "question": "Qual é a raiz quadrada de 289?",
+      "answer": 17
+    },
+    {
+      "question": "Qual é a raiz quadrada de 324?",
+      "answer": 18
+    },
+    {
+      "question": "Qual é a raiz quadrada de 361?",
+      "answer": 19
+    },
+    {
+      "question": "Qual é a raiz quadrada de 400?",
+      "answer": 20
+    },
+    {
+      "question": "Qual é a raiz quadrada de 441?",
+      "answer": 21
+    },
+    {
+      "question": "Qual é a raiz quadrada de 484?",
+      "answer": 22
+    },
+    {
+      "question": "Qual é a raiz quadrada de 529?",
+      "answer": 23
+    },
+    {
+      "question": "Qual é a raiz quadrada de 576?",
+      "answer": 24
+    },
+    {
+      "question": "Qual é a raiz quadrada de 625?",
+      "answer": 25
+    },
+    {
+      "question": "Qual é a raiz quadrada de 676?",
+      "answer": 26
+    },
+    {
+      "question": "Qual é a raiz quadrada de 729?",
+      "answer": 27
+    },
+    {
+      "question": "Qual é a raiz quadrada de 784?",
+      "answer": 28
+    },
+    {
+      "question": "Qual é a raiz quadrada de 841?",
+      "answer": 29
+    },
+    {
+      "question": "Qual é a raiz quadrada de 900?",
+      "answer": 30
+    },
+    {
+      "question": "Qual é a raiz quadrada de 961?",
+      "answer": 31
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1024?",
+      "answer": 32
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1089?",
+      "answer": 33
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1156?",
+      "answer": 34
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1225?",
+      "answer": 35
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1296?",
+      "answer": 36
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1369?",
+      "answer": 37
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1444?",
+      "answer": 38
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1521?",
+      "answer": 39
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1600?",
+      "answer": 40
+    },
+    {
+      "question": "Qual é a raiz quadrada de 1681?",
+      "answer": 41
+    }
+  ],
+  "duvido": [
+    "Cite animais que começam com a letra A",
+    "Cite animais que começam com a letra B",
+    "Cite animais que começam com a letra C",
+    "Cite animais que começam com a letra D",
+    "Cite animais que começam com a letra E",
+    "Cite animais que começam com a letra F",
+    "Cite animais que começam com a letra G",
+    "Cite animais que começam com a letra H",
+    "Cite animais que começam com a letra I",
+    "Cite animais que começam com a letra J",
+    "Cite animais que começam com a letra K",
+    "Cite animais que começam com a letra L",
+    "Cite animais que começam com a letra M",
+    "Cite animais que começam com a letra N",
+    "Cite animais que começam com a letra O",
+    "Cite animais que começam com a letra P",
+    "Cite animais que começam com a letra Q",
+    "Cite animais que começam com a letra R",
+    "Cite animais que começam com a letra S",
+    "Cite animais que começam com a letra T",
+    "Cite animais que começam com a letra U",
+    "Cite animais que começam com a letra V",
+    "Cite animais que começam com a letra W",
+    "Cite animais que começam com a letra X",
+    "Cite animais que começam com a letra Y",
+    "Cite animais que começam com a letra Z",
+    "Cite frutas que começam com a letra A",
+    "Cite frutas que começam com a letra B",
+    "Cite frutas que começam com a letra C",
+    "Cite frutas que começam com a letra D",
+    "Cite frutas que começam com a letra E",
+    "Cite frutas que começam com a letra F",
+    "Cite frutas que começam com a letra G",
+    "Cite frutas que começam com a letra H",
+    "Cite frutas que começam com a letra I",
+    "Cite frutas que começam com a letra J",
+    "Cite frutas que começam com a letra K",
+    "Cite frutas que começam com a letra L",
+    "Cite frutas que começam com a letra M",
+    "Cite frutas que começam com a letra N",
+    "Cite frutas que começam com a letra O",
+    "Cite frutas que começam com a letra P",
+    "Cite frutas que começam com a letra Q",
+    "Cite frutas que começam com a letra R",
+    "Cite frutas que começam com a letra S",
+    "Cite frutas que começam com a letra T",
+    "Cite frutas que começam com a letra U",
+    "Cite frutas que começam com a letra V",
+    "Cite frutas que começam com a letra W",
+    "Cite frutas que começam com a letra X",
+    "Cite frutas que começam com a letra Y",
+    "Cite frutas que começam com a letra Z",
+    "Cite cidades que começam com a letra A",
+    "Cite cidades que começam com a letra B",
+    "Cite cidades que começam com a letra C",
+    "Cite cidades que começam com a letra D",
+    "Cite cidades que começam com a letra E",
+    "Cite cidades que começam com a letra F",
+    "Cite cidades que começam com a letra G",
+    "Cite cidades que começam com a letra H",
+    "Cite cidades que começam com a letra I",
+    "Cite cidades que começam com a letra J",
+    "Cite cidades que começam com a letra K",
+    "Cite cidades que começam com a letra L",
+    "Cite cidades que começam com a letra M",
+    "Cite cidades que começam com a letra N",
+    "Cite cidades que começam com a letra O",
+    "Cite cidades que começam com a letra P",
+    "Cite cidades que começam com a letra Q",
+    "Cite cidades que começam com a letra R",
+    "Cite cidades que começam com a letra S",
+    "Cite cidades que começam com a letra T",
+    "Cite cidades que começam com a letra U",
+    "Cite cidades que começam com a letra V",
+    "Cite cidades que começam com a letra W",
+    "Cite cidades que começam com a letra X",
+    "Cite cidades que começam com a letra Y",
+    "Cite cidades que começam com a letra Z",
+    "Cite países que começam com a letra A",
+    "Cite países que começam com a letra B",
+    "Cite países que começam com a letra C",
+    "Cite países que começam com a letra D",
+    "Cite países que começam com a letra E",
+    "Cite países que começam com a letra F",
+    "Cite países que começam com a letra G",
+    "Cite países que começam com a letra H",
+    "Cite países que começam com a letra I",
+    "Cite países que começam com a letra J",
+    "Cite países que começam com a letra K",
+    "Cite países que começam com a letra L",
+    "Cite países que começam com a letra M",
+    "Cite países que começam com a letra N",
+    "Cite países que começam com a letra O",
+    "Cite países que começam com a letra P",
+    "Cite países que começam com a letra Q",
+    "Cite países que começam com a letra R",
+    "Cite países que começam com a letra S",
+    "Cite países que começam com a letra T",
+    "Cite países que começam com a letra U",
+    "Cite países que começam com a letra V",
+    "Cite países que começam com a letra W",
+    "Cite países que começam com a letra X",
+    "Cite países que começam com a letra Y",
+    "Cite países que começam com a letra Z",
+    "Cite objetos que começam com a letra A",
+    "Cite objetos que começam com a letra B",
+    "Cite objetos que começam com a letra C",
+    "Cite objetos que começam com a letra D",
+    "Cite objetos que começam com a letra E",
+    "Cite objetos que começam com a letra F",
+    "Cite objetos que começam com a letra G",
+    "Cite objetos que começam com a letra H",
+    "Cite objetos que começam com a letra I",
+    "Cite objetos que começam com a letra J",
+    "Cite objetos que começam com a letra K",
+    "Cite objetos que começam com a letra L",
+    "Cite objetos que começam com a letra M",
+    "Cite objetos que começam com a letra N",
+    "Cite objetos que começam com a letra O",
+    "Cite objetos que começam com a letra P",
+    "Cite objetos que começam com a letra Q",
+    "Cite objetos que começam com a letra R",
+    "Cite objetos que começam com a letra S",
+    "Cite objetos que começam com a letra T",
+    "Cite objetos que começam com a letra U",
+    "Cite objetos que começam com a letra V",
+    "Cite objetos que começam com a letra W",
+    "Cite objetos que começam com a letra X",
+    "Cite objetos que começam com a letra Y",
+    "Cite objetos que começam com a letra Z",
+    "Cite nomes de pessoas que começam com a letra A",
+    "Cite nomes de pessoas que começam com a letra B",
+    "Cite nomes de pessoas que começam com a letra C",
+    "Cite nomes de pessoas que começam com a letra D",
+    "Cite nomes de pessoas que começam com a letra E",
+    "Cite nomes de pessoas que começam com a letra F",
+    "Cite nomes de pessoas que começam com a letra G",
+    "Cite nomes de pessoas que começam com a letra H",
+    "Cite nomes de pessoas que começam com a letra I",
+    "Cite nomes de pessoas que começam com a letra J",
+    "Cite nomes de pessoas que começam com a letra K",
+    "Cite nomes de pessoas que começam com a letra L",
+    "Cite nomes de pessoas que começam com a letra M",
+    "Cite nomes de pessoas que começam com a letra N",
+    "Cite nomes de pessoas que começam com a letra O",
+    "Cite nomes de pessoas que começam com a letra P",
+    "Cite nomes de pessoas que começam com a letra Q",
+    "Cite nomes de pessoas que começam com a letra R",
+    "Cite nomes de pessoas que começam com a letra S",
+    "Cite nomes de pessoas que começam com a letra T",
+    "Cite nomes de pessoas que começam com a letra U",
+    "Cite nomes de pessoas que começam com a letra V",
+    "Cite nomes de pessoas que começam com a letra W",
+    "Cite nomes de pessoas que começam com a letra X",
+    "Cite nomes de pessoas que começam com a letra Y",
+    "Cite nomes de pessoas que começam com a letra Z",
+    "Cite profissões que começam com a letra A",
+    "Cite profissões que começam com a letra B",
+    "Cite profissões que começam com a letra C",
+    "Cite profissões que começam com a letra D",
+    "Cite profissões que começam com a letra E",
+    "Cite profissões que começam com a letra F",
+    "Cite profissões que começam com a letra G",
+    "Cite profissões que começam com a letra H",
+    "Cite profissões que começam com a letra I",
+    "Cite profissões que começam com a letra J",
+    "Cite profissões que começam com a letra K",
+    "Cite profissões que começam com a letra L",
+    "Cite profissões que começam com a letra M",
+    "Cite profissões que começam com a letra N",
+    "Cite profissões que começam com a letra O",
+    "Cite profissões que começam com a letra P",
+    "Cite profissões que começam com a letra Q",
+    "Cite profissões que começam com a letra R",
+    "Cite profissões que começam com a letra S",
+    "Cite profissões que começam com a letra T",
+    "Cite profissões que começam com a letra U",
+    "Cite profissões que começam com a letra V",
+    "Cite profissões que começam com a letra W",
+    "Cite profissões que começam com a letra X",
+    "Cite profissões que começam com a letra Y",
+    "Cite profissões que começam com a letra Z",
+    "Cite filmes que começam com a letra A",
+    "Cite filmes que começam com a letra B",
+    "Cite filmes que começam com a letra C",
+    "Cite filmes que começam com a letra D",
+    "Cite filmes que começam com a letra E",
+    "Cite filmes que começam com a letra F",
+    "Cite filmes que começam com a letra G",
+    "Cite filmes que começam com a letra H",
+    "Cite filmes que começam com a letra I",
+    "Cite filmes que começam com a letra J",
+    "Cite filmes que começam com a letra K",
+    "Cite filmes que começam com a letra L",
+    "Cite filmes que começam com a letra M",
+    "Cite filmes que começam com a letra N",
+    "Cite filmes que começam com a letra O",
+    "Cite filmes que começam com a letra P",
+    "Cite filmes que começam com a letra Q",
+    "Cite filmes que começam com a letra R",
+    "Cite filmes que começam com a letra S",
+    "Cite filmes que começam com a letra T",
+    "Cite filmes que começam com a letra U",
+    "Cite filmes que começam com a letra V",
+    "Cite filmes que começam com a letra W",
+    "Cite filmes que começam com a letra X",
+    "Cite filmes que começam com a letra Y",
+    "Cite filmes que começam com a letra Z",
+    "Cite marcas que começam com a letra A",
+    "Cite marcas que começam com a letra B",
+    "Cite marcas que começam com a letra C",
+    "Cite marcas que começam com a letra D",
+    "Cite marcas que começam com a letra E",
+    "Cite marcas que começam com a letra F",
+    "Cite marcas que começam com a letra G",
+    "Cite marcas que começam com a letra H",
+    "Cite marcas que começam com a letra I",
+    "Cite marcas que começam com a letra J",
+    "Cite marcas que começam com a letra K",
+    "Cite marcas que começam com a letra L",
+    "Cite marcas que começam com a letra M",
+    "Cite marcas que começam com a letra N",
+    "Cite marcas que começam com a letra O",
+    "Cite marcas que começam com a letra P",
+    "Cite marcas que começam com a letra Q",
+    "Cite marcas que começam com a letra R",
+    "Cite marcas que começam com a letra S",
+    "Cite marcas que começam com a letra T",
+    "Cite marcas que começam com a letra U",
+    "Cite marcas que começam com a letra V",
+    "Cite marcas que começam com a letra W",
+    "Cite marcas que começam com a letra X",
+    "Cite marcas que começam com a letra Y",
+    "Cite marcas que começam com a letra Z",
+    "Cite bandas que começam com a letra A",
+    "Cite bandas que começam com a letra B",
+    "Cite bandas que começam com a letra C",
+    "Cite bandas que começam com a letra D",
+    "Cite bandas que começam com a letra E",
+    "Cite bandas que começam com a letra F",
+    "Cite bandas que começam com a letra G",
+    "Cite bandas que começam com a letra H",
+    "Cite bandas que começam com a letra I",
+    "Cite bandas que começam com a letra J",
+    "Cite bandas que começam com a letra K",
+    "Cite bandas que começam com a letra L",
+    "Cite bandas que começam com a letra M",
+    "Cite bandas que começam com a letra N",
+    "Cite bandas que começam com a letra O",
+    "Cite bandas que começam com a letra P",
+    "Cite bandas que começam com a letra Q",
+    "Cite bandas que começam com a letra R",
+    "Cite bandas que começam com a letra S",
+    "Cite bandas que começam com a letra T",
+    "Cite bandas que começam com a letra U",
+    "Cite bandas que começam com a letra V",
+    "Cite bandas que começam com a letra W",
+    "Cite bandas que começam com a letra X",
+    "Cite bandas que começam com a letra Y",
+    "Cite bandas que começam com a letra Z",
+    "Cite instrumentos musicais que começam com a letra A",
+    "Cite instrumentos musicais que começam com a letra B",
+    "Cite instrumentos musicais que começam com a letra C",
+    "Cite instrumentos musicais que começam com a letra D",
+    "Cite instrumentos musicais que começam com a letra E",
+    "Cite instrumentos musicais que começam com a letra F",
+    "Cite instrumentos musicais que começam com a letra G",
+    "Cite instrumentos musicais que começam com a letra H",
+    "Cite instrumentos musicais que começam com a letra I",
+    "Cite instrumentos musicais que começam com a letra J",
+    "Cite instrumentos musicais que começam com a letra K",
+    "Cite instrumentos musicais que começam com a letra L",
+    "Cite instrumentos musicais que começam com a letra M",
+    "Cite instrumentos musicais que começam com a letra N",
+    "Cite instrumentos musicais que começam com a letra O",
+    "Cite instrumentos musicais que começam com a letra P",
+    "Cite instrumentos musicais que começam com a letra Q",
+    "Cite instrumentos musicais que começam com a letra R",
+    "Cite instrumentos musicais que começam com a letra S",
+    "Cite instrumentos musicais que começam com a letra T",
+    "Cite instrumentos musicais que começam com a letra U",
+    "Cite instrumentos musicais que começam com a letra V",
+    "Cite instrumentos musicais que começam com a letra W",
+    "Cite instrumentos musicais que começam com a letra X",
+    "Cite instrumentos musicais que começam com a letra Y",
+    "Cite instrumentos musicais que começam com a letra Z",
+    "Cite cores que começam com a letra A",
+    "Cite cores que começam com a letra B",
+    "Cite cores que começam com a letra C",
+    "Cite cores que começam com a letra D",
+    "Cite cores que começam com a letra E",
+    "Cite cores que começam com a letra F",
+    "Cite cores que começam com a letra G",
+    "Cite cores que começam com a letra H",
+    "Cite cores que começam com a letra I",
+    "Cite cores que começam com a letra J",
+    "Cite cores que começam com a letra K",
+    "Cite cores que começam com a letra L",
+    "Cite cores que começam com a letra M",
+    "Cite cores que começam com a letra N",
+    "Cite cores que começam com a letra O",
+    "Cite cores que começam com a letra P",
+    "Cite cores que começam com a letra Q",
+    "Cite cores que começam com a letra R",
+    "Cite cores que começam com a letra S",
+    "Cite cores que começam com a letra T",
+    "Cite cores que começam com a letra U",
+    "Cite cores que começam com a letra V",
+    "Cite cores que começam com a letra W",
+    "Cite cores que começam com a letra X",
+    "Cite cores que começam com a letra Y",
+    "Cite cores que começam com a letra Z",
+    "Cite esportes que começam com a letra A",
+    "Cite esportes que começam com a letra B",
+    "Cite esportes que começam com a letra C",
+    "Cite esportes que começam com a letra D",
+    "Cite esportes que começam com a letra E",
+    "Cite esportes que começam com a letra F",
+    "Cite esportes que começam com a letra G",
+    "Cite esportes que começam com a letra H",
+    "Cite esportes que começam com a letra I",
+    "Cite esportes que começam com a letra J",
+    "Cite esportes que começam com a letra K",
+    "Cite esportes que começam com a letra L",
+    "Cite esportes que começam com a letra M",
+    "Cite esportes que começam com a letra N",
+    "Cite esportes que começam com a letra O",
+    "Cite esportes que começam com a letra P",
+    "Cite esportes que começam com a letra Q",
+    "Cite esportes que começam com a letra R",
+    "Cite esportes que começam com a letra S",
+    "Cite esportes que começam com a letra T",
+    "Cite esportes que começam com a letra U",
+    "Cite esportes que começam com a letra V",
+    "Cite esportes que começam com a letra W",
+    "Cite esportes que começam com a letra X",
+    "Cite esportes que começam com a letra Y",
+    "Cite esportes que começam com a letra Z",
+    "Cite comidas que começam com a letra A",
+    "Cite comidas que começam com a letra B",
+    "Cite comidas que começam com a letra C",
+    "Cite comidas que começam com a letra D",
+    "Cite comidas que começam com a letra E",
+    "Cite comidas que começam com a letra F",
+    "Cite comidas que começam com a letra G",
+    "Cite comidas que começam com a letra H",
+    "Cite comidas que começam com a letra I",
+    "Cite comidas que começam com a letra J",
+    "Cite comidas que começam com a letra K",
+    "Cite comidas que começam com a letra L",
+    "Cite comidas que começam com a letra M",
+    "Cite comidas que começam com a letra N",
+    "Cite comidas que começam com a letra O",
+    "Cite comidas que começam com a letra P",
+    "Cite comidas que começam com a letra Q",
+    "Cite comidas que começam com a letra R",
+    "Cite comidas que começam com a letra S",
+    "Cite comidas que começam com a letra T",
+    "Cite comidas que começam com a letra U",
+    "Cite comidas que começam com a letra V",
+    "Cite comidas que começam com a letra W",
+    "Cite comidas que começam com a letra X",
+    "Cite comidas que começam com a letra Y",
+    "Cite comidas que começam com a letra Z",
+    "Cite doenças que começam com a letra A",
+    "Cite doenças que começam com a letra B",
+    "Cite doenças que começam com a letra C",
+    "Cite doenças que começam com a letra D",
+    "Cite doenças que começam com a letra E",
+    "Cite doenças que começam com a letra F",
+    "Cite doenças que começam com a letra G",
+    "Cite doenças que começam com a letra H",
+    "Cite doenças que começam com a letra I",
+    "Cite doenças que começam com a letra J",
+    "Cite doenças que começam com a letra K",
+    "Cite doenças que começam com a letra L",
+    "Cite doenças que começam com a letra M",
+    "Cite doenças que começam com a letra N",
+    "Cite doenças que começam com a letra O",
+    "Cite doenças que começam com a letra P",
+    "Cite doenças que começam com a letra Q",
+    "Cite doenças que começam com a letra R",
+    "Cite doenças que começam com a letra S",
+    "Cite doenças que começam com a letra T",
+    "Cite doenças que começam com a letra U",
+    "Cite doenças que começam com a letra V",
+    "Cite doenças que começam com a letra W",
+    "Cite doenças que começam com a letra X",
+    "Cite doenças que começam com a letra Y",
+    "Cite doenças que começam com a letra Z",
+    "Cite verbos que começam com a letra A",
+    "Cite verbos que começam com a letra B",
+    "Cite verbos que começam com a letra C",
+    "Cite verbos que começam com a letra D",
+    "Cite verbos que começam com a letra E",
+    "Cite verbos que começam com a letra F",
+    "Cite verbos que começam com a letra G",
+    "Cite verbos que começam com a letra H",
+    "Cite verbos que começam com a letra I",
+    "Cite verbos que começam com a letra J",
+    "Cite verbos que começam com a letra K",
+    "Cite verbos que começam com a letra L",
+    "Cite verbos que começam com a letra M",
+    "Cite verbos que começam com a letra N",
+    "Cite verbos que começam com a letra O",
+    "Cite verbos que começam com a letra P",
+    "Cite verbos que começam com a letra Q",
+    "Cite verbos que começam com a letra R",
+    "Cite verbos que começam com a letra S",
+    "Cite verbos que começam com a letra T",
+    "Cite verbos que começam com a letra U",
+    "Cite verbos que começam com a letra V",
+    "Cite verbos que começam com a letra W",
+    "Cite verbos que começam com a letra X",
+    "Cite verbos que começam com a letra Y",
+    "Cite verbos que começam com a letra Z",
+    "Cite adjetivos que começam com a letra A",
+    "Cite adjetivos que começam com a letra B",
+    "Cite adjetivos que começam com a letra C",
+    "Cite adjetivos que começam com a letra D",
+    "Cite adjetivos que começam com a letra E",
+    "Cite adjetivos que começam com a letra F",
+    "Cite adjetivos que começam com a letra G",
+    "Cite adjetivos que começam com a letra H",
+    "Cite adjetivos que começam com a letra I",
+    "Cite adjetivos que começam com a letra J",
+    "Cite adjetivos que começam com a letra K",
+    "Cite adjetivos que começam com a letra L",
+    "Cite adjetivos que começam com a letra M",
+    "Cite adjetivos que começam com a letra N",
+    "Cite adjetivos que começam com a letra O",
+    "Cite adjetivos que começam com a letra P",
+    "Cite adjetivos que começam com a letra Q",
+    "Cite adjetivos que começam com a letra R",
+    "Cite adjetivos que começam com a letra S",
+    "Cite adjetivos que começam com a letra T",
+    "Cite adjetivos que começam com a letra U",
+    "Cite adjetivos que começam com a letra V",
+    "Cite adjetivos que começam com a letra W",
+    "Cite adjetivos que começam com a letra X",
+    "Cite adjetivos que começam com a letra Y",
+    "Cite adjetivos que começam com a letra Z",
+    "Cite personagens que começam com a letra A",
+    "Cite personagens que começam com a letra B",
+    "Cite personagens que começam com a letra C",
+    "Cite personagens que começam com a letra D",
+    "Cite personagens que começam com a letra E",
+    "Cite personagens que começam com a letra F",
+    "Cite personagens que começam com a letra G",
+    "Cite personagens que começam com a letra H",
+    "Cite personagens que começam com a letra I",
+    "Cite personagens que começam com a letra J",
+    "Cite personagens que começam com a letra K",
+    "Cite personagens que começam com a letra L",
+    "Cite personagens que começam com a letra M",
+    "Cite personagens que começam com a letra N",
+    "Cite personagens que começam com a letra O",
+    "Cite personagens que começam com a letra P",
+    "Cite personagens que começam com a letra Q",
+    "Cite personagens que começam com a letra R",
+    "Cite personagens que começam com a letra S",
+    "Cite personagens que começam com a letra T",
+    "Cite personagens que começam com a letra U",
+    "Cite personagens que começam com a letra V",
+    "Cite personagens que começam com a letra W",
+    "Cite personagens que começam com a letra X",
+    "Cite personagens que começam com a letra Y",
+    "Cite personagens que começam com a letra Z",
+    "Cite jogos que começam com a letra A",
+    "Cite jogos que começam com a letra B",
+    "Cite jogos que começam com a letra C",
+    "Cite jogos que começam com a letra D",
+    "Cite jogos que começam com a letra E",
+    "Cite jogos que começam com a letra F",
+    "Cite jogos que começam com a letra G",
+    "Cite jogos que começam com a letra H",
+    "Cite jogos que começam com a letra I",
+    "Cite jogos que começam com a letra J",
+    "Cite jogos que começam com a letra K",
+    "Cite jogos que começam com a letra L",
+    "Cite jogos que começam com a letra M",
+    "Cite jogos que começam com a letra N",
+    "Cite jogos que começam com a letra O",
+    "Cite jogos que começam com a letra P",
+    "Cite jogos que começam com a letra Q",
+    "Cite jogos que começam com a letra R",
+    "Cite jogos que começam com a letra S",
+    "Cite jogos que começam com a letra T",
+    "Cite jogos que começam com a letra U",
+    "Cite jogos que começam com a letra V",
+    "Cite jogos que começam com a letra W",
+    "Cite jogos que começam com a letra X",
+    "Cite jogos que começam com a letra Y",
+    "Cite jogos que começam com a letra Z",
+    "Cite ferramentas que começam com a letra A",
+    "Cite ferramentas que começam com a letra B",
+    "Cite ferramentas que começam com a letra C",
+    "Cite ferramentas que começam com a letra D",
+    "Cite ferramentas que começam com a letra E",
+    "Cite ferramentas que começam com a letra F",
+    "Cite ferramentas que começam com a letra G",
+    "Cite ferramentas que começam com a letra H",
+    "Cite ferramentas que começam com a letra I",
+    "Cite ferramentas que começam com a letra J",
+    "Cite ferramentas que começam com a letra K",
+    "Cite ferramentas que começam com a letra L",
+    "Cite ferramentas que começam com a letra M",
+    "Cite ferramentas que começam com a letra N",
+    "Cite ferramentas que começam com a letra O",
+    "Cite ferramentas que começam com a letra P",
+    "Cite ferramentas que começam com a letra Q",
+    "Cite ferramentas que começam com a letra R",
+    "Cite ferramentas que começam com a letra S",
+    "Cite ferramentas que começam com a letra T",
+    "Cite ferramentas que começam com a letra U",
+    "Cite ferramentas que começam com a letra V",
+    "Cite ferramentas que começam com a letra W",
+    "Cite ferramentas que começam com a letra X",
+    "Cite ferramentas que começam com a letra Y",
+    "Cite ferramentas que começam com a letra Z",
+    "Cite partes do corpo que começam com a letra A",
+    "Cite partes do corpo que começam com a letra B",
+    "Cite partes do corpo que começam com a letra C",
+    "Cite partes do corpo que começam com a letra D",
+    "Cite partes do corpo que começam com a letra E",
+    "Cite partes do corpo que começam com a letra F",
+    "Cite partes do corpo que começam com a letra G",
+    "Cite partes do corpo que começam com a letra H",
+    "Cite partes do corpo que começam com a letra I",
+    "Cite partes do corpo que começam com a letra J",
+    "Cite partes do corpo que começam com a letra K",
+    "Cite partes do corpo que começam com a letra L",
+    "Cite partes do corpo que começam com a letra M",
+    "Cite partes do corpo que começam com a letra N",
+    "Cite partes do corpo que começam com a letra O",
+    "Cite partes do corpo que começam com a letra P",
+    "Cite partes do corpo que começam com a letra Q",
+    "Cite partes do corpo que começam com a letra R",
+    "Cite partes do corpo que começam com a letra S",
+    "Cite partes do corpo que começam com a letra T",
+    "Cite partes do corpo que começam com a letra U",
+    "Cite partes do corpo que começam com a letra V",
+    "Cite partes do corpo que começam com a letra W",
+    "Cite partes do corpo que começam com a letra X",
+    "Cite partes do corpo que começam com a letra Y",
+    "Cite partes do corpo que começam com a letra Z",
+    "Cite times de futebol que começam com a letra A",
+    "Cite times de futebol que começam com a letra B",
+    "Cite times de futebol que começam com a letra C",
+    "Cite times de futebol que começam com a letra D",
+    "Cite times de futebol que começam com a letra E",
+    "Cite times de futebol que começam com a letra F",
+    "Cite times de futebol que começam com a letra G",
+    "Cite times de futebol que começam com a letra H",
+    "Cite times de futebol que começam com a letra I",
+    "Cite times de futebol que começam com a letra J",
+    "Cite times de futebol que começam com a letra K",
+    "Cite times de futebol que começam com a letra L",
+    "Cite times de futebol que começam com a letra M",
+    "Cite times de futebol que começam com a letra N",
+    "Cite times de futebol que começam com a letra O",
+    "Cite times de futebol que começam com a letra P",
+    "Cite times de futebol que começam com a letra Q",
+    "Cite times de futebol que começam com a letra R",
+    "Cite times de futebol que começam com a letra S",
+    "Cite times de futebol que começam com a letra T",
+    "Cite times de futebol que começam com a letra U",
+    "Cite times de futebol que começam com a letra V",
+    "Cite times de futebol que começam com a letra W",
+    "Cite times de futebol que começam com a letra X",
+    "Cite times de futebol que começam com a letra Y",
+    "Cite times de futebol que começam com a letra Z",
+    "Cite carros que começam com a letra A",
+    "Cite carros que começam com a letra B",
+    "Cite carros que começam com a letra C",
+    "Cite carros que começam com a letra D",
+    "Cite carros que começam com a letra E",
+    "Cite carros que começam com a letra F",
+    "Cite carros que começam com a letra G",
+    "Cite carros que começam com a letra H",
+    "Cite carros que começam com a letra I",
+    "Cite carros que começam com a letra J",
+    "Cite carros que começam com a letra K",
+    "Cite carros que começam com a letra L",
+    "Cite carros que começam com a letra M",
+    "Cite carros que começam com a letra N",
+    "Cite carros que começam com a letra O",
+    "Cite carros que começam com a letra P",
+    "Cite carros que começam com a letra Q",
+    "Cite carros que começam com a letra R",
+    "Cite carros que começam com a letra S",
+    "Cite carros que começam com a letra T",
+    "Cite carros que começam com a letra U",
+    "Cite carros que começam com a letra V",
+    "Cite carros que começam com a letra W",
+    "Cite carros que começam com a letra X",
+    "Cite carros que começam com a letra Y",
+    "Cite carros que começam com a letra Z",
+    "Cite flores que começam com a letra A",
+    "Cite flores que começam com a letra B",
+    "Cite flores que começam com a letra C",
+    "Cite flores que começam com a letra D",
+    "Cite flores que começam com a letra E",
+    "Cite flores que começam com a letra F",
+    "Cite flores que começam com a letra G",
+    "Cite flores que começam com a letra H",
+    "Cite flores que começam com a letra I",
+    "Cite flores que começam com a letra J",
+    "Cite flores que começam com a letra K",
+    "Cite flores que começam com a letra L",
+    "Cite flores que começam com a letra M",
+    "Cite flores que começam com a letra N",
+    "Cite flores que começam com a letra O",
+    "Cite flores que começam com a letra P",
+    "Cite flores que começam com a letra Q",
+    "Cite flores que começam com a letra R",
+    "Cite flores que começam com a letra S",
+    "Cite flores que começam com a letra T",
+    "Cite flores que começam com a letra U",
+    "Cite flores que começam com a letra V",
+    "Cite flores que começam com a letra W",
+    "Cite flores que começam com a letra X",
+    "Cite flores que começam com a letra Y",
+    "Cite flores que começam com a letra Z",
+    "Cite idiomas que começam com a letra A",
+    "Cite idiomas que começam com a letra B",
+    "Cite idiomas que começam com a letra C",
+    "Cite idiomas que começam com a letra D",
+    "Cite idiomas que começam com a letra E",
+    "Cite idiomas que começam com a letra F",
+    "Cite idiomas que começam com a letra G",
+    "Cite idiomas que começam com a letra H",
+    "Cite idiomas que começam com a letra I",
+    "Cite idiomas que começam com a letra J",
+    "Cite idiomas que começam com a letra K",
+    "Cite idiomas que começam com a letra L",
+    "Cite idiomas que começam com a letra M",
+    "Cite idiomas que começam com a letra N",
+    "Cite idiomas que começam com a letra O",
+    "Cite idiomas que começam com a letra P",
+    "Cite idiomas que começam com a letra Q",
+    "Cite idiomas que começam com a letra R",
+    "Cite idiomas que começam com a letra S",
+    "Cite idiomas que começam com a letra T",
+    "Cite idiomas que começam com a letra U",
+    "Cite idiomas que começam com a letra V",
+    "Cite idiomas que começam com a letra W",
+    "Cite idiomas que começam com a letra X",
+    "Cite idiomas que começam com a letra Y",
+    "Cite idiomas que começam com a letra Z",
+    "Cite rios que começam com a letra A",
+    "Cite rios que começam com a letra B",
+    "Cite rios que começam com a letra C",
+    "Cite rios que começam com a letra D",
+    "Cite rios que começam com a letra E",
+    "Cite rios que começam com a letra F",
+    "Cite rios que começam com a letra G",
+    "Cite rios que começam com a letra H",
+    "Cite rios que começam com a letra I",
+    "Cite rios que começam com a letra J",
+    "Cite rios que começam com a letra K",
+    "Cite rios que começam com a letra L",
+    "Cite rios que começam com a letra M",
+    "Cite rios que começam com a letra N",
+    "Cite rios que começam com a letra O",
+    "Cite rios que começam com a letra P",
+    "Cite rios que começam com a letra Q",
+    "Cite rios que começam com a letra R",
+    "Cite rios que começam com a letra S",
+    "Cite rios que começam com a letra T",
+    "Cite rios que começam com a letra U",
+    "Cite rios que começam com a letra V",
+    "Cite rios que começam com a letra W",
+    "Cite rios que começam com a letra X",
+    "Cite rios que começam com a letra Y",
+    "Cite rios que começam com a letra Z",
+    "Cite montanhas que começam com a letra A",
+    "Cite montanhas que começam com a letra B",
+    "Cite montanhas que começam com a letra C",
+    "Cite montanhas que começam com a letra D",
+    "Cite montanhas que começam com a letra E",
+    "Cite montanhas que começam com a letra F",
+    "Cite montanhas que começam com a letra G",
+    "Cite montanhas que começam com a letra H",
+    "Cite montanhas que começam com a letra I",
+    "Cite montanhas que começam com a letra J",
+    "Cite montanhas que começam com a letra K",
+    "Cite montanhas que começam com a letra L",
+    "Cite montanhas que começam com a letra M",
+    "Cite montanhas que começam com a letra N",
+    "Cite montanhas que começam com a letra O",
+    "Cite montanhas que começam com a letra P",
+    "Cite montanhas que começam com a letra Q",
+    "Cite montanhas que começam com a letra R",
+    "Cite montanhas que começam com a letra S",
+    "Cite montanhas que começam com a letra T",
+    "Cite montanhas que começam com a letra U",
+    "Cite montanhas que começam com a letra V",
+    "Cite montanhas que começam com a letra W",
+    "Cite montanhas que começam com a letra X",
+    "Cite montanhas que começam com a letra Y",
+    "Cite montanhas que começam com a letra Z",
+    "Cite doces que começam com a letra A",
+    "Cite doces que começam com a letra B",
+    "Cite doces que começam com a letra C",
+    "Cite doces que começam com a letra D",
+    "Cite doces que começam com a letra E",
+    "Cite doces que começam com a letra F",
+    "Cite doces que começam com a letra G",
+    "Cite doces que começam com a letra H",
+    "Cite doces que começam com a letra I",
+    "Cite doces que começam com a letra J",
+    "Cite doces que começam com a letra K",
+    "Cite doces que começam com a letra L",
+    "Cite doces que começam com a letra M",
+    "Cite doces que começam com a letra N",
+    "Cite doces que começam com a letra O",
+    "Cite doces que começam com a letra P",
+    "Cite doces que começam com a letra Q",
+    "Cite doces que começam com a letra R",
+    "Cite doces que começam com a letra S",
+    "Cite doces que começam com a letra T",
+    "Cite doces que começam com a letra U",
+    "Cite doces que começam com a letra V",
+    "Cite doces que começam com a letra W",
+    "Cite doces que começam com a letra X",
+    "Cite doces que começam com a letra Y",
+    "Cite doces que começam com a letra Z",
+    "Cite bebidas que começam com a letra A",
+    "Cite bebidas que começam com a letra B",
+    "Cite bebidas que começam com a letra C",
+    "Cite bebidas que começam com a letra D",
+    "Cite bebidas que começam com a letra E",
+    "Cite bebidas que começam com a letra F",
+    "Cite bebidas que começam com a letra G",
+    "Cite bebidas que começam com a letra H",
+    "Cite bebidas que começam com a letra I",
+    "Cite bebidas que começam com a letra J",
+    "Cite bebidas que começam com a letra K",
+    "Cite bebidas que começam com a letra L",
+    "Cite bebidas que começam com a letra M",
+    "Cite bebidas que começam com a letra N",
+    "Cite bebidas que começam com a letra O",
+    "Cite bebidas que começam com a letra P",
+    "Cite bebidas que começam com a letra Q",
+    "Cite bebidas que começam com a letra R",
+    "Cite bebidas que começam com a letra S",
+    "Cite bebidas que começam com a letra T",
+    "Cite bebidas que começam com a letra U",
+    "Cite bebidas que começam com a letra V",
+    "Cite bebidas que começam com a letra W",
+    "Cite bebidas que começam com a letra X",
+    "Cite bebidas que começam com a letra Y",
+    "Cite bebidas que começam com a letra Z",
+    "Cite roupas que começam com a letra A",
+    "Cite roupas que começam com a letra B",
+    "Cite roupas que começam com a letra C",
+    "Cite roupas que começam com a letra D",
+    "Cite roupas que começam com a letra E",
+    "Cite roupas que começam com a letra F",
+    "Cite roupas que começam com a letra G",
+    "Cite roupas que começam com a letra H",
+    "Cite roupas que começam com a letra I",
+    "Cite roupas que começam com a letra J",
+    "Cite roupas que começam com a letra K",
+    "Cite roupas que começam com a letra L",
+    "Cite roupas que começam com a letra M",
+    "Cite roupas que começam com a letra N",
+    "Cite roupas que começam com a letra O",
+    "Cite roupas que começam com a letra P",
+    "Cite roupas que começam com a letra Q",
+    "Cite roupas que começam com a letra R",
+    "Cite roupas que começam com a letra S",
+    "Cite roupas que começam com a letra T",
+    "Cite roupas que começam com a letra U",
+    "Cite roupas que começam com a letra V",
+    "Cite roupas que começam com a letra W",
+    "Cite roupas que começam com a letra X",
+    "Cite roupas que começam com a letra Y",
+    "Cite roupas que começam com a letra Z",
+    "Cite móveis que começam com a letra A",
+    "Cite móveis que começam com a letra B",
+    "Cite móveis que começam com a letra C",
+    "Cite móveis que começam com a letra D",
+    "Cite móveis que começam com a letra E",
+    "Cite móveis que começam com a letra F",
+    "Cite móveis que começam com a letra G",
+    "Cite móveis que começam com a letra H",
+    "Cite móveis que começam com a letra I",
+    "Cite móveis que começam com a letra J",
+    "Cite móveis que começam com a letra K",
+    "Cite móveis que começam com a letra L",
+    "Cite móveis que começam com a letra M",
+    "Cite móveis que começam com a letra N",
+    "Cite móveis que começam com a letra O",
+    "Cite móveis que começam com a letra P",
+    "Cite móveis que começam com a letra Q",
+    "Cite móveis que começam com a letra R",
+    "Cite móveis que começam com a letra S",
+    "Cite móveis que começam com a letra T",
+    "Cite móveis que começam com a letra U",
+    "Cite móveis que começam com a letra V",
+    "Cite móveis que começam com a letra W",
+    "Cite móveis que começam com a letra X",
+    "Cite móveis que começam com a letra Y",
+    "Cite móveis que começam com a letra Z",
+    "Cite eletrodomésticos que começam com a letra A",
+    "Cite eletrodomésticos que começam com a letra B",
+    "Cite eletrodomésticos que começam com a letra C",
+    "Cite eletrodomésticos que começam com a letra D",
+    "Cite eletrodomésticos que começam com a letra E",
+    "Cite eletrodomésticos que começam com a letra F",
+    "Cite eletrodomésticos que começam com a letra G",
+    "Cite eletrodomésticos que começam com a letra H",
+    "Cite eletrodomésticos que começam com a letra I",
+    "Cite eletrodomésticos que começam com a letra J",
+    "Cite eletrodomésticos que começam com a letra K",
+    "Cite eletrodomésticos que começam com a letra L",
+    "Cite eletrodomésticos que começam com a letra M",
+    "Cite eletrodomésticos que começam com a letra N",
+    "Cite eletrodomésticos que começam com a letra O",
+    "Cite eletrodomésticos que começam com a letra P",
+    "Cite eletrodomésticos que começam com a letra Q",
+    "Cite eletrodomésticos que começam com a letra R",
+    "Cite eletrodomésticos que começam com a letra S",
+    "Cite eletrodomésticos que começam com a letra T",
+    "Cite eletrodomésticos que começam com a letra U",
+    "Cite eletrodomésticos que começam com a letra V",
+    "Cite eletrodomésticos que começam com a letra W",
+    "Cite eletrodomésticos que começam com a letra X",
+    "Cite eletrodomésticos que começam com a letra Y",
+    "Cite eletrodomésticos que começam com a letra Z",
+    "Cite insetos que começam com a letra A",
+    "Cite insetos que começam com a letra B",
+    "Cite insetos que começam com a letra C",
+    "Cite insetos que começam com a letra D",
+    "Cite insetos que começam com a letra E",
+    "Cite insetos que começam com a letra F",
+    "Cite insetos que começam com a letra G",
+    "Cite insetos que começam com a letra H",
+    "Cite insetos que começam com a letra I",
+    "Cite insetos que começam com a letra J",
+    "Cite insetos que começam com a letra K",
+    "Cite insetos que começam com a letra L",
+    "Cite insetos que começam com a letra M",
+    "Cite insetos que começam com a letra N",
+    "Cite insetos que começam com a letra O",
+    "Cite insetos que começam com a letra P",
+    "Cite insetos que começam com a letra Q",
+    "Cite insetos que começam com a letra R",
+    "Cite insetos que começam com a letra S",
+    "Cite insetos que começam com a letra T",
+    "Cite insetos que começam com a letra U",
+    "Cite insetos que começam com a letra V",
+    "Cite insetos que começam com a letra W",
+    "Cite insetos que começam com a letra X",
+    "Cite insetos que começam com a letra Y",
+    "Cite insetos que começam com a letra Z",
+    "Cite pássaros que começam com a letra A",
+    "Cite pássaros que começam com a letra B",
+    "Cite pássaros que começam com a letra C",
+    "Cite pássaros que começam com a letra D",
+    "Cite pássaros que começam com a letra E",
+    "Cite pássaros que começam com a letra F",
+    "Cite pássaros que começam com a letra G",
+    "Cite pássaros que começam com a letra H",
+    "Cite pássaros que começam com a letra I",
+    "Cite pássaros que começam com a letra J",
+    "Cite pássaros que começam com a letra K",
+    "Cite pássaros que começam com a letra L",
+    "Cite pássaros que começam com a letra M",
+    "Cite pássaros que começam com a letra N",
+    "Cite pássaros que começam com a letra O",
+    "Cite pássaros que começam com a letra P",
+    "Cite pássaros que começam com a letra Q",
+    "Cite pássaros que começam com a letra R",
+    "Cite pássaros que começam com a letra S",
+    "Cite pássaros que começam com a letra T",
+    "Cite pássaros que começam com a letra U",
+    "Cite pássaros que começam com a letra V",
+    "Cite pássaros que começam com a letra W",
+    "Cite pássaros que começam com a letra X",
+    "Cite pássaros que começam com a letra Y",
+    "Cite pássaros que começam com a letra Z",
+    "Cite peixes que começam com a letra A",
+    "Cite peixes que começam com a letra B",
+    "Cite peixes que começam com a letra C",
+    "Cite peixes que começam com a letra D",
+    "Cite peixes que começam com a letra E",
+    "Cite peixes que começam com a letra F",
+    "Cite peixes que começam com a letra G",
+    "Cite peixes que começam com a letra H",
+    "Cite peixes que começam com a letra I",
+    "Cite peixes que começam com a letra J",
+    "Cite peixes que começam com a letra K",
+    "Cite peixes que começam com a letra L",
+    "Cite peixes que começam com a letra M",
+    "Cite peixes que começam com a letra N",
+    "Cite peixes que começam com a letra O",
+    "Cite peixes que começam com a letra P",
+    "Cite peixes que começam com a letra Q",
+    "Cite peixes que começam com a letra R",
+    "Cite peixes que começam com a letra S",
+    "Cite peixes que começam com a letra T",
+    "Cite peixes que começam com a letra U",
+    "Cite peixes que começam com a letra V",
+    "Cite peixes que começam com a letra W",
+    "Cite peixes que começam com a letra X",
+    "Cite peixes que começam com a letra Y",
+    "Cite peixes que começam com a letra Z",
+    "Cite répteis que começam com a letra A",
+    "Cite répteis que começam com a letra B",
+    "Cite répteis que começam com a letra C",
+    "Cite répteis que começam com a letra D",
+    "Cite répteis que começam com a letra E",
+    "Cite répteis que começam com a letra F",
+    "Cite répteis que começam com a letra G",
+    "Cite répteis que começam com a letra H",
+    "Cite répteis que começam com a letra I",
+    "Cite répteis que começam com a letra J",
+    "Cite répteis que começam com a letra K",
+    "Cite répteis que começam com a letra L",
+    "Cite répteis que começam com a letra M",
+    "Cite répteis que começam com a letra N",
+    "Cite répteis que começam com a letra O",
+    "Cite répteis que começam com a letra P",
+    "Cite répteis que começam com a letra Q",
+    "Cite répteis que começam com a letra R",
+    "Cite répteis que começam com a letra S",
+    "Cite répteis que começam com a letra T",
+    "Cite répteis que começam com a letra U",
+    "Cite répteis que começam com a letra V",
+    "Cite répteis que começam com a letra W",
+    "Cite répteis que começam com a letra X",
+    "Cite répteis que começam com a letra Y",
+    "Cite répteis que começam com a letra Z",
+    "Cite atores que começam com a letra A",
+    "Cite atores que começam com a letra B",
+    "Cite atores que começam com a letra C",
+    "Cite atores que começam com a letra D",
+    "Cite atores que começam com a letra E",
+    "Cite atores que começam com a letra F",
+    "Cite atores que começam com a letra G",
+    "Cite atores que começam com a letra H",
+    "Cite atores que começam com a letra I",
+    "Cite atores que começam com a letra J",
+    "Cite atores que começam com a letra K",
+    "Cite atores que começam com a letra L",
+    "Cite atores que começam com a letra M",
+    "Cite atores que começam com a letra N",
+    "Cite atores que começam com a letra O",
+    "Cite atores que começam com a letra P",
+    "Cite atores que começam com a letra Q",
+    "Cite atores que começam com a letra R",
+    "Cite atores que começam com a letra S",
+    "Cite atores que começam com a letra T",
+    "Cite atores que começam com a letra U",
+    "Cite atores que começam com a letra V",
+    "Cite atores que começam com a letra W",
+    "Cite atores que começam com a letra X",
+    "Cite atores que começam com a letra Y",
+    "Cite atores que começam com a letra Z",
+    "Cite atrizes que começam com a letra A",
+    "Cite atrizes que começam com a letra B",
+    "Cite atrizes que começam com a letra C",
+    "Cite atrizes que começam com a letra D",
+    "Cite atrizes que começam com a letra E",
+    "Cite atrizes que começam com a letra F",
+    "Cite atrizes que começam com a letra G",
+    "Cite atrizes que começam com a letra H",
+    "Cite atrizes que começam com a letra I",
+    "Cite atrizes que começam com a letra J",
+    "Cite atrizes que começam com a letra K",
+    "Cite atrizes que começam com a letra L",
+    "Cite atrizes que começam com a letra M",
+    "Cite atrizes que começam com a letra N",
+    "Cite atrizes que começam com a letra O",
+    "Cite atrizes que começam com a letra P",
+    "Cite atrizes que começam com a letra Q",
+    "Cite atrizes que começam com a letra R",
+    "Cite atrizes que começam com a letra S",
+    "Cite atrizes que começam com a letra T",
+    "Cite atrizes que começam com a letra U",
+    "Cite atrizes que começam com a letra V",
+    "Cite atrizes que começam com a letra W",
+    "Cite atrizes que começam com a letra X",
+    "Cite atrizes que começam com a letra Y",
+    "Cite atrizes que começam com a letra Z",
+    "Cite cantores que começam com a letra A",
+    "Cite cantores que começam com a letra B",
+    "Cite cantores que começam com a letra C",
+    "Cite cantores que começam com a letra D",
+    "Cite cantores que começam com a letra E",
+    "Cite cantores que começam com a letra F",
+    "Cite cantores que começam com a letra G",
+    "Cite cantores que começam com a letra H",
+    "Cite cantores que começam com a letra I",
+    "Cite cantores que começam com a letra J",
+    "Cite cantores que começam com a letra K",
+    "Cite cantores que começam com a letra L",
+    "Cite cantores que começam com a letra M",
+    "Cite cantores que começam com a letra N",
+    "Cite cantores que começam com a letra O",
+    "Cite cantores que começam com a letra P",
+    "Cite cantores que começam com a letra Q",
+    "Cite cantores que começam com a letra R",
+    "Cite cantores que começam com a letra S",
+    "Cite cantores que começam com a letra T",
+    "Cite cantores que começam com a letra U",
+    "Cite cantores que começam com a letra V",
+    "Cite cantores que começam com a letra W",
+    "Cite cantores que começam com a letra X",
+    "Cite cantores que começam com a letra Y",
+    "Cite cantores que começam com a letra Z",
+    "Cite séries de TV que começam com a letra A",
+    "Cite séries de TV que começam com a letra B",
+    "Cite séries de TV que começam com a letra C",
+    "Cite séries de TV que começam com a letra D",
+    "Cite séries de TV que começam com a letra E",
+    "Cite séries de TV que começam com a letra F",
+    "Cite séries de TV que começam com a letra G",
+    "Cite séries de TV que começam com a letra H",
+    "Cite séries de TV que começam com a letra I",
+    "Cite séries de TV que começam com a letra J",
+    "Cite séries de TV que começam com a letra K",
+    "Cite séries de TV que começam com a letra L",
+    "Cite séries de TV que começam com a letra M",
+    "Cite séries de TV que começam com a letra N",
+    "Cite séries de TV que começam com a letra O",
+    "Cite séries de TV que começam com a letra P",
+    "Cite séries de TV que começam com a letra Q",
+    "Cite séries de TV que começam com a letra R",
+    "Cite séries de TV que começam com a letra S",
+    "Cite séries de TV que começam com a letra T",
+    "Cite séries de TV que começam com a letra U",
+    "Cite séries de TV que começam com a letra V",
+    "Cite séries de TV que começam com a letra W",
+    "Cite séries de TV que começam com a letra X",
+    "Cite séries de TV que começam com a letra Y",
+    "Cite séries de TV que começam com a letra Z",
+    "Cite desenhos animados que começam com a letra A",
+    "Cite desenhos animados que começam com a letra B",
+    "Cite desenhos animados que começam com a letra C",
+    "Cite desenhos animados que começam com a letra D",
+    "Cite desenhos animados que começam com a letra E",
+    "Cite desenhos animados que começam com a letra F",
+    "Cite desenhos animados que começam com a letra G",
+    "Cite desenhos animados que começam com a letra H",
+    "Cite desenhos animados que começam com a letra I",
+    "Cite desenhos animados que começam com a letra J",
+    "Cite desenhos animados que começam com a letra K",
+    "Cite desenhos animados que começam com a letra L",
+    "Cite desenhos animados que começam com a letra M",
+    "Cite desenhos animados que começam com a letra N",
+    "Cite desenhos animados que começam com a letra O",
+    "Cite desenhos animados que começam com a letra P",
+    "Cite desenhos animados que começam com a letra Q",
+    "Cite desenhos animados que começam com a letra R",
+    "Cite desenhos animados que começam com a letra S",
+    "Cite desenhos animados que começam com a letra T",
+    "Cite desenhos animados que começam com a letra U",
+    "Cite desenhos animados que começam com a letra V",
+    "Cite desenhos animados que começam com a letra W",
+    "Cite desenhos animados que começam com a letra X",
+    "Cite desenhos animados que começam com a letra Y",
+    "Cite desenhos animados que começam com a letra Z",
+    "Cite super-heróis que começam com a letra A",
+    "Cite super-heróis que começam com a letra B",
+    "Cite super-heróis que começam com a letra C",
+    "Cite super-heróis que começam com a letra D",
+    "Cite super-heróis que começam com a letra E",
+    "Cite super-heróis que começam com a letra F",
+    "Cite super-heróis que começam com a letra G",
+    "Cite super-heróis que começam com a letra H",
+    "Cite super-heróis que começam com a letra I",
+    "Cite super-heróis que começam com a letra J",
+    "Cite super-heróis que começam com a letra K",
+    "Cite super-heróis que começam com a letra L",
+    "Cite super-heróis que começam com a letra M",
+    "Cite super-heróis que começam com a letra N",
+    "Cite super-heróis que começam com a letra O",
+    "Cite super-heróis que começam com a letra P",
+    "Cite super-heróis que começam com a letra Q",
+    "Cite super-heróis que começam com a letra R",
+    "Cite super-heróis que começam com a letra S",
+    "Cite super-heróis que começam com a letra T",
+    "Cite super-heróis que começam com a letra U",
+    "Cite super-heróis que começam com a letra V",
+    "Cite super-heróis que começam com a letra W",
+    "Cite super-heróis que começam com a letra X",
+    "Cite super-heróis que começam com a letra Y",
+    "Cite super-heróis que começam com a letra Z",
+    "Cite vilões que começam com a letra A",
+    "Cite vilões que começam com a letra B",
+    "Cite vilões que começam com a letra C",
+    "Cite vilões que começam com a letra D",
+    "Cite vilões que começam com a letra E",
+    "Cite vilões que começam com a letra F",
+    "Cite vilões que começam com a letra G",
+    "Cite vilões que começam com a letra H",
+    "Cite vilões que começam com a letra I",
+    "Cite vilões que começam com a letra J",
+    "Cite vilões que começam com a letra K",
+    "Cite vilões que começam com a letra L",
+    "Cite vilões que começam com a letra M",
+    "Cite vilões que começam com a letra N",
+    "Cite vilões que começam com a letra O",
+    "Cite vilões que começam com a letra P",
+    "Cite vilões que começam com a letra Q",
+    "Cite vilões que começam com a letra R",
+    "Cite vilões que começam com a letra S",
+    "Cite vilões que começam com a letra T",
+    "Cite vilões que começam com a letra U",
+    "Cite vilões que começam com a letra V",
+    "Cite vilões que começam com a letra W",
+    "Cite vilões que começam com a letra X",
+    "Cite vilões que começam com a letra Y",
+    "Cite vilões que começam com a letra Z",
+    "Cite brinquedos que começam com a letra A",
+    "Cite brinquedos que começam com a letra B",
+    "Cite brinquedos que começam com a letra C",
+    "Cite brinquedos que começam com a letra D",
+    "Cite brinquedos que começam com a letra E",
+    "Cite brinquedos que começam com a letra F",
+    "Cite brinquedos que começam com a letra G",
+    "Cite brinquedos que começam com a letra H",
+    "Cite brinquedos que começam com a letra I",
+    "Cite brinquedos que começam com a letra J",
+    "Cite brinquedos que começam com a letra K",
+    "Cite brinquedos que começam com a letra L",
+    "Cite brinquedos que começam com a letra M",
+    "Cite brinquedos que começam com a letra N",
+    "Cite brinquedos que começam com a letra O",
+    "Cite brinquedos que começam com a letra P",
+    "Cite brinquedos que começam com a letra Q",
+    "Cite brinquedos que começam com a letra R",
+    "Cite brinquedos que começam com a letra S",
+    "Cite brinquedos que começam com a letra T",
+    "Cite brinquedos que começam com a letra U",
+    "Cite brinquedos que começam com a letra V",
+    "Cite brinquedos que começam com a letra W",
+    "Cite brinquedos que começam com a letra X",
+    "Cite brinquedos que começam com a letra Y",
+    "Cite brinquedos que começam com a letra Z",
+    "Cite planetas que começam com a letra A",
+    "Cite planetas que começam com a letra B",
+    "Cite planetas que começam com a letra C",
+    "Cite planetas que começam com a letra D",
+    "Cite planetas que começam com a letra E",
+    "Cite planetas que começam com a letra F",
+    "Cite planetas que começam com a letra G",
+    "Cite planetas que começam com a letra H",
+    "Cite planetas que começam com a letra I",
+    "Cite planetas que começam com a letra J",
+    "Cite planetas que começam com a letra K",
+    "Cite planetas que começam com a letra L",
+    "Cite planetas que começam com a letra M",
+    "Cite planetas que começam com a letra N",
+    "Cite planetas que começam com a letra O",
+    "Cite planetas que começam com a letra P",
+    "Cite planetas que começam com a letra Q",
+    "Cite planetas que começam com a letra R",
+    "Cite planetas que começam com a letra S",
+    "Cite planetas que começam com a letra T",
+    "Cite planetas que começam com a letra U",
+    "Cite planetas que começam com a letra V",
+    "Cite planetas que começam com a letra W",
+    "Cite planetas que começam com a letra X",
+    "Cite planetas que começam com a letra Y",
+    "Cite planetas que começam com a letra Z",
+    "Cite livros que começam com a letra A",
+    "Cite livros que começam com a letra B",
+    "Cite livros que começam com a letra C",
+    "Cite livros que começam com a letra D",
+    "Cite livros que começam com a letra E",
+    "Cite livros que começam com a letra F",
+    "Cite livros que começam com a letra G",
+    "Cite livros que começam com a letra H",
+    "Cite livros que começam com a letra I",
+    "Cite livros que começam com a letra J",
+    "Cite livros que começam com a letra K",
+    "Cite livros que começam com a letra L",
+    "Cite livros que começam com a letra M",
+    "Cite livros que começam com a letra N",
+    "Cite livros que começam com a letra O",
+    "Cite livros que começam com a letra P",
+    "Cite livros que começam com a letra Q",
+    "Cite livros que começam com a letra R",
+    "Cite livros que começam com a letra S",
+    "Cite livros que começam com a letra T",
+    "Cite livros que começam com a letra U",
+    "Cite livros que começam com a letra V",
+    "Cite livros que começam com a letra W",
+    "Cite livros que começam com a letra X",
+    "Cite livros que começam com a letra Y",
+    "Cite livros que começam com a letra Z",
+    "Cite escritores que começam com a letra A",
+    "Cite escritores que começam com a letra B",
+    "Cite escritores que começam com a letra C",
+    "Cite escritores que começam com a letra D",
+    "Cite escritores que começam com a letra E",
+    "Cite escritores que começam com a letra F",
+    "Cite escritores que começam com a letra G",
+    "Cite escritores que começam com a letra H",
+    "Cite escritores que começam com a letra I",
+    "Cite escritores que começam com a letra J",
+    "Cite escritores que começam com a letra K",
+    "Cite escritores que começam com a letra L",
+    "Cite escritores que começam com a letra M",
+    "Cite escritores que começam com a letra N",
+    "Cite escritores que começam com a letra O",
+    "Cite escritores que começam com a letra P",
+    "Cite escritores que começam com a letra Q",
+    "Cite escritores que começam com a letra R",
+    "Cite escritores que começam com a letra S",
+    "Cite escritores que começam com a letra T",
+    "Cite escritores que começam com a letra U",
+    "Cite escritores que começam com a letra V",
+    "Cite escritores que começam com a letra W",
+    "Cite escritores que começam com a letra X",
+    "Cite escritores que começam com a letra Y",
+    "Cite escritores que começam com a letra Z",
+    "Cite temperos que começam com a letra A",
+    "Cite temperos que começam com a letra B",
+    "Cite temperos que começam com a letra C",
+    "Cite temperos que começam com a letra D",
+    "Cite temperos que começam com a letra E",
+    "Cite temperos que começam com a letra F",
+    "Cite temperos que começam com a letra G",
+    "Cite temperos que começam com a letra H",
+    "Cite temperos que começam com a letra I",
+    "Cite temperos que começam com a letra J",
+    "Cite temperos que começam com a letra K",
+    "Cite temperos que começam com a letra L",
+    "Cite temperos que começam com a letra M",
+    "Cite temperos que começam com a letra N",
+    "Cite temperos que começam com a letra O",
+    "Cite temperos que começam com a letra P",
+    "Cite temperos que começam com a letra Q",
+    "Cite temperos que começam com a letra R",
+    "Cite temperos que começam com a letra S",
+    "Cite temperos que começam com a letra T",
+    "Cite temperos que começam com a letra U",
+    "Cite temperos que começam com a letra V",
+    "Cite temperos que começam com a letra W",
+    "Cite temperos que começam com a letra X",
+    "Cite temperos que começam com a letra Y",
+    "Cite temperos que começam com a letra Z",
+    "Cite legumes que começam com a letra A",
+    "Cite legumes que começam com a letra B",
+    "Cite legumes que começam com a letra C",
+    "Cite legumes que começam com a letra D",
+    "Cite legumes que começam com a letra E",
+    "Cite legumes que começam com a letra F",
+    "Cite legumes que começam com a letra G",
+    "Cite legumes que começam com a letra H",
+    "Cite legumes que começam com a letra I",
+    "Cite legumes que começam com a letra J",
+    "Cite legumes que começam com a letra K",
+    "Cite legumes que começam com a letra L",
+    "Cite legumes que começam com a letra M",
+    "Cite legumes que começam com a letra N",
+    "Cite legumes que começam com a letra O",
+    "Cite legumes que começam com a letra P",
+    "Cite legumes que começam com a letra Q",
+    "Cite legumes que começam com a letra R",
+    "Cite legumes que começam com a letra S",
+    "Cite legumes que começam com a letra T",
+    "Cite legumes que começam com a letra U",
+    "Cite legumes que começam com a letra V",
+    "Cite legumes que começam com a letra W",
+    "Cite legumes que começam com a letra X",
+    "Cite legumes que começam com a letra Y",
+    "Cite legumes que começam com a letra Z",
+    "Cite verduras que começam com a letra A",
+    "Cite verduras que começam com a letra B",
+    "Cite verduras que começam com a letra C",
+    "Cite verduras que começam com a letra D",
+    "Cite verduras que começam com a letra E",
+    "Cite verduras que começam com a letra F",
+    "Cite verduras que começam com a letra G",
+    "Cite verduras que começam com a letra H",
+    "Cite verduras que começam com a letra I",
+    "Cite verduras que começam com a letra J",
+    "Cite verduras que começam com a letra K",
+    "Cite verduras que começam com a letra L",
+    "Cite verduras que começam com a letra M",
+    "Cite verduras que começam com a letra N",
+    "Cite verduras que começam com a letra O",
+    "Cite verduras que começam com a letra P",
+    "Cite verduras que começam com a letra Q",
+    "Cite verduras que começam com a letra R",
+    "Cite verduras que começam com a letra S",
+    "Cite verduras que começam com a letra T",
+    "Cite verduras que começam com a letra U",
+    "Cite verduras que começam com a letra V",
+    "Cite verduras que começam com a letra W",
+    "Cite verduras que começam com a letra X",
+    "Cite verduras que começam com a letra Y",
+    "Cite verduras que começam com a letra Z"
+  ],
+  "proibido": [
+    {
+      "word": "Gato",
+      "forbidden": [
+        "Miar",
+        "Animal",
+        "Rato",
+        "Leite",
+        "Felino"
+      ]
+    },
+    {
+      "word": "Cachorro",
+      "forbidden": [
+        "Latir",
+        "Osso",
+        "Animal",
+        "Melhor amigo",
+        "Mordida"
+      ]
+    },
+    {
+      "word": "Elefante",
+      "forbidden": [
+        "Tromba",
+        "Grande",
+        "África",
+        "Peso",
+        "Marfim"
+      ]
+    },
+    {
+      "word": "Leão",
+      "forbidden": [
+        "Rei",
+        "Selva",
+        "Rugido",
+        "Juba",
+        "Carnívoro"
+      ]
+    },
+    {
+      "word": "Tigre",
+      "forbidden": [
+        "Listras",
+        "Feroz",
+        "Gato",
+        "Asiático",
+        "Laranja"
+      ]
+    },
+    {
+      "word": "Macaco",
+      "forbidden": [
+        "Banana",
+        "Árvore",
+        "Pular",
+        "Gorila",
+        "Chimpanzé"
+      ]
+    },
+    {
+      "word": "Urso",
+      "forbidden": [
+        "Mel",
+        "Inverno",
+        "Hibernar",
+        "Polar",
+        "Pardo"
+      ]
+    },
+    {
+      "word": "Coelho",
+      "forbidden": [
+        "Cenoura",
+        "Orelhas",
+        "Pular",
+        "Páscoa",
+        "Rápido"
+      ]
+    },
+    {
+      "word": "Pássaro",
+      "forbidden": [
+        "Voar",
+        "Asas",
+        "Pena",
+        "Ninho",
+        "Céu"
+      ]
+    },
+    {
+      "word": "Peixe",
+      "forbidden": [
+        "Água",
+        "Nadar",
+        "Mar",
+        "Aquário",
+        "Escamas"
+      ]
+    },
+    {
+      "word": "Tubarão",
+      "forbidden": [
+        "Mar",
+        "Dentes",
+        "Perigo",
+        "Sangue",
+        "Filme"
+      ]
+    },
+    {
+      "word": "Baleia",
+      "forbidden": [
+        "Oceano",
+        "Enorme",
+        "Mamífero",
+        "Água",
+        "Azul"
+      ]
+    },
+    {
+      "word": "Cavalo",
+      "forbidden": [
+        "Cavalgar",
+        "Sela",
+        "Fazenda",
+        "Relinchar",
+        "Crina"
+      ]
+    },
+    {
+      "word": "Galinha",
+      "forbidden": [
+        "Ovo",
+        "Pena",
+        "Fazenda",
+        "Cacarejar",
+        "Galo"
+      ]
+    },
+    {
+      "word": "Vaca",
+      "forbidden": [
+        "Leite",
+        "Muu",
+        "Fazenda",
+        "Pasto",
+        "Queijo"
+      ]
+    },
+    {
+      "word": "Porco",
+      "forbidden": [
+        "Lama",
+        "Rosa",
+        "Bacon",
+        "Fazenda",
+        "Gordo"
+      ]
+    },
+    {
+      "word": "Cobra",
+      "forbidden": [
+        "Veneno",
+        "Rastejar",
+        "Picar",
+        "Língua",
+        "Cascavel"
+      ]
+    },
+    {
+      "word": "Aranha",
+      "forbidden": [
+        "Teia",
+        "Inseto",
+        "Oito patas",
+        "Picar",
+        "Medo"
+      ]
+    },
+    {
+      "word": "Sapo",
+      "forbidden": [
+        "Pular",
+        "Verde",
+        "Brejo",
+        "Língua",
+        "Mosca"
+      ]
+    },
+    {
+      "word": "Jacaré",
+      "forbidden": [
+        "Lagoa",
+        "Dentes",
+        "Couro",
+        "Réptil",
+        "Boca"
+      ]
+    },
+    {
+      "word": "Maçã",
+      "forbidden": [
+        "Fruta",
+        "Branca de Neve",
+        "Vermelha",
+        "Árvore",
+        "Comer"
+      ]
+    },
+    {
+      "word": "Banana",
+      "forbidden": [
+        "Macaco",
+        "Amarela",
+        "Casca",
+        "Fruta",
+        "Comer"
+      ]
+    },
+    {
+      "word": "Laranja",
+      "forbidden": [
+        "Suco",
+        "Fruta",
+        "Cor",
+        "Vitamina C",
+        "Cítrica"
+      ]
+    },
+    {
+      "word": "Uva",
+      "forbidden": [
+        "Vinho",
+        "Roxa",
+        "Cacho",
+        "Fruta",
+        "Suco"
+      ]
+    },
+    {
+      "word": "Morango",
+      "forbidden": [
+        "Vermelho",
+        "Fruta",
+        "Semente",
+        "Doce",
+        "Bolo"
+      ]
+    },
+    {
+      "word": "Melancia",
+      "forbidden": [
+        "Verde",
+        "Vermelha",
+        "Grande",
+        "Fruta",
+        "Caroço"
+      ]
+    },
+    {
+      "word": "Pizza",
+      "forbidden": [
+        "Massa",
+        "Queijo",
+        "Italiana",
+        "Redonda",
+        "Forno"
+      ]
+    },
+    {
+      "word": "Hambúrguer",
+      "forbidden": [
+        "Pão",
+        "Carne",
+        "Fast food",
+        "Sanduíche",
+        "Queijo"
+      ]
+    },
+    {
+      "word": "Batata Frita",
+      "forbidden": [
+        "Óleo",
+        "Salgada",
+        "Ketchup",
+        "Fast food",
+        "McDonalds"
+      ]
+    },
+    {
+      "word": "Sorvete",
+      "forbidden": [
+        "Gelado",
+        "Doce",
+        "Casquinha",
+        "Sabor",
+        "Verão"
+      ]
+    },
+    {
+      "word": "Chocolate",
+      "forbidden": [
+        "Cacau",
+        "Doce",
+        "Marrom",
+        "Páscoa",
+        "Derreter"
+      ]
+    },
+    {
+      "word": "Bolo",
+      "forbidden": [
+        "Aniversário",
+        "Festa",
+        "Vela",
+        "Fatia",
+        "Doce"
+      ]
+    },
+    {
+      "word": "Pão",
+      "forbidden": [
+        "Padaria",
+        "Manteiga",
+        "Trigo",
+        "Comer",
+        "Francês"
+      ]
+    },
+    {
+      "word": "Queijo",
+      "forbidden": [
+        "Leite",
+        "Rato",
+        "Amarelo",
+        "Minas",
+        "Comer"
+      ]
+    },
+    {
+      "word": "Arroz",
+      "forbidden": [
+        "Feijão",
+        "Branco",
+        "Grão",
+        "Panela",
+        "Comida"
+      ]
+    },
+    {
+      "word": "Feijão",
+      "forbidden": [
+        "Arroz",
+        "Marrom",
+        "Preto",
+        "Caldo",
+        "Panela"
+      ]
+    },
+    {
+      "word": "Macarrão",
+      "forbidden": [
+        "Massa",
+        "Molho",
+        "Espaguete",
+        "Italiano",
+        "Comer"
+      ]
+    },
+    {
+      "word": "Sopa",
+      "forbidden": [
+        "Quente",
+        "Colher",
+        "Caldo",
+        "Frio",
+        "Legumes"
+      ]
+    },
+    {
+      "word": "Salada",
+      "forbidden": [
+        "Alface",
+        "Tomate",
+        "Verde",
+        "Saudável",
+        "Dieta"
+      ]
+    },
+    {
+      "word": "Churrasco",
+      "forbidden": [
+        "Carne",
+        "Fogo",
+        "Fim de semana",
+        "Espeto",
+        "Carvão"
+      ]
+    },
+    {
+      "word": "Mesa",
+      "forbidden": [
+        "Cadeira",
+        "Madeira",
+        "Comer",
+        "Sentar",
+        "Móvel"
+      ]
+    },
+    {
+      "word": "Cadeira",
+      "forbidden": [
+        "Sentar",
+        "Mesa",
+        "Pernas",
+        "Móvel",
+        "Costas"
+      ]
+    },
+    {
+      "word": "Sofá",
+      "forbidden": [
+        "Sala",
+        "Sentar",
+        "Televisão",
+        "Descansar",
+        "Confortável"
+      ]
+    },
+    {
+      "word": "Cama",
+      "forbidden": [
+        "Dormir",
+        "Quarto",
+        "Colchão",
+        "Travesseiro",
+        "Deitar"
+      ]
+    },
+    {
+      "word": "Geladeira",
+      "forbidden": [
+        "Frio",
+        "Comida",
+        "Cozinha",
+        "Gelo",
+        "Guardar"
+      ]
+    },
+    {
+      "word": "Fogão",
+      "forbidden": [
+        "Fogo",
+        "Cozinhar",
+        "Panela",
+        "Cozinha",
+        "Gás"
+      ]
+    },
+    {
+      "word": "Televisão",
+      "forbidden": [
+        "Assistir",
+        "Tela",
+        "Controle",
+        "Sala",
+        "Canal"
+      ]
+    },
+    {
+      "word": "Computador",
+      "forbidden": [
+        "Internet",
+        "Teclado",
+        "Mouse",
+        "Tela",
+        "Trabalho"
+      ]
+    },
+    {
+      "word": "Celular",
+      "forbidden": [
+        "Ligar",
+        "Telefone",
+        "Tela",
+        "Mensagem",
+        "Internet"
+      ]
+    },
+    {
+      "word": "Relógio",
+      "forbidden": [
+        "Hora",
+        "Tempo",
+        "Pulso",
+        "Ponteiro",
+        "Minuto"
+      ]
+    },
+    {
+      "word": "Óculos",
+      "forbidden": [
+        "Olho",
+        "Enxergar",
+        "Lente",
+        "Rosto",
+        "Míope"
+      ]
+    },
+    {
+      "word": "Espelho",
+      "forbidden": [
+        "Reflexo",
+        "Rosto",
+        "Vidro",
+        "Quebrar",
+        "Ver"
+      ]
+    },
+    {
+      "word": "Livro",
+      "forbidden": [
+        "Ler",
+        "Páginas",
+        "História",
+        "Papel",
+        "Biblioteca"
+      ]
+    },
+    {
+      "word": "Caderno",
+      "forbidden": [
+        "Escrever",
+        "Escola",
+        "Folha",
+        "Anotar",
+        "Caneta"
+      ]
+    },
+    {
+      "word": "Caneta",
+      "forbidden": [
+        "Escrever",
+        "Tinta",
+        "Papel",
+        "Lápis",
+        "Azul"
+      ]
+    },
+    {
+      "word": "Lápis",
+      "forbidden": [
+        "Escrever",
+        "Borracha",
+        "Grafite",
+        "Papel",
+        "Apontador"
+      ]
+    },
+    {
+      "word": "Borracha",
+      "forbidden": [
+        "Apagar",
+        "Lápis",
+        "Erro",
+        "Escola",
+        "Papel"
+      ]
+    },
+    {
+      "word": "Tesoura",
+      "forbidden": [
+        "Cortar",
+        "Papel",
+        "Lâmina",
+        "Cabeleireiro",
+        "Ferramenta"
+      ]
+    },
+    {
+      "word": "Faca",
+      "forbidden": [
+        "Cortar",
+        "Cozinha",
+        "Comida",
+        "Garfo",
+        "Afiada"
+      ]
+    },
+    {
+      "word": "Garfo",
+      "forbidden": [
+        "Faca",
+        "Comer",
+        "Cozinha",
+        "Dentes",
+        "Talher"
+      ]
+    },
+    {
+      "word": "Colher",
+      "forbidden": [
+        "Sopa",
+        "Comer",
+        "Sobremesa",
+        "Talher",
+        "Cozinha"
+      ]
+    },
+    {
+      "word": "Prato",
+      "forbidden": [
+        "Comida",
+        "Comer",
+        "Mesa",
+        "Vidro",
+        "Cozinha"
+      ]
+    },
+    {
+      "word": "Copo",
+      "forbidden": [
+        "Beber",
+        "Água",
+        "Vidro",
+        "Suco",
+        "Boca"
+      ]
+    },
+    {
+      "word": "Chave",
+      "forbidden": [
+        "Porta",
+        "Abrir",
+        "Fechadura",
+        "Carro",
+        "Casa"
+      ]
+    },
+    {
+      "word": "Dinheiro",
+      "forbidden": [
+        "Comprar",
+        "Banco",
+        "Nota",
+        "Moeda",
+        "Rico"
+      ]
+    },
+    {
+      "word": "Carteira",
+      "forbidden": [
+        "Dinheiro",
+        "Documento",
+        "Bolso",
+        "Guardar",
+        "Cartão"
+      ]
+    },
+    {
+      "word": "Bolsa",
+      "forbidden": [
+        "Mulher",
+        "Carregar",
+        "Ombro",
+        "Guardar",
+        "Mochila"
+      ]
+    },
+    {
+      "word": "Mochila",
+      "forbidden": [
+        "Costas",
+        "Escola",
+        "Carregar",
+        "Caderno",
+        "Viagem"
+      ]
+    },
+    {
+      "word": "Guarda-chuva",
+      "forbidden": [
+        "Chuva",
+        "Água",
+        "Proteger",
+        "Abrir",
+        "Molhar"
+      ]
+    },
+    {
+      "word": "Toalha",
+      "forbidden": [
+        "Banho",
+        "Secar",
+        "Água",
+        "Corpo",
+        "Rosto"
+      ]
+    },
+    {
+      "word": "Praia",
+      "forbidden": [
+        "Areia",
+        "Mar",
+        "Sol",
+        "Verão",
+        "Onda"
+      ]
+    },
+    {
+      "word": "Escola",
+      "forbidden": [
+        "Estudar",
+        "Professor",
+        "Aluno",
+        "Aula",
+        "Caderno"
+      ]
+    },
+    {
+      "word": "Hospital",
+      "forbidden": [
+        "Médico",
+        "Doente",
+        "Enfermeira",
+        "Saúde",
+        "Remédio"
+      ]
+    },
+    {
+      "word": "Cinema",
+      "forbidden": [
+        "Filme",
+        "Pipoca",
+        "Tela",
+        "Escuro",
+        "Assistir"
+      ]
+    },
+    {
+      "word": "Parque",
+      "forbidden": [
+        "Brincar",
+        "Árvore",
+        "Grama",
+        "Criança",
+        "Ao ar livre"
+      ]
+    },
+    {
+      "word": "Igreja",
+      "forbidden": [
+        "Rezar",
+        "Deus",
+        "Missa",
+        "Padre",
+        "Religião"
+      ]
+    },
+    {
+      "word": "Banco",
+      "forbidden": [
+        "Dinheiro",
+        "Sacar",
+        "Conta",
+        "Fila",
+        "Cartão"
+      ]
+    },
+    {
+      "word": "Supermercado",
+      "forbidden": [
+        "Comprar",
+        "Comida",
+        "Carrinho",
+        "Prateleira",
+        "Caixa"
+      ]
+    },
+    {
+      "word": "Farmácia",
+      "forbidden": [
+        "Remédio",
+        "Comprar",
+        "Doente",
+        "Saúde",
+        "Receita"
+      ]
+    },
+    {
+      "word": "Padaria",
+      "forbidden": [
+        "Pão",
+        "Comprar",
+        "Manteiga",
+        "Doce",
+        "Leite"
+      ]
+    },
+    {
+      "word": "Restaurante",
+      "forbidden": [
+        "Comer",
+        "Garçom",
+        "Comida",
+        "Mesa",
+        "Conta"
+      ]
+    },
+    {
+      "word": "Aeroporto",
+      "forbidden": [
+        "Avião",
+        "Viajar",
+        "Mala",
+        "Passagem",
+        "Voo"
+      ]
+    },
+    {
+      "word": "Rodoviária",
+      "forbidden": [
+        "Ônibus",
+        "Viajar",
+        "Passagem",
+        "Mala",
+        "Estação"
+      ]
+    },
+    {
+      "word": "Shopping",
+      "forbidden": [
+        "Lojas",
+        "Comprar",
+        "Passear",
+        "Praça de alimentação",
+        "Cinema"
+      ]
+    },
+    {
+      "word": "Academia",
+      "forbidden": [
+        "Malhar",
+        "Peso",
+        "Exercício",
+        "Músculo",
+        "Suor"
+      ]
+    },
+    {
+      "word": "Sol",
+      "forbidden": [
+        "Calor",
+        "Dia",
+        "Amarelo",
+        "Céu",
+        "Queimar"
+      ]
+    },
+    {
+      "word": "Lua",
+      "forbidden": [
+        "Noite",
+        "Céu",
+        "Branca",
+        "Estrela",
+        "Lobisomem"
+      ]
+    },
+    {
+      "word": "Estrela",
+      "forbidden": [
+        "Céu",
+        "Noite",
+        "Brilhar",
+        "Espaço",
+        "Sol"
+      ]
+    },
+    {
+      "word": "Nuvem",
+      "forbidden": [
+        "Céu",
+        "Chuva",
+        "Branca",
+        "Algodão",
+        "Alto"
+      ]
+    },
+    {
+      "word": "Chuva",
+      "forbidden": [
+        "Água",
+        "Cair",
+        "Molhar",
+        "Céu",
+        "Nuvem"
+      ]
+    },
+    {
+      "word": "Vento",
+      "forbidden": [
+        "Ar",
+        "Soprar",
+        "Forte",
+        "Frio",
+        "Brisa"
+      ]
+    },
+    {
+      "word": "Neve",
+      "forbidden": [
+        "Frio",
+        "Branco",
+        "Gelo",
+        "Inverno",
+        "Boneco"
+      ]
+    },
+    {
+      "word": "Fogo",
+      "forbidden": [
+        "Queimar",
+        "Quente",
+        "Chama",
+        "Incêndio",
+        "Fumaça"
+      ]
+    },
+    {
+      "word": "Água",
+      "forbidden": [
+        "Beber",
+        "Líquido",
+        "Sede",
+        "Molhar",
+        "Rio"
+      ]
+    },
+    {
+      "word": "Terra",
+      "forbidden": [
+        "Chão",
+        "Planeta",
+        "Plantar",
+        "Sujeira",
+        "Marrom"
+      ]
+    },
+    {
+      "word": "Árvore",
+      "forbidden": [
+        "Planta",
+        "Folha",
+        "Madeira",
+        "Verde",
+        "Raiz"
+      ]
+    },
+    {
+      "word": "Flor",
+      "forbidden": [
+        "Pétala",
+        "Jardim",
+        "Cheiro",
+        "Rosa",
+        "Planta"
+      ]
+    },
+    {
+      "word": "Música",
+      "forbidden": [
+        "Tocar",
+        "Ouvir",
+        "Cantar",
+        "Som",
+        "Banda"
+      ]
+    },
+    {
+      "word": "Festa",
+      "forbidden": [
+        "Música",
+        "Dança",
+        "Comemorar",
+        "Bolo",
+        "Bebida"
+      ]
+    },
+    {
+      "word": "Casamento",
+      "forbidden": [
+        "Noiva",
+        "Festa",
+        "Igreja",
+        "Aliança",
+        "Amor"
+      ]
+    }
+  ],
+  "impostor": [
+    "Qual é a sua relação com isso?",
+    "Onde você costuma encontrar isso?",
+    "Quando foi a última vez que você viu ou usou isso?",
+    "Que cor ou forma isso costuma ter?",
+    "Se você pudesse descrever isso em uma palavra, qual seria?",
+    "Qual o tamanho aproximado disso?",
+    "Isso é mais usado por adultos ou crianças?",
+    "Isso faz algum tipo de barulho?",
+    "Você acha que isso é algo caro ou barato?",
+    "Você levaria isso para uma viagem?"
+  ]
+}
