@@ -188,7 +188,7 @@ io.on('connection', (socket) => {
       
       if (room.gameType === 'nota') {
         room.currentRound = 1;
-        room.maxRounds = room.maxRounds || 10;
+        room.maxRounds = room.players.length * 3;
         room.usedQuestions = [];
         room.turnIndex = 0;
         room.notaState = 'answering';

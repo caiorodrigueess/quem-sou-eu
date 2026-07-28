@@ -184,7 +184,7 @@ function App() {
               <button onClick={() => { setGameType('duvido'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #8b5cf6, #6d28d9)' }}>
                 🤨 Duvido
               </button>
-              <button onClick={() => { setGameType('nota'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #ec4899, #be185d)' }}>
+              <button onClick={() => { setGameType('nota'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #0ea5e9, #0369a1)' }}>
                 💯 Nota
               </button>
 
@@ -244,7 +244,7 @@ function App() {
                   </div>
                 )}
                 
-                {(gameType === 'palpite' || gameType === 'proibido' || gameType === 'duvido' || gameType === 'nota') && (
+                {(gameType === 'palpite' || gameType === 'proibido' || gameType === 'duvido') && (
                   <div className="form-group">
                     <label>Número de Rodadas</label>
                     <select value={maxRounds} onChange={e => setMaxRounds(Number(e.target.value))}>
@@ -255,7 +255,7 @@ function App() {
                   </div>
                 )}
                 
-                {gameType !== 'palpite' && gameType !== 'proibido' && gameType !== 'duvido' && (mode === 'random' || mode === 'tradicional') && (
+                {gameType !== 'palpite' && gameType !== 'proibido' && gameType !== 'duvido' && gameType !== 'nota' && (mode === 'random' || mode === 'tradicional') && (
                   <div className="form-group">
                     <label>Categoria</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
@@ -850,7 +850,7 @@ function App() {
                     </p>
                     <button 
                       onClick={() => { socket.emit('submitNotaAnswer', { answer: '' }); }}
-                      style={{ background: 'linear-gradient(135deg, #ec4899, #be185d)', fontSize: '1.2rem', padding: '1rem 2rem' }}
+                      style={{ background: 'linear-gradient(135deg, #0ea5e9, #0369a1)', fontSize: '1.2rem', padding: '1rem 2rem' }}
                     >
                       Começar Palpites
                     </button>
