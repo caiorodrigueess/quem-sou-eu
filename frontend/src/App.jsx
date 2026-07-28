@@ -26,6 +26,7 @@ function App() {
   const [suggestedChar, setSuggestedChar] = useState('');
   const [tick, setTick] = useState(0);
   const [betInput, setBetInput] = useState('');
+  const [notaAnswer, setNotaAnswer] = useState('');
 
   useEffect(() => {
     if (view === 'playing') {
@@ -183,6 +184,9 @@ function App() {
               <button onClick={() => { setGameType('duvido'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #8b5cf6, #6d28d9)' }}>
                 🤨 Duvido
               </button>
+              <button onClick={() => { setGameType('nota'); setMode('random'); }} style={{ padding: '1rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #ec4899, #be185d)' }}>
+                💯 Nota
+              </button>
 
             </div>
           </div>
@@ -209,7 +213,7 @@ function App() {
       <div className="container">
         <div className="glass-panel">
           <div className="flex-row">
-            <h1>{gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : gameType === 'proibido' ? '🚫 Proibido' : gameType === 'duvido' ? '🤨 Duvido' : '🤔 Quem Sou Eu?'}</h1>
+            <h1>{gameType === 'nota' ? '💯 Nota' : gameType === 'impostor' ? '🕵️ Impostor' : gameType === 'palpite' ? '🔢 Palpite' : gameType === 'proibido' ? '🚫 Proibido' : gameType === 'duvido' ? '🤨 Duvido' : '🤔 Quem Sou Eu?'}</h1>
             <button onClick={() => setGameType('')} style={{ background: 'transparent', width: 'auto', margin: 0, padding: '0.5rem' }}>Voltar</button>
           </div>
           
@@ -221,7 +225,7 @@ function App() {
                   <label>Seu Nome</label>
                   <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: João" />
                 </div>
-                {gameType !== 'palpite' && gameType !== 'proibido' && gameType !== 'duvido' && (
+                {gameType !== 'palpite' && gameType !== 'proibido' && gameType !== 'duvido' && gameType !== 'nota' && (
                   <div className="form-group">
                     <label>Modo de Jogo</label>
                     <select value={mode} onChange={e => setMode(e.target.value)}>
@@ -240,7 +244,7 @@ function App() {
                   </div>
                 )}
                 
-                {(gameType === 'palpite' || gameType === 'proibido' || gameType === 'duvido') && (
+                {(gameType === 'palpite' || gameType === 'proibido' || gameType === 'duvido' || gameType === 'nota') && (
                   <div className="form-group">
                     <label>Número de Rodadas</label>
                     <select value={maxRounds} onChange={e => setMaxRounds(Number(e.target.value))}>
@@ -844,6 +848,152 @@ function App() {
       </div>
     );
   }
+
+    if (roomData.gameType === 'nota') {
+      const isAvaliador = roomData.players[roomData.turnIndex % room.players.length] === myId;
+      const avaliadorName = roomData.playersData.find(p => p.id === roomData.players[roomData.turnIndex % room.players.length])?.name;
+      const myData = roomData.playersData.find(p => p.id === myId);
+
+      return (
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <h2>Sala: {roomData.id}</h2>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div className="badge" style={{ background: 'var(--primary)', color: 'white' }}>Rodada {roomData.currentRound} / {roomData.maxRounds}</div>
+              <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+            </div>
+          </div>
+          
+          <div className="glass-panel" style={{ marginTop: '2rem', padding: '3rem 2rem' }}>
+            {roomData.notaState === 'answering' && (
+              <>
+                {isAvaliador ? (
+                  <>
+                    <h3 style={{ marginBottom: '1rem' }}>Sua vez de avaliar!</h3>
+                    <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px', marginBottom: '2rem' }}>
+                      <p style={{ fontSize: '1.2rem', color: '#aaa', marginBottom: '0.5rem' }}>O tema é:</p>
+                      <h2 style={{ fontSize: '2rem', color: '#ec4899' }}>{roomData.currentQuestion}</h2>
+                    </div>
+                    <div style={{ marginBottom: '2rem' }}>
+                      <p style={{ fontSize: '1.2rem' }}>Sua nota secreta é:</p>
+                      <h1 style={{ fontSize: '4rem', margin: '1rem 0', color: '#10b981' }}>{roomData.currentNota} / 10</h1>
+                    </div>
+                    <p style={{ marginBottom: '1rem' }}>Dê uma dica para os outros adivinharem a sua nota:</p>
+                    <input 
+                      type="text" 
+                      value={notaAnswer} 
+                      onChange={e => setNotaAnswer(e.target.value)} 
+                      placeholder="Sua resposta / dica..." 
+                      style={{ fontSize: '1.2rem', padding: '1rem', width: '100%', marginBottom: '1rem' }} 
+                    />
+                    <button 
+                      onClick={() => { socket.emit('submitNotaAnswer', { answer: notaAnswer }); setNotaAnswer(''); }}
+                      disabled={!notaAnswer}
+                      style={{ background: 'linear-gradient(135deg, #ec4899, #be185d)' }}
+                    >
+                      Enviar Dica
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <h3 style={{ marginBottom: '1rem' }}>Aguarde...</h3>
+                    <div className="pulse" style={{ fontSize: '1.5rem', margin: '3rem 0' }}>
+                      ⏳ {avaliadorName} está pensando em uma dica...
+                    </div>
+                    <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px' }}>
+                      <p style={{ fontSize: '1.2rem', color: '#aaa', marginBottom: '0.5rem' }}>O tema da rodada é:</p>
+                      <h2 style={{ fontSize: '2rem', color: '#ec4899' }}>{roomData.currentQuestion}</h2>
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+
+            {roomData.notaState === 'guessing' && (
+              <>
+                <h3 style={{ marginBottom: '1rem' }}>Adivinhe a Nota!</h3>
+                <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px', marginBottom: '2rem' }}>
+                  <p style={{ fontSize: '1.2rem', color: '#aaa', marginBottom: '0.5rem' }}>O tema é: <strong>{roomData.currentQuestion}</strong></p>
+                  <p style={{ fontSize: '1.2rem', color: '#aaa', marginTop: '1rem' }}>A dica de {avaliadorName} foi:</p>
+                  <h2 style={{ fontSize: '2rem', color: '#3b82f6', marginTop: '0.5rem' }}>"{roomData.notaAnswer}"</h2>
+                </div>
+                
+                {isAvaliador ? (
+                  <div className="pulse" style={{ fontSize: '1.2rem', margin: '2rem 0' }}>
+                    Aguardando os outros jogadores palpitarem...
+                  </div>
+                ) : myData.hasSubmittedNotaGuess ? (
+                  <div style={{ fontSize: '1.2rem', margin: '2rem 0', color: '#10b981' }}>
+                    ✅ Palpite enviado! Aguardando outros jogadores...
+                  </div>
+                ) : (
+                  <>
+                    <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem' }}>Qual foi a nota que ele(a) recebeu de 1 a 10?</p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+                        <button 
+                          key={num} 
+                          onClick={() => socket.emit('submitNotaGuess', { guess: num })}
+                          style={{ 
+                            width: '60px', 
+                            height: '60px', 
+                            fontSize: '1.5rem', 
+                            background: 'rgba(255,255,255,0.1)', 
+                            border: '2px solid rgba(255,255,255,0.2)',
+                            margin: 0,
+                            padding: 0
+                          }}
+                        >
+                          {num}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+
+            {roomData.notaState === 'revealed' && (
+              <>
+                <h3 style={{ marginBottom: '1rem' }}>Resultado da Rodada</h3>
+                <div style={{ background: 'rgba(0,0,0,0.2)', padding: '2rem', borderRadius: '12px', marginBottom: '2rem' }}>
+                  <p style={{ fontSize: '1.2rem' }}>A nota secreta de {avaliadorName} era:</p>
+                  <h1 style={{ fontSize: '5rem', margin: '1rem 0', color: '#10b981' }}>{roomData.currentNota}</h1>
+                  <p style={{ fontSize: '1.2rem', color: '#aaa' }}>Tema: {roomData.currentQuestion}</p>
+                  <p style={{ fontSize: '1.5rem', color: '#3b82f6', marginTop: '1rem' }}>"{roomData.notaAnswer}"</p>
+                </div>
+
+                <div style={{ textAlign: 'left', background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '8px', marginBottom: '2rem' }}>
+                  <h4 style={{ marginBottom: '1rem' }}>Palpites:</h4>
+                  {roomData.players.map(pId => {
+                    if (pId === roomData.players[roomData.turnIndex % room.players.length]) return null;
+                    const p = roomData.playersData.find(x => x.id === pId);
+                    const guess = roomData.notaGuesses[pId];
+                    const isCorrect = guess === roomData.currentNota;
+                    return (
+                      <div key={pId} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span>{p.name}</span>
+                        <span style={{ color: isCorrect ? '#10b981' : '#ef4444', fontWeight: 'bold' }}>
+                          Chutou: {guess} {isCorrect && '(+10 pts)'}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {isAvaliador ? (
+                  <button onClick={() => socket.emit('nextNotaRound')} style={{ background: 'linear-gradient(135deg, #10b981, #047857)', fontSize: '1.2rem', padding: '1rem 2rem' }}>
+                    Próxima Rodada
+                  </button>
+                ) : (
+                  <p style={{ color: '#aaa' }}>Aguardando {avaliadorName} iniciar a próxima rodada...</p>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+      );
+    }
 
   if (view === 'palpite_results' && roomData) {
     const isHost = roomData.host === myId;
