@@ -807,8 +807,8 @@ function App() {
   }
 
     if (roomData.gameType === 'nota') {
-      const isAvaliador = roomData.players[roomData.turnIndex % room.players.length] === myId;
-      const avaliadorName = roomData.playersData.find(p => p.id === roomData.players[roomData.turnIndex % room.players.length])?.name;
+      const isAvaliador = roomData.players[roomData.turnIndex % roomData.players.length] === myId;
+      const avaliadorName = roomData.playersData.find(p => p.id === roomData.players[roomData.turnIndex % roomData.players.length])?.name;
       const myData = roomData.playersData.find(p => p.id === myId);
 
       return (
@@ -923,7 +923,7 @@ function App() {
                 <div style={{ textAlign: 'left', background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '8px', marginBottom: '2rem' }}>
                   <h4 style={{ marginBottom: '1rem' }}>Palpites:</h4>
                   {roomData.players.map(pId => {
-                    if (pId === roomData.players[roomData.turnIndex % room.players.length]) return null;
+                    if (pId === roomData.players[roomData.turnIndex % roomData.players.length]) return null;
                     const p = roomData.playersData.find(x => x.id === pId);
                     const guess = roomData.notaGuesses[pId];
                     const isCorrect = guess === roomData.currentNota;
