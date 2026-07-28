@@ -283,6 +283,16 @@ function App() {
     );
   }
 
+  if (view !== 'home' && !roomData) {
+    return (
+      <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="pulse" style={{ fontSize: '1.5rem', color: 'var(--text-muted)' }}>
+          Carregando dados da sala...
+        </div>
+      </div>
+    );
+  }
+
   if (view === 'lobby' && roomData) {
     const isHost = roomData.host === myId;
     return (
@@ -835,27 +845,21 @@ function App() {
                       <p style={{ fontSize: '1.2rem' }}>Sua nota secreta é:</p>
                       <h1 style={{ fontSize: '4rem', margin: '1rem 0', color: '#10b981' }}>{roomData.currentNota} / 10</h1>
                     </div>
-                    <p style={{ marginBottom: '1rem' }}>Dê uma dica para os outros adivinharem a sua nota:</p>
-                    <input 
-                      type="text" 
-                      value={notaAnswer} 
-                      onChange={e => setNotaAnswer(e.target.value)} 
-                      placeholder="Sua resposta / dica..." 
-                      style={{ fontSize: '1.2rem', padding: '1rem', width: '100%', marginBottom: '1rem' }} 
-                    />
+                    <p style={{ marginBottom: '1.5rem', fontSize: '1.2rem', color: '#fbbf24' }}>
+                      <strong>Fale a sua dica em voz alta!</strong>
+                    </p>
                     <button 
-                      onClick={() => { socket.emit('submitNotaAnswer', { answer: notaAnswer }); setNotaAnswer(''); }}
-                      disabled={!notaAnswer}
-                      style={{ background: 'linear-gradient(135deg, #ec4899, #be185d)' }}
+                      onClick={() => { socket.emit('submitNotaAnswer', { answer: '' }); }}
+                      style={{ background: 'linear-gradient(135deg, #ec4899, #be185d)', fontSize: '1.2rem', padding: '1rem 2rem' }}
                     >
-                      Enviar Dica
+                      Começar Palpites
                     </button>
                   </>
                 ) : (
                   <>
                     <h3 style={{ marginBottom: '1rem' }}>Aguarde...</h3>
                     <div className="pulse" style={{ fontSize: '1.5rem', margin: '3rem 0' }}>
-                      ⏳ {avaliadorName} está pensando em uma dica...
+                      ⏳ {avaliadorName} está preparando a dica (falada)...
                     </div>
                     <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px' }}>
                       <p style={{ fontSize: '1.2rem', color: '#aaa', marginBottom: '0.5rem' }}>O tema da rodada é:</p>
@@ -871,8 +875,14 @@ function App() {
                 <h3 style={{ marginBottom: '1rem' }}>Adivinhe a Nota!</h3>
                 <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px', marginBottom: '2rem' }}>
                   <p style={{ fontSize: '1.2rem', color: '#aaa', marginBottom: '0.5rem' }}>O tema é: <strong>{roomData.currentQuestion}</strong></p>
-                  <p style={{ fontSize: '1.2rem', color: '#aaa', marginTop: '1rem' }}>A dica de {avaliadorName} foi:</p>
-                  <h2 style={{ fontSize: '2rem', color: '#3b82f6', marginTop: '0.5rem' }}>"{roomData.notaAnswer}"</h2>
+                  {roomData.notaAnswer ? (
+                    <>
+                      <p style={{ fontSize: '1.2rem', color: '#aaa', marginTop: '1rem' }}>A dica de {avaliadorName} foi:</p>
+                      <h2 style={{ fontSize: '2rem', color: '#3b82f6', marginTop: '0.5rem' }}>"{roomData.notaAnswer}"</h2>
+                    </>
+                  ) : (
+                    <p style={{ fontSize: '1.2rem', color: '#fbbf24', marginTop: '1rem' }}>Lembre-se da dica dita por {avaliadorName}!</p>
+                  )}
                 </div>
                 
                 {isAvaliador ? (
@@ -917,7 +927,9 @@ function App() {
                   <p style={{ fontSize: '1.2rem' }}>A nota secreta de {avaliadorName} era:</p>
                   <h1 style={{ fontSize: '5rem', margin: '1rem 0', color: '#10b981' }}>{roomData.currentNota}</h1>
                   <p style={{ fontSize: '1.2rem', color: '#aaa' }}>Tema: {roomData.currentQuestion}</p>
-                  <p style={{ fontSize: '1.5rem', color: '#3b82f6', marginTop: '1rem' }}>"{roomData.notaAnswer}"</p>
+                  {roomData.notaAnswer && (
+                    <p style={{ fontSize: '1.5rem', color: '#3b82f6', marginTop: '1rem' }}>"{roomData.notaAnswer}"</p>
+                  )}
                 </div>
 
                 <div style={{ textAlign: 'left', background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '8px', marginBottom: '2rem' }}>
