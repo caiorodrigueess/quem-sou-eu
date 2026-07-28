@@ -806,49 +806,6 @@ function App() {
     );
   }
 
-  return (
-      <div className="container" style={{ maxWidth: '1000px' }}>
-        <div className="flex-row">
-          <h2>Sala: {roomData.id}</h2>
-          <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
-        </div>
-        
-        <div className="players-grid">
-          {roomData.playersData.map((p, index) => {
-            const isMe = p.id === myId;
-            return (
-              <div key={p.id} className={`player-card ${isMe ? 'my-card' : ''}`}>
-                <div className="score">{p.score}</div>
-                <div className="player-name">{p.name} {p.connected === false ? '(Off)' : ''} {p.id === roomData.host ? '👑' : ''} {isMe ? '(Você)' : ''}</div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--secondary)', marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                  {index === 0 ? '🎯 1º a jogar' : `${index + 1}º a jogar`}
-                </div>
-                
-                <div className="player-character" style={{ fontSize: isMe ? '3rem' : '1.5rem' }}>
-                  {isMe ? '?' : p.character}
-                </div>
-                {isMe && <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>Descubra quem você é!</p>}
-                
-                {!p.finishTime ? (
-                  isHost && !roomData.impostorCaught ? (
-                    <button className="correct-btn" onClick={() => handleCorrectGuess(p.id)}>
-                      Marcar Acerto
-                    </button>
-                  ) : null
-                ) : (
-                  <div style={{ marginTop: '1rem', color: '#10b981', fontWeight: 'bold' }}>
-                    <Check size={18} style={{ verticalAlign: 'middle', marginRight: '5px' }}/>
-                    Terminou!
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
-
     if (roomData.gameType === 'nota') {
       const isAvaliador = roomData.players[roomData.turnIndex % room.players.length] === myId;
       const avaliadorName = roomData.playersData.find(p => p.id === roomData.players[roomData.turnIndex % room.players.length])?.name;
@@ -994,6 +951,50 @@ function App() {
         </div>
       );
     }
+
+
+  return (
+      <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="flex-row">
+          <h2>Sala: {roomData.id}</h2>
+          <button onClick={handleLeaveRoom} style={{ padding: '0.5rem 1rem', margin: 0, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444' }}>Sair</button>
+        </div>
+        
+        <div className="players-grid">
+          {roomData.playersData.map((p, index) => {
+            const isMe = p.id === myId;
+            return (
+              <div key={p.id} className={`player-card ${isMe ? 'my-card' : ''}`}>
+                <div className="score">{p.score}</div>
+                <div className="player-name">{p.name} {p.connected === false ? '(Off)' : ''} {p.id === roomData.host ? '👑' : ''} {isMe ? '(Você)' : ''}</div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--secondary)', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                  {index === 0 ? '🎯 1º a jogar' : `${index + 1}º a jogar`}
+                </div>
+                
+                <div className="player-character" style={{ fontSize: isMe ? '3rem' : '1.5rem' }}>
+                  {isMe ? '?' : p.character}
+                </div>
+                {isMe && <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>Descubra quem você é!</p>}
+                
+                {!p.finishTime ? (
+                  isHost && !roomData.impostorCaught ? (
+                    <button className="correct-btn" onClick={() => handleCorrectGuess(p.id)}>
+                      Marcar Acerto
+                    </button>
+                  ) : null
+                ) : (
+                  <div style={{ marginTop: '1rem', color: '#10b981', fontWeight: 'bold' }}>
+                    <Check size={18} style={{ verticalAlign: 'middle', marginRight: '5px' }}/>
+                    Terminou!
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   if (view === 'palpite_results' && roomData) {
     const isHost = roomData.host === myId;
