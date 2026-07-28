@@ -1063,12 +1063,12 @@ function App() {
   }
 
   if (view === 'finished' && roomData) {
-    if (roomData.gameType === 'palpite') {
+    if (roomData.gameType !== 'quem_sou_eu') {
       const sortedPlayers = [...roomData.playersData].sort((a, b) => b.score - a.score);
       return (
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <div className="glass-panel">
-            <h2><Trophy size={48} style={{ color: '#fbbf24', display: 'block', margin: '0 auto 1rem' }}/> Ranking Final (Palpite)</h2>
+            <h2><Trophy size={48} style={{ color: '#fbbf24', display: 'block', margin: '0 auto 1rem' }}/> Ranking Final</h2>
             <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>Fim das {roomData.maxRounds} rodadas!</p>
             
             <div style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
