@@ -34,22 +34,54 @@ while len(palpite) < 1100:
 
 # --- DUVIDO (1300 items) ---
 duvido = []
-categories = [
-    "animais", "frutas", "cidades", "países", "objetos", "nomes de pessoas", 
-    "profissões", "filmes", "marcas", "bandas", "instrumentos musicais", 
-    "cores", "esportes", "comidas", "doenças", "verbos", "adjetivos", 
-    "personagens", "jogos", "ferramentas", "partes do corpo", "times de futebol",
-    "carros", "flores", "idiomas", "rios", "montanhas", "doces", "bebidas",
-    "roupas", "móveis", "eletrodomésticos", "insetos", "pássaros", "peixes",
-    "répteis", "atores", "atrizes", "cantores", "séries de TV", "desenhos animados",
-    "super-heróis", "vilões", "brinquedos", "planetas", "livros", "escritores",
-    "temperos", "legumes", "verduras"
+# Lista de categorias gerais
+categorias = [
+    "animais", "frutas", "cidades", "países", "objetos", "profissões", 
+    "filmes", "marcas", "bandas", "instrumentos musicais", "esportes", 
+    "comidas", "personagens", "jogos", "partes do corpo", "times de futebol", 
+    "carros", "idiomas", "doces", "bebidas", "roupas", "eletrodomésticos", 
+    "insetos", "pássaros", "peixes", "atores", "cantores", "séries de TV", 
+    "desenhos animados", "super-heróis", "vilões", "brinquedos", "livros"
 ]
-letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-for cat in categories:
-    for letter in letters:
-        duvido.append(f"Cite {cat} que começam com a letra {letter}")
+# Templates de desafios variados
+templates_desafios = [
+    # Restrições de Adjetivo / Cor / Tamanho
+    "Cite 3 {cat} que são da cor vermelha ou amarela",
+    "Cite 2 {cat} que cabem dentro de uma caixa de sapatos",
+    "Cite 3 {cat} que são considerados gigantes ou muito grandes",
+    "Cite 2 {cat} que são redondos ou ovais",
+    "Cite 2 {cat} que cheiram muito bem",
+    "Cite 2 {cat} que são perigosos ou assustadores",
+
+    # Restrições de Contexto / Local / Uso
+    "Cite 3 {cat} que você encontraria em uma praia",
+    "Cite 3 {cat} que existem/faria em uma festa de aniversário",
+    "Cite 2 {cat} que você usaria ou veria num dia de chuva",
+    "Cite 3 {cat} que você costuma ver numa cozinha",
+    "Cite 2 {cat} que são famosos nos anos 90 ou 2000",
+    "Cite 2 {cat} que só existem fora do Brasil",
+
+    # Restrições Estruturais / Gramaticais / Números
+    "Cite 2 {cat} cujo nome tem exatamente 4 letras",
+    "Cite 2 {cat} cujo nome tem pelo menos 3 sílabas",
+    "Cite 2 {cat} que terminam com a letra 'A'",
+    "Cite 2 {cat} cujo nome é composto por duas palavras",
+    "Cite 2 {cat} que contêm a letra 'Z' ou 'X' no nome",
+
+    # Desafios Rápido / Comparativos / Preferência
+    "Cite 3 {cat} que a maioria das crianças adora",
+    "Cite 2 {cat} que quase ninguém gosta ou acha chato",
+    "Cite 3 {cat} que custam mais de 1000 reais",
+    "Cite 2 {cat} que não usam eletricidade/bateria",
+    "Cite 3 {cat} que você pode comprar no supermercado"
+]
+
+# Gerando as combinações
+for cat in categorias:
+    for t in templates_desafios:
+        desafio = t.format(cat=cat)
+        duvido.append(desafio)
 
 
 # --- PROIBIDO (100+ items) ---
