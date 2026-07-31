@@ -34,7 +34,6 @@ while len(palpite) < 1100:
 
 # --- DUVIDO (1300 items) ---
 duvido = []
-# Lista de categorias gerais
 categorias = [
     "animais", "frutas", "cidades", "países", "objetos", "profissões", 
     "filmes", "marcas", "bandas", "instrumentos musicais", "esportes", 
@@ -44,42 +43,42 @@ categorias = [
     "desenhos animados", "super-heróis", "vilões", "brinquedos", "livros"
 ]
 
-# Templates de desafios variados
-templates_desafios = [
-    # Restrições de Adjetivo / Cor / Tamanho
-    "Cite 3 {cat} que são da cor vermelha ou amarela",
-    "Cite 2 {cat} que cabem dentro de uma caixa de sapatos",
-    "Cite 3 {cat} que são considerados gigantes ou muito grandes",
-    "Cite 2 {cat} que são redondos ou ovais",
-    "Cite 2 {cat} que cheiram muito bem",
-    "Cite 2 {cat} que são perigosos ou assustadores",
+# Templates baseados em critérios objetivos e indiscutíveis
+templates_objetivos = [
+    # 1. Regras Ortográficas e Estruturais
+    "Cite 2 {cat} cujo nome começa e termina com a mesma letra",
+    "Cite 2 {cat} cujo nome tem exatamente duas sílabas",
+    "Cite 2 {cat} cujo nome contém uma letra dobrada (ex: RR, SS, LL)",
+    "Cite 2 {cat} cujo nome é composto por duas ou mais palavras",
+    "Cite 2 {cat} cujo nome tem acento gráfico",
 
-    # Restrições de Contexto / Local / Uso
-    "Cite 3 {cat} que você encontraria em uma praia",
-    "Cite 3 {cat} que existem/faria em uma festa de aniversário",
-    "Cite 2 {cat} que você usaria ou veria num dia de chuva",
-    "Cite 3 {cat} que você costuma ver numa cozinha",
-    "Cite 2 {cat} que são famosos nos anos 90 ou 2000",
-    "Cite 2 {cat} que só existem fora do Brasil",
+    # 2. Atributos Físicos Verificáveis (Cores, Estado, Material)
+    "Cite 2 {cat} que são naturalmente da cor verde",
+    "Cite 2 {cat} que contêm algum elemento metálico ou são feitos de metal",
+    "Cite 2 {cat} que funcionam ou necessitam de água para existir/operar",
+    "Cite 2 {cat} que necessitam de eletricidade ou bateria",
+    "Cite 2 {cat} que são consumidos/servidos em estado líquido",
 
-    # Restrições Estruturais / Gramaticais / Números
-    "Cite 2 {cat} cujo nome tem exatamente 4 letras",
-    "Cite 2 {cat} cujo nome tem pelo menos 3 sílabas",
-    "Cite 2 {cat} que terminam com a letra 'A'",
-    "Cite 2 {cat} cujo nome é composto por duas palavras",
-    "Cite 2 {cat} que contêm a letra 'Z' ou 'X' no nome",
-
-    # Desafios Rápido / Comparativos / Preferência
-    "Cite 3 {cat} que a maioria das crianças adora",
-    "Cite 2 {cat} que quase ninguém gosta ou acha chato",
-    "Cite 3 {cat} que custam mais de 1000 reais",
-    "Cite 2 {cat} que não usam eletricidade/bateria",
-    "Cite 3 {cat} que você pode comprar no supermercado"
+    # 3. Classificação Lógica / Origem / Localização
+    "Cite 2 {cat} de origem ou fabricação brasileira",
+    "Cite 2 {cat} que são encontrados ou ocorrem no hemisfério sul",
+    "Cite 2 {cat} cujo nome começa com uma vogal",
+    "Cite 2 {cat} cujo nome começa com uma consoante",
+    
+    # 4. Numéricos e Quantitativos
+    "Cite 2 {cat} cujo nome tem mais de 8 letras",
+    "Cite 2 {cat} cujo nome tem menos de 5 letras"
 ]
 
-# Gerando as combinações
+
 for cat in categorias:
-    for t in templates_desafios:
+    for t in templates_objetivos:
+        # Filtros de coerência básica para evitar combinações sem sentido
+        if "líquido" in t and cat in ["cidades", "países", "profissões", "filmes", "carros"]:
+            continue
+        if "eletricidade" in t and cat in ["frutas", "animais", "países", "verbos"]:
+            continue
+            
         desafio = t.format(cat=cat)
         duvido.append(desafio)
 
