@@ -83,18 +83,28 @@ let PERGUNTAS_DUVIDO = [];
 let PERGUNTAS_PALPITE = [];
 let PERGUNTAS_NOTA = [];
 
-try {
-  if (fs.existsSync(DATA_FILE)) {
-    const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    PERGUNTAS_IMPOSTOR = data.impostor || [];
-    PERGUNTAS_PROIBIDO = data.proibido || [];
-    PERGUNTAS_DUVIDO = data.duvido || [];
-    PERGUNTAS_PALPITE = data.palpite || [];
-    PERGUNTAS_NOTA = data.nota || [];
+function loadQuestions() {
+  try {
+    if (fs.existsSync(DATA_FILE)) {
+      const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+      PERGUNTAS_IMPOSTOR = data.impostor || [];
+      PERGUNTAS_PROIBIDO = data.proibido || [];
+      PERGUNTAS_DUVIDO = data.duvido || [];
+      PERGUNTAS_PALPITE = data.palpite || [];
+      PERGUNTAS_NOTA = data.nota || [];
+      console.log('Questions loaded successfully.');
+    }
+  } catch (e) {
+    console.error('Error loading questions data:', e);
   }
-} catch (e) {
-  console.error('Error loading questions data:', e);
 }
+
+loadQuestions();
+
+fs.watchFile(DATA_FILE, (curr, prev) => {
+  console.log('Questions file changed! Reloading...');
+  loadQuestions();
+});
 
 function generateRoomCode() {
   return Math.random().toString(36).substring(2, 6).toUpperCase();
