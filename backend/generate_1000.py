@@ -215,11 +215,19 @@ impostor = [
     "Você levaria isso para uma viagem?"
 ]
 
+# Preserve 'nota'
+nota = []
+if os.path.exists('data/perguntas.json'):
+    with open('data/perguntas.json', 'r', encoding='utf-8') as f:
+        old_data = json.load(f)
+        nota = old_data.get('nota', [])
+
 data = {
     "palpite": palpite,
     "duvido": duvido,
     "proibido": proibido,
-    "impostor": impostor
+    "impostor": impostor,
+    "nota": nota
 }
 
 os.makedirs('data', exist_ok=True)
