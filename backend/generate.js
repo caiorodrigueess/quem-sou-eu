@@ -31,7 +31,7 @@ while (palpite.length < 1100) {
 
 // --- DUVIDO ---
 let duvido = [];
-const categorias = [
+const categorias_gerais = [
     "animais", "frutas", "cidades", "países", "objetos", "profissões", 
     "filmes", "marcas", "bandas", "instrumentos musicais", "esportes", 
     "comidas", "personagens", "jogos", "partes do corpo", "times de futebol", 
@@ -40,32 +40,29 @@ const categorias = [
     "desenhos animados", "super-heróis", "vilões", "brinquedos", "livros"
 ];
 
-const templates_objetivos = [
-    "Cite 2 {cat} cujo nome começa e termina com a mesma letra",
-    "Cite 2 {cat} cujo nome tem exatamente duas sílabas",
-    "Cite 2 {cat} cujo nome contém uma letra dobrada (ex: RR, SS, LL)",
-    "Cite 2 {cat} cujo nome é composto por duas ou mais palavras",
-    "Cite 2 {cat} cujo nome tem acento gráfico",
-    "Cite 2 {cat} que são naturalmente da cor verde",
-    "Cite 2 {cat} que contêm algum elemento metálico ou são feitos de metal",
-    "Cite 2 {cat} que funcionam ou necessitam de água para existir/operar",
-    "Cite 2 {cat} que necessitam de eletricidade ou bateria",
-    "Cite 2 {cat} que são consumidos/servidos em estado líquido",
-    "Cite 2 {cat} de origem ou fabricação brasileira",
-    "Cite 2 {cat} que são encontrados ou ocorrem no hemisfério sul",
-    "Cite 2 {cat} cujo nome começa com uma vogal",
-    "Cite 2 {cat} cujo nome começa com uma consoante",
-    "Cite 2 {cat} cujo nome tem mais de 8 letras",
-    "Cite 2 {cat} cujo nome tem menos de 5 letras"
+const templates = [
+    { text: "Cite 2 {cat} cujo nome começa e termina com a mesma letra", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome tem exatamente duas sílabas", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome contém uma letra dobrada (ex: RR, SS, LL)", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome é composto por duas ou mais palavras", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome tem acento gráfico", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome começa com uma vogal", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome começa com uma consoante", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome tem mais de 8 letras", cats: categorias_gerais },
+    { text: "Cite 2 {cat} cujo nome tem menos de 5 letras", cats: categorias_gerais },
+    
+    { text: "Cite 2 {cat} que são naturalmente da cor verde", cats: ["animais", "frutas", "comidas", "personagens", "insetos", "pássaros", "peixes", "super-heróis", "vilões"] },
+    { text: "Cite 2 {cat} que contêm algum elemento metálico ou são feitos de metal", cats: ["objetos", "instrumentos musicais", "carros", "eletrodomésticos", "brinquedos"] },
+    { text: "Cite 2 {cat} que funcionam ou necessitam de água para existir/operar", cats: ["animais", "peixes", "eletrodomésticos", "objetos"] },
+    { text: "Cite 2 {cat} que necessitam de eletricidade ou bateria", cats: ["objetos", "instrumentos musicais", "carros", "eletrodomésticos", "brinquedos"] },
+    { text: "Cite 2 {cat} que são consumidos/servidos em estado líquido", cats: ["comidas", "bebidas", "doces", "frutas"] },
+    { text: "Cite 2 {cat} de origem ou fabricação brasileira", cats: ["marcas", "bandas", "comidas", "doces", "bebidas", "atores", "cantores", "cidades", "times de futebol", "carros"] },
+    { text: "Cite 2 {cat} que são encontrados ou ocorrem no hemisfério sul", cats: ["animais", "cidades", "países", "pássaros", "peixes"] }
 ];
 
-for (let cat of categorias) {
-    for (let t of templates_objetivos) {
-        if (t.includes("líquido") && ["cidades", "países", "profissões", "filmes", "carros"].includes(cat)) continue;
-        if (t.includes("eletricidade") && ["frutas", "animais", "países", "verbos"].includes(cat)) continue;
-        
-        let desafio = t.replace("{cat}", cat);
-        duvido.push(desafio);
+for (let t of templates) {
+    for (let cat of t.cats) {
+        duvido.push(t.text.replace("{cat}", cat));
     }
 }
 
@@ -171,7 +168,24 @@ const words_list = [
     ["Flor", ["Pétala", "Jardim", "Cheiro", "Rosa", "Planta"]],
     ["Música", ["Tocar", "Ouvir", "Cantar", "Som", "Banda"]],
     ["Festa", ["Música", "Dança", "Comemorar", "Bolo", "Bebida"]],
-    ["Casamento", ["Noiva", "Festa", "Igreja", "Aliança", "Amor"]]
+    ["Casamento", ["Noiva", "Festa", "Igreja", "Aliança", "Amor"]],
+    ["Guitarra", ["Instrumento", "Corda", "Tocar", "Rock", "Banda"]],
+    ["Bateria", ["Instrumento", "Tocar", "Banda", "Baqueta", "Som"]],
+    ["Piano", ["Teclado", "Tocar", "Música", "Preto", "Branco"]],
+    ["Violão", ["Acústico", "Tocar", "Corda", "Música", "Cantor"]],
+    ["Bicicleta", ["Pedalar", "Roda", "Andar", "Guidão", "Pneu"]],
+    ["Carro", ["Dirigir", "Roda", "Motor", "Veículo", "Volante"]],
+    ["Avião", ["Voar", "Céu", "Piloto", "Viagem", "Asa"]],
+    ["Navio", ["Mar", "Água", "Barco", "Oceano", "Cruzeiro"]],
+    ["Trem", ["Trilho", "Vagão", "Estação", "Viagem", "Locomotiva"]],
+    ["Helicóptero", ["Voar", "Hélice", "Céu", "Piloto", "Ar"]],
+    ["Caminhão", ["Carga", "Estrada", "Dirigir", "Motorista", "Grande"]],
+    ["Foguete", ["Espaço", "Astronauta", "Lua", "Planeta", "Lançar"]],
+    ["Computador", ["Teclado", "Mouse", "Tela", "Internet", "Trabalhar"]],
+    ["Mouse", ["Computador", "Clicar", "Seta", "Botão", "Rato"]],
+    ["Teclado", ["Digitar", "Computador", "Letras", "Escrever", "Botão"]],
+    ["Câmera", ["Foto", "Tirar", "Imagem", "Lente", "Flash"]],
+    ["Microfone", ["Falar", "Cantar", "Som", "Voz", "Áudio"]]
 ];
 
 for (let [word, forb] of words_list) {

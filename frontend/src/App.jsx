@@ -1064,7 +1064,27 @@ function App() {
 
   if (view === 'finished' && roomData) {
     if (roomData.gameType !== 'quem_sou_eu') {
-      const sortedPlayers = [...roomData.playersData].sort((a, b) => b.score - a.score);
+      const isTeamGame = roomData.gameType === 'duvido' || roomData.gameType === 'proibido';
+      
+      let sortedEntities = [];
+      if (isTeamGame && roomData.teams && roomData.teamScores) {
+        sortedEntities = roomData.teams.map((team, index) => {
+          const teamNames = team.map(pId => roomData.playersData.find(p => p.id === pId)?.name || 'Desconhecido').join(' & ');
+          return {
+            id: 'team_' + index,
+            name: `Dupla ${index + 1} (${teamNames})`,
+            score: roomData.teamScores[index],
+            isMyTeam: team.includes(myId),
+            connected: true // Just a fallback so it doesn't break
+          };
+        }).sort((a, b) => b.score - a.score);
+      } else {
+        sortedEntities = [...roomData.playersData].map(p => ({
+          ...p,
+          isMyTeam: p.id === myId
+        })).sort((a, b) => b.score - a.score);
+      }
+
       return (
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <div className="glass-panel">
@@ -1072,17 +1092,17 @@ function App() {
             <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>Fim das {roomData.maxRounds} rodadas!</p>
             
             <div style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
-              {sortedPlayers.map((p, index) => (
+              {sortedEntities.map((p, index) => (
                 <div key={p.id} style={{ 
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                  padding: '1.5rem', background: p.id === myId ? 'rgba(255,255,255,0.1)' : 'var(--bg-card)',
+                  padding: '1.5rem', background: p.isMyTeam ? 'rgba(255,255,255,0.1)' : 'var(--bg-card)',
                   border: '1px solid var(--glass-border)', borderRadius: '12px', marginBottom: '1rem'
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                     <div style={{ fontSize: '2rem', fontWeight: 'bold', width: '40px', color: index === 0 ? '#fbbf24' : index === 1 ? '#9ca3af' : index === 2 ? '#b45309' : 'inherit' }}>
                       #{index + 1}
                     </div>
-                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{p.name} {p.connected === false ? '(Off)' : ''} {p.id === myId ? '(Você)' : ''}</div>
+                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{p.name} {!isTeamGame && p.connected === false ? '(Off)' : ''} {!isTeamGame && p.id === myId ? '(Você)' : ''}</div>
                   </div>
                   <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>
                     {p.score} pts
