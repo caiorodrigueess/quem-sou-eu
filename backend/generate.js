@@ -1,30 +1,45 @@
 const fs = require('fs');
 const path = require('path');
 
-// --- PALPITE ---
 let palpite = [
     {"question": "Quantos ossos tem um adulto humano?", "answer": 206},
     {"question": "Quantos dentes tem um adulto humano?", "answer": 32},
     {"question": "Qual a altura do aro de basquete em cm?", "answer": 305},
     {"question": "Quantos dias há em um ano bissexto?", "answer": 366},
-    {"question": "Quantos graus tem um círculo completo?", "answer": 360}
+    {"question": "Quantos graus tem um círculo completo?", "answer": 360},
+    {"question": "Quantos minutos tem em uma hora?", "answer": 60},
+    {"question": "Quantos segundos tem em um minuto?", "answer": 60},
+    {"question": "Quantas cores tem o arco-íris?", "answer": 7},
+    {"question": "Quantos jogadores de linha tem um time de futebol em campo?", "answer": 11},
+    {"question": "Quantos estados tem o Brasil?", "answer": 26},
+    {"question": "Quantos dedos tem um ser humano (mãos e pés)?", "answer": 20},
+    {"question": "Quantas letras tem o alfabeto da língua portuguesa?", "answer": 26},
+    {"question": "Em que ano a segunda guerra mundial acabou?", "answer": 1945},
+    {"question": "Quantos centímetros tem em um metro?", "answer": 100},
+    {"question": "Quantos continentes existem no mundo?", "answer": 6},
+    {"question": "Quantos peões tem em um tabuleiro de xadrez inicialmente?", "answer": 16},
+    {"question": "Quantas casas tem um tabuleiro de xadrez?", "answer": 64},
+    {"question": "Quantos lados tem um dodecágono?", "answer": 12},
+    {"question": "Quantos lados tem um heptágono?", "answer": 7}
 ];
 
-for (let i = 2; i <= 150; i++) {
+for (let i = 2; i <= 300; i++) {
     palpite.push({"question": `Quantos meses existem em ${i} anos?`, "answer": i * 12});
     palpite.push({"question": `Quantos dias existem em ${i} semanas?`, "answer": i * 7});
     palpite.push({"question": `Quantas horas tem ${i} dias?`, "answer": i * 24});
+    palpite.push({"question": `Quantos minutos tem ${i} horas?`, "answer": i * 60});
+    palpite.push({"question": `Quantos centímetros tem ${i} metros?`, "answer": i * 100});
 }
 
-for (let i = 1; i <= 150; i++) {
+for (let i = 1; i <= 300; i++) {
     palpite.push({"question": `Qual o resultado de ${i} multiplicado por 15?`, "answer": i * 15});
     palpite.push({"question": `Qual o resultado de ${i} multiplicado por 25?`, "answer": i * 25});
     palpite.push({"question": `Qual o resultado de ${i} multiplicado por 50?`, "answer": i * 50});
-    palpite.push({"question": `Quantos centímetros existem em ${i} metros?`, "answer": i * 100});
+    palpite.push({"question": `Qual o triplo de ${i}?`, "answer": i * 3});
 }
 
 let idx = 0;
-while (palpite.length < 1100) {
+while (palpite.length < 5000) {
     idx++;
     palpite.push({"question": `Qual é a raiz quadrada de ${idx * idx}?`, "answer": idx});
 }
