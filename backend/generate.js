@@ -54,7 +54,7 @@ try {
             .filter(l => l.trim().startsWith('"'))
             .map(l => l.match(/"([^"]+)"/)[1]);
         
-        duvido = lines.map(line => `Cite 2 ${line.charAt(0).toLowerCase() + line.slice(1)}`);
+        duvido = lines;
         console.log(`Extracted ${duvido.length} duvido questions from generate_1000.py`);
     } else {
         console.warn('Could not find temas_duvido_duplas in generate_1000.py');
