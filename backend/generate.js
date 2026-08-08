@@ -46,39 +46,21 @@ while (palpite.length < 5000) {
 
 // --- DUVIDO ---
 let duvido = [];
-const categorias_gerais = [
-    "animais", "frutas", "cidades", "países", "objetos", "profissões", 
-    "filmes", "marcas", "bandas", "instrumentos musicais", "esportes", 
-    "comidas", "personagens", "jogos", "partes do corpo", "times de futebol", 
-    "carros", "idiomas", "doces", "bebidas", "roupas", "eletrodomésticos", 
-    "insetos", "pássaros", "peixes", "atores", "cantores", "séries de TV", 
-    "desenhos animados", "super-heróis", "vilões", "brinquedos", "livros"
-];
-
-const templates = [
-    { text: "Cite 2 {cat} cujo nome começa e termina com a mesma letra", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome tem exatamente duas sílabas", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome contém uma letra dobrada (ex: RR, SS, LL)", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome é composto por duas ou mais palavras", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome tem acento gráfico", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome começa com uma vogal", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome começa com uma consoante", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome tem mais de 8 letras", cats: categorias_gerais },
-    { text: "Cite 2 {cat} cujo nome tem menos de 5 letras", cats: categorias_gerais },
-    
-    { text: "Cite 2 {cat} que são naturalmente da cor verde", cats: ["animais", "frutas", "comidas", "personagens", "insetos", "pássaros", "peixes", "super-heróis", "vilões"] },
-    { text: "Cite 2 {cat} que contêm algum elemento metálico ou são feitos de metal", cats: ["objetos", "instrumentos musicais", "carros", "eletrodomésticos", "brinquedos"] },
-    { text: "Cite 2 {cat} que funcionam ou necessitam de água para existir/operar", cats: ["animais", "peixes", "eletrodomésticos", "objetos"] },
-    { text: "Cite 2 {cat} que necessitam de eletricidade ou bateria", cats: ["objetos", "instrumentos musicais", "carros", "eletrodomésticos", "brinquedos"] },
-    { text: "Cite 2 {cat} que são consumidos/servidos em estado líquido", cats: ["comidas", "bebidas", "doces", "frutas"] },
-    { text: "Cite 2 {cat} de origem ou fabricação brasileira", cats: ["marcas", "bandas", "comidas", "doces", "bebidas", "atores", "cantores", "cidades", "times de futebol", "carros"] },
-    { text: "Cite 2 {cat} que são encontrados ou ocorrem no hemisfério sul", cats: ["animais", "cidades", "países", "pássaros", "peixes"] }
-];
-
-for (let t of templates) {
-    for (let cat of t.cats) {
-        duvido.push(t.text.replace("{cat}", cat));
+try {
+    const pythonContent = fs.readFileSync(path.join(__dirname, 'generate_1000.py'), 'utf-8');
+    const match = pythonContent.match(/"temas_duvido_duplas":\s*\[([\s\S]*?)\]/);
+    if (match) {
+        const lines = match[1].split('\n')
+            .filter(l => l.trim().startsWith('"'))
+            .map(l => l.match(/"([^"]+)"/)[1]);
+        
+        duvido = lines.map(line => `Cite 2 ${line.charAt(0).toLowerCase() + line.slice(1)}`);
+        console.log(`Extracted ${duvido.length} duvido questions from generate_1000.py`);
+    } else {
+        console.warn('Could not find temas_duvido_duplas in generate_1000.py');
     }
+} catch (err) {
+    console.error('Error reading generate_1000.py:', err.message);
 }
 
 // --- PROIBIDO ---
